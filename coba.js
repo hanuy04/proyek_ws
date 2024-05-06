@@ -186,4 +186,184 @@ app.get("/getTournaments/:tournament_id", async (req, res) => {
   }
 });
 
+app.get("/getTeam", async (req, res) => {
+  const { nickname, game, offset, limit } = req.query;
+
+  try {
+    const result = await axios.get(
+      `https://open.faceit.com/data/v4/search/teams?nickname=${nickname}&game=${game}&offset=${offset}&limit=${limit}`,
+      {
+        headers: {
+          Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
+          Accept: "application/json",
+        },
+      }
+    );
+
+    return res.status(200).json({
+      status: 200,
+      body: {
+        team: result.data.items,
+      },
+    });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return res.status(500).json({ error: error });
+  }
+});
+
+app.get("/getHubs", async (req, res) => {
+  const { name, game, region, offset, limit } = req.query;
+
+  try {
+    const result = await axios.get(
+      `https://open.faceit.com/data/v4/search/hubs?name=${name}&game=${game}&region=${region}&offset=${offset}&limit=${limit}`,
+      {
+        headers: {
+          Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
+          Accept: "application/json",
+        },
+      }
+    );
+
+    return res.status(200).json({
+      status: 200,
+      body: {
+        team: result.data.items,
+      },
+    });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return res.status(500).json({ error: error });
+  }
+});
+
+app.get("/getOneHub/:hub_id", async (req, res) => {
+  const hub_id = req.params.hub_id;
+
+  try {
+    const result = await axios.get(
+      `https://open.faceit.com/data/v4/hubs/${hub_id}`,
+      {
+        headers: {
+          Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
+          Accept: "application/json",
+        },
+      }
+    );
+
+    return res.status(200).json({
+      status: 200,
+      body: {
+        hub: result.data,
+      },
+    });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return res.status(500).json({ error: error });
+  }
+});
+
+app.get("/getMatchesFromHub/:hub_id", async (req, res) => {
+  const hub_id = req.params.hub_id;
+  const { type, offset, limit } = req.query;
+
+  try {
+    const result = await axios.get(
+      `https://open.faceit.com/data/v4/hubs/${hub_id}/matches?type=${type}&offset=${offset}&limit=${limit}`,
+      {
+        headers: {
+          Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
+          Accept: "application/json",
+        },
+      }
+    );
+
+    return res.status(200).json({
+      status: 200,
+      body: {
+        matches: result.data.items.map((item) => {
+          return {
+            match_id: item.match_id,
+            game: item.game,
+            region: item.region,
+            competition_name: item.competition_name,
+            teams: item.teams,
+            best_of: item.best_of,
+            status: item.status,
+            faceit_url: item.faceit_url,
+          };
+        }),
+      },
+    });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return res.status(500).json({ error: error });
+  }
+});
+
+app.get("/getMatch/:match_id", async (req, res) => {
+  const match_id = req.params.match_id;
+
+  try {
+    const result = await axios.get(
+      `https://open.faceit.com/data/v4/matches/${match_id}`,
+      {
+        headers: {
+          Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
+          Accept: "application/json",
+        },
+      }
+    );
+
+    return res.status(200).json({
+      status: 200,
+      body: {
+        match: {
+          match_id: result.data.match_id,
+          game: result.data.game,
+          region: result.data.region,
+          competition_name: result.data.competition_name,
+          teams_faction_1_leader: result.data.teams.faction1.leader,
+          team_faction_1_roster: result.data.teams.faction1.roster.map(
+            (item) => {
+              return {
+                player_id: item.player_id,
+                nickname: item.nickname,
+                game_player_id: item.game_player_id,
+                game_player_name: item.game_player_name,
+                game_skill_level: item.game_skill_level,
+              };
+            }
+          ),
+          teams_faction_2_leader: result.data.teams.faction2.leader,
+          team_faction_2_roster: result.data.teams.faction2.roster.map(
+            (item) => {
+              return {
+                player_id: item.player_id,
+                nickname: item.nickname,
+                game_player_id: item.game_player_id,
+                game_player_name: item.game_player_name,
+                game_skill_level: item.game_skill_level,
+              };
+            }
+          ),
+          best_of: result.data.best_of,
+          status: result.data.status,
+          location: result.data.voting.location.pick,
+          map: result.data.voting.map.pick,
+          started_at: result.data.started_at,
+          finished_at: result.data.finished_at,
+          best_of: result.data.best_of,
+          results: result.data.results,
+          status: result.data.status,
+        },
+      },
+    });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return res.status(500).json({ error: error });
+  }
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
