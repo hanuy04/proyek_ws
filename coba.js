@@ -21,17 +21,46 @@ app.get("/getGames", async (req, res) => {
     return res.status(200).json({
       status: 200,
       body: {
-        games: result.data.items.map((item) => {
-          return {
-            game_id: item.game_id,
-            game_name_short: item.short_label,
-            game_name_long: item.long_label,
-            platforms: item.platforms,
-            regions: item.regions,
-            parent_game_id: item.parent_game_id,
-            order: item.order,
-          };
-        }),
+        games: result.data.items,
+        // games: result.data.items.map((item) => {
+        //   return {
+        //     game_id: item.game_id,
+        //     game_name_short: item.short_label,
+        //     game_name_long: item.long_label,
+        //     platforms: item.platforms,
+        //     regions: item.regions,
+        //     parent_game_id: item.parent_game_id,
+        //     order: item.order,
+        //   };
+        // }),
+      },
+    });
+  } catch (error) {
+    let newMsgError = error.toString().split(": ")[1];
+    console.error("Error fetching data:", newMsgError);
+    return res.status(500).json({ error: newMsgError });
+  }
+});
+
+// lihat detail game
+app.get("/getDetailsGame/:game_id", async (req, res) => {
+  const game_id = req.params.game_id;
+
+  try {
+    const result = await axios.get(
+      `https://open.faceit.com/data/v4/games/${game_id}`,
+      {
+        headers: {
+          Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
+          Accept: "application/json",
+        },
+      }
+    );
+
+    return res.status(200).json({
+      status: 200,
+      body: {
+        games: result.data,
       },
     });
   } catch (error) {
@@ -159,13 +188,14 @@ app.get("/getLeaderboardsPlayer/:leaderboard_id", async (req, res) => {
   }
 });
 
-app.get("/getTournaments/:tournament_id", async (req, res) => {
+app.get("/getTournaments", async (req, res) => {
   const tournament_id = req.params.tournament_id;
-  const expanded = req.query;
+  const { name, offset, limit } = req.query;
+  // const expanded = req.query;
 
   try {
     const result = await axios.get(
-      `https://open.faceit.com/data/v4/tournaments/${tournament_id}?expanded=${expanded}`,
+      `https://open.faceit.com/data/v4/search/tournaments?name=${name}&offset=${offset}&limit=${limit}`,
       {
         headers: {
           Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
@@ -177,7 +207,35 @@ app.get("/getTournaments/:tournament_id", async (req, res) => {
     return res.status(200).json({
       status: 200,
       body: {
-        tournaments_name: result.data.items.name,
+        tournaments: result.data,
+      },
+    });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return res.status(500).json({ error: error });
+  }
+});
+
+// lihat detail tournament
+app.get("/getTournaments/:tournament_id", async (req, res) => {
+  const tournament_id = req.params.tournament_id;
+  // const expanded = req.query;
+
+  try {
+    const result = await axios.get(
+      `https://open.faceit.com/data/v4/tournaments/${tournament_id}`,
+      {
+        headers: {
+          Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
+          Accept: "application/json",
+        },
+      }
+    );
+
+    return res.status(200).json({
+      status: 200,
+      body: {
+        tournament: result.data,
       },
     });
   } catch (error) {
@@ -302,6 +360,7 @@ app.get("/getMatchesFromHub/:hub_id", async (req, res) => {
   }
 });
 
+// lihat detail match
 app.get("/getMatch/:match_id", async (req, res) => {
   const match_id = req.params.match_id;
 
