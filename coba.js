@@ -77,7 +77,7 @@ app.get("/getChampionships", async (req, res) => {
       `https://open.faceit.com/data/v4/championships?game=${game}&offset=${offset}&limit=${limit}`,
       {
         headers: {
-          Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
+          Authorization: "Bearer b2007218-0c5d-4444-a10f-8ecc42c6980c",
           Accept: "application/json",
         },
       }
