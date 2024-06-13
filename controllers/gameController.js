@@ -54,4 +54,21 @@ const addGame = async (req, res) => {
   }
 };
 
-module.exports = { addGame };
+const getGames = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const games = await db.collection("games").find().toArray();
+
+    return res.status(200).json(games);
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
+};
+
+
+module.exports = { addGame, getGames };

@@ -9,3 +9,6 @@ app.listen(3000, () => console.log("Server up and running..."));
 
 const addGameRoutes = require("./routes/gameRoutes");
 app.use("", addGameRoutes);
+const getGameRoutes = require("./routes/gameRoutes");
+app.use("", getGameRoutes);
+
