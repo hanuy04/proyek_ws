@@ -70,5 +70,4 @@ const getGames = async (req, res) => {
   }
 };
 
-
 module.exports = { addGame, getGames };
