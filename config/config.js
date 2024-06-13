@@ -1,13 +1,8 @@
-// INI file yang akan menyimpan konfigurasi dari koneksi kita
-// Kalau kalian masih ingat laravel, file ini kayak config/database.php
-
-module.exports = {
-    koneksi_buku: {
-        host: process.env.DB_HOST,
-        username: process.env.DB_USER,
-        password: process.env.DB_PASS,
-        port: process.env.DB_PORT,
-        database: process.env.DB_DBNAME,
-        dialect: "mysql",
-    },
-};
+const { MongoClient } = require("mongodb");
+const connectionString =
+  "mongodb+srv://hanvyhendrawan1105:lwxeC7fEfa7jgAH1@proyekws.ur2e8i2.mongodb.net/";
+const client = new MongoClient(connectionString, { family: 4 });
+client.connect();
+const db = client.db("projectWS");
+module.exports = db;
+console.log("You successfully connected to MongoDB!");
