@@ -1,5 +1,5 @@
 const express = require("express");
-const { addGame } = require("../controllers/addGame");
+const { addGame } = require("../controllers/gameController");
 const router = express.Router();
 
 router.post("/addGame", addGame);
