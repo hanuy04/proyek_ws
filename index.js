@@ -17,6 +17,8 @@ const addGameRoutes = require("./routes/gameRoutes");
 app.use("", addGameRoutes);
 const getGameRoutes = require("./routes/gameRoutes");
 app.use("", getGameRoutes);
+const putGameRoutes = require("./routes/gameRoutes");
+app.use("", putGameRoutes);
 
 // team
 const addTeamRoutes = require("./routes/teamRoutes");
