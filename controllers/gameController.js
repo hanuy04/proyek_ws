@@ -2,7 +2,7 @@ const axios = require("axios");
 const client = require("../config/config");
 
 const addGame = async (req, res) => {
-  const game_id = req.body.game_id;
+  const game_id = req.params.game_id;
   if (!game_id) {
     return res.status(400).json({ error: "Game ID is required" });
   }
