@@ -1,12 +1,14 @@
 const express = require("express");
-const { addTeam, updateTeam, deleteTeam } = require("../controllers/teamController");
+const {
+  addTeam,
+  updateTeam,
+  deleteTeam,
+} = require("../controllers/teamController");
 const { verifyToken } = require("../middleware/verifyJWT");
 const router = express.Router();
 
 // Post
 router.post("/addTeam", verifyToken, addTeam);
-
-// Get
 
 // Put
 router.put("/updateTeam/:team_id", verifyToken, updateTeam);

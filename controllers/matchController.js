@@ -1,6 +1,5 @@
 const axios = require("axios");
 const client = require("../config/config");
-const { deleteGames } = require("./gameController");
 
 const addMatches = async (req, res) => {
   const { hub_name, game } = req.query;
@@ -89,14 +88,18 @@ const deleteMatches = async (req, res) => {
     }
 
     // Cari pertandingan dengan match_id yang sesuai
-    const match = await db.collection("matches").findOne({ match_id: match_id });
+    const match = await db
+      .collection("matches")
+      .findOne({ match_id: match_id });
 
     if (!match) {
       return res.status(404).json({ error: "Match not found" });
     }
 
     // Hapus pertandingan dari database
-    const deleteResult = await db.collection("matches").deleteOne({ match_id: match_id });
+    const deleteResult = await db
+      .collection("matches")
+      .deleteOne({ match_id: match_id });
 
     if (deleteResult.deletedCount === 0) {
       return res.status(404).json({ error: "Failed to delete match" });

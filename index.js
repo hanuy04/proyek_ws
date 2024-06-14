@@ -49,4 +49,20 @@ const updateTicketRoutes = require("./routes/ticketRoutes");
 app.use("", updateTicketRoutes);
 const deleteTicketRoutes = require("./routes/ticketRoutes");
 app.use("", deleteTicketRoutes);
+
+// user
+const blockUserRoutes = require("./routes/userRoutes");
+app.use("", blockUserRoutes);
+const deleteserRoutes = require("./routes/userRoutes");
+app.use("", deleteserRoutes);
 // ---------------------------------------- ADMIN-----------------------------------------
+
+// ---------------------------------------- USER -----------------------------------------
+// register
+const registerRoutes = require("./routes/userRoutes");
+app.use("", registerRoutes);
+
+// update profile
+const updateProfileRoutes = require("./routes/userRoutes");
+app.use("", updateProfileRoutes);
+// ---------------------------------------- USER -----------------------------------------

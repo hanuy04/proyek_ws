@@ -86,7 +86,9 @@ const updateGames = async (req, res) => {
 
     // Validasi field
     if (!long_label || !platforms || !regions) {
-      return res.status(400).json({ error: "long_label, platforms, and regions are required" });
+      return res
+        .status(400)
+        .json({ error: "long_label, platforms, and regions are required" });
     }
 
     // Pastikan platforms dan regions berupa array
@@ -130,7 +132,9 @@ const deleteGames = async (req, res) => {
       return res.status(404).json({ error: "Game not found" });
     }
 
-    const deleteResult = await db.collection("games").deleteOne({ game_id: gameId });
+    const deleteResult = await db
+      .collection("games")
+      .deleteOne({ game_id: gameId });
 
     if (deleteResult.deletedCount === 0) {
       return res.status(500).json({ error: "Failed to delete game" });
@@ -144,6 +148,5 @@ const deleteGames = async (req, res) => {
     await client.close();
   }
 };
-
 
 module.exports = { addGame, getGames, updateGames, deleteGames };

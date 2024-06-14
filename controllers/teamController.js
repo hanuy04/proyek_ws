@@ -65,14 +65,18 @@ const updateTeam = async (req, res) => {
     }
 
     // Pengecekan apakah game sudah ada di database
-    const existingGame = await db.collection("games").findOne({ game_id:game });
+    const existingGame = await db
+      .collection("games")
+      .findOne({ game_id: game });
 
     if (!existingGame) {
       return res.status(400).json({ error: "Game not found in database" });
     }
 
     const teamId = req.params.team_id;
-    const existingTeam = await db.collection("teams").findOne({ team_id: teamId });
+    const existingTeam = await db
+      .collection("teams")
+      .findOne({ team_id: teamId });
 
     if (!existingTeam) {
       return res.status(404).json({ error: "Team not found" });
@@ -85,10 +89,9 @@ const updateTeam = async (req, res) => {
       },
     };
 
-    const updateResult = await db.collection("teams").updateOne(
-      { team_id: teamId },
-      updateData
-    );
+    const updateResult = await db
+      .collection("teams")
+      .updateOne({ team_id: teamId }, updateData);
 
     if (updateResult.modifiedCount === 0) {
       return res.status(200).json({ message: "No changes made" });
@@ -109,7 +112,9 @@ const deleteTeam = async (req, res) => {
     const db = client.db("projectWS");
 
     const teamId = req.params.team_id;
-    const deleteResult = await db.collection("teams").deleteOne({ team_id : teamId });
+    const deleteResult = await db
+      .collection("teams")
+      .deleteOne({ team_id: teamId });
 
     if (deleteResult.deletedCount === 0) {
       return res.status(404).json({ error: "Team not found" });
@@ -123,6 +128,5 @@ const deleteTeam = async (req, res) => {
     await client.close();
   }
 };
-
 
 module.exports = { addTeam, updateTeam, deleteTeam };
