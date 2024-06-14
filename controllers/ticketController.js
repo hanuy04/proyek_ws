@@ -1,56 +1,182 @@
-const axios = require("axios");
 const client = require("../config/config");
+const Joi = require("joi");
+
+const addTicketSchema = Joi.object({
+  name: Joi.string().required().messages({
+    "string.empty": "name is required!",
+    "string.required": "name is required!",
+  }),
+  amount: Joi.number().min(0).required().messages({
+    "string.empty": "Password is required!",
+    "string.required": "Password is required!",
+    "number.min": "Amount must be greater than 0!",
+  }),
+  price: Joi.number().min(0).required().messages({
+    "string.empty": "price is required!",
+    "string.required": "price is required!",
+    "number.min": "price must be greater than 0!",
+  }),
+  match_id: Joi.string().required().messages({
+    "string.empty": "match_id is required!",
+    "string.required": "match_id is required!",
+  }),
+});
 
 const addTicket = async (req, res) => {
-  const { nickname, game } = req.query;
-  if (!nickname) {
-    return res.status(400).json({ error: "Nickname is required!" });
+  const { error } = addTicketSchema.validate(req.body);
+
+  if (error) {
+    return res.status(400).send({ message: error.details[0].message });
+  }
+
+  const { name, amount, price, match_id } = req.body;
+
+  if (amount < 0 || price < 0) {
+    return res
+      .status(400)
+      .json({ error: "Amount and price must be greater than 0!" });
   }
 
   try {
-    const result = await axios.get(
-      `https://open.faceit.com/data/v4/search/teams?nickname=${nickname}&game=${game}&offset=0&limit=1`,
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const findTicket = await db.collection("tickets").findOne({ name: name });
+
+    if (findTicket) {
+      return res.status(400).json({ message: "Ticket has been added!" });
+    }
+
+    const findMatch = await db
+      .collection("matches")
+      .findOne({ match_id: match_id });
+
+    if (!findMatch) {
+      return res.status(404).json({ message: "Match's not found!" });
+    }
+
+    await db.collection("tickets").insertOne({
+      name: name,
+      amount: amount,
+      price: price,
+      match_id: findMatch.match_id,
+      competition_name: findMatch.competition_name,
+    });
+
+    return res.status(201).json({ message: "Success add ticket" });
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
+};
+
+const updateTicketSchema = Joi.object({
+  new_name: Joi.string().required().messages({
+    "string.empty": "new_name is required!",
+    "string.required": "new_name is required!",
+  }),
+  amount: Joi.number().min(0).required().messages({
+    "string.empty": "Amount is required!",
+    "string.required": "Amount is required!",
+    "number.min": "Amount must be greater than 0!",
+  }),
+  price: Joi.number().min(0).required().messages({
+    "string.empty": "Price is required!",
+    "string.required": "Price is required!",
+    "number.min": "Price must be greater than 0!",
+  }),
+});
+
+const updateTicket = async (req, res) => {
+  const { error } = updateTicketSchema.validate(req.body);
+
+  if (error) {
+    return res.status(400).send({ message: error.details[0].message });
+  }
+
+  const { new_name, amount, price } = req.body;
+  const name = req.params.name;
+
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const findTicket = await db.collection("tickets").findOne({ name });
+
+    if (!findTicket) {
+      return res.status(404).json({ message: "Ticket not found!" });
+    }
+
+    const checkNewName = await db
+      .collection("tickets")
+      .findOne({ name: new_name });
+
+    if (checkNewName && new_name !== name) {
+      return res.status(400).json({ message: "New name already exists!" });
+    }
+
+    if (amount < 0 || price < 0) {
+      return res
+        .status(400)
+        .json({ error: "Amount and price must be greater than 0!" });
+    }
+
+    const updateResult = await db.collection("tickets").updateOne(
+      { name },
       {
-        headers: {
-          Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
-          Accept: "application/json",
+        $set: {
+          name: new_name,
+          amount,
+          price,
         },
       }
     );
 
-    if (!result.data) {
-      return res.status(404).json({ message: "Data's not found!" });
+    if (updateResult.matchedCount === 0) {
+      return res.status(404).json({ error: "Failed to update ticket" });
     }
 
-    try {
-      await client.connect();
-      const db = client.db("projectWS");
-
-      const findTeam = await db.collection("teams").findOne({ name: nickname });
-
-      if (findTeam) {
-        return res.status(400).json({ message: "Team has been added!" });
-      }
-
-      await db.collection("teams").insertOne({
-        team_id: result.data.items[0].team_id,
-        name: result.data.items[0].name,
-        game: result.data.items[0].game,
-        chat_room_id: result.data.items[0].chat_room_id,
-        faceit_url: result.data.items[0].faceit_url,
-      });
-
-      return res.status(201).json({ message: "Success add team" });
-    } catch (dbError) {
-      console.error("Database error:", dbError);
-      return res.status(500).json({ error: "Database error" });
-    } finally {
-      await client.close();
-    }
-  } catch (error) {
-    console.error("Error fetching data:", error.message);
-    return res.status(500).json({ error: error.message });
+    return res.status(200).json({ message: "Ticket updated successfully" });
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
   }
 };
 
-module.exports = { addTeam };
+const deleteTicket = async (req, res) => {
+  const name = req.params.name;
+
+  if (!name) {
+    return res.status(400).json({ error: "Name is required" });
+  }
+
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const findTicket = await db.collection("tickets").findOne({ name });
+
+    if (!findTicket) {
+      return res.status(404).json({ message: "Ticket not found!" });
+    }
+
+    const deleteResult = await db.collection("tickets").deleteOne({ name });
+
+    if (deleteResult.deletedCount === 0) {
+      return res.status(404).json({ error: "Failed to delete ticket" });
+    }
+
+    return res.status(200).json({ message: "Ticket deleted successfully" });
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
+};
+
+module.exports = { addTicket, updateTicket, deleteTicket };

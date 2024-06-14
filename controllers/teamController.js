@@ -53,4 +53,76 @@ const addTeam = async (req, res) => {
   }
 };
 
-module.exports = { addTeam };
+const updateTeam = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const { name, game } = req.body;
+
+    if (!name || !game) {
+      return res.status(400).json({ error: "Name and game are required" });
+    }
+
+    // Pengecekan apakah game sudah ada di database
+    const existingGame = await db.collection("games").findOne({ game_id:game });
+
+    if (!existingGame) {
+      return res.status(400).json({ error: "Game not found in database" });
+    }
+
+    const teamId = req.params.team_id;
+    const existingTeam = await db.collection("teams").findOne({ team_id: teamId });
+
+    if (!existingTeam) {
+      return res.status(404).json({ error: "Team not found" });
+    }
+
+    const updateData = {
+      $set: {
+        name,
+        game,
+      },
+    };
+
+    const updateResult = await db.collection("teams").updateOne(
+      { team_id: teamId },
+      updateData
+    );
+
+    if (updateResult.modifiedCount === 0) {
+      return res.status(200).json({ message: "No changes made" });
+    }
+
+    return res.status(200).json({ message: "Team updated successfully" });
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
+};
+
+const deleteTeam = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const teamId = req.params.team_id;
+    const deleteResult = await db.collection("teams").deleteOne({ team_id : teamId });
+
+    if (deleteResult.deletedCount === 0) {
+      return res.status(404).json({ error: "Team not found" });
+    }
+
+    return res.status(200).json({ message: "Team deleted successfully" });
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
+};
+
+
+module.exports = { addTeam, updateTeam, deleteTeam };

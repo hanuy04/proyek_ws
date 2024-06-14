@@ -19,12 +19,34 @@ const getGameRoutes = require("./routes/gameRoutes");
 app.use("", getGameRoutes);
 const putGameRoutes = require("./routes/gameRoutes");
 app.use("", putGameRoutes);
+const deleteGameRoutes = require("./routes/gameRoutes");
+app.use("", deleteGameRoutes);
 
 // team
 const addTeamRoutes = require("./routes/teamRoutes");
 app.use("", addTeamRoutes);
+const getTeamRoutes = require("./routes/teamRoutes");
+app.use("", getTeamRoutes);
+const updateTeamRoutes = require("./routes/teamRoutes");
+app.use("", updateTeamRoutes);
+const deleteTeamRoutes = require("./routes/teamRoutes");
+app.use("", deleteTeamRoutes);
 
 // matches
 const addMatchesRoutes = require("./routes/matchRoutes");
 app.use("", addMatchesRoutes);
+const getMatchesRoutes = require("./routes/matchRoutes");
+app.use("", getMatchesRoutes);
+const deleteMatchesRoutes = require("./routes/matchRoutes");
+app.use("", deleteMatchesRoutes);
+
+// ticket
+const addTicketRoutes = require("./routes/ticketRoutes");
+app.use("", addTicketRoutes);
+const getTicketRoutes = require("./routes/ticketRoutes");
+app.use("", getTicketRoutes);
+const updateTicketRoutes = require("./routes/ticketRoutes");
+app.use("", updateTicketRoutes);
+const deleteTicketRoutes = require("./routes/ticketRoutes");
+app.use("", deleteTicketRoutes);
 // ---------------------------------------- ADMIN-----------------------------------------

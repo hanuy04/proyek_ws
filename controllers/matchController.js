@@ -1,5 +1,6 @@
 const axios = require("axios");
 const client = require("../config/config");
+const { deleteGames } = require("./gameController");
 
 const addMatches = async (req, res) => {
   const { hub_name, game } = req.query;
@@ -76,4 +77,38 @@ const addMatches = async (req, res) => {
   }
 };
 
-module.exports = { addMatches };
+const deleteMatches = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const match_id = req.params.match_id;
+
+    if (!match_id) {
+      return res.status(400).json({ error: "Match ID is required" });
+    }
+
+    // Cari pertandingan dengan match_id yang sesuai
+    const match = await db.collection("matches").findOne({ match_id: match_id });
+
+    if (!match) {
+      return res.status(404).json({ error: "Match not found" });
+    }
+
+    // Hapus pertandingan dari database
+    const deleteResult = await db.collection("matches").deleteOne({ match_id: match_id });
+
+    if (deleteResult.deletedCount === 0) {
+      return res.status(404).json({ error: "Failed to delete match" });
+    }
+
+    return res.status(200).json({ message: "Match deleted successfully" });
+  } catch (error) {
+    console.error("Error:", error.message);
+    return res.status(500).json({ error: "Internal Server Error" });
+  } finally {
+    await client.close();
+  }
+};
+
+module.exports = { addMatches, deleteMatches };
