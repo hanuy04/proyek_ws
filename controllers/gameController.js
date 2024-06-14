@@ -70,4 +70,54 @@ const getGames = async (req, res) => {
   }
 };
 
-module.exports = { addGame, getGames };
+const updateGames = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const gameId = req.params.game_id; // Ambil gameId dari URL parameter
+    const game = await db.collection("games").findOne({ game_id: gameId });
+
+    if (!game) {
+      return res.status(404).json({ error: "Game not found" });
+    }
+
+    const { long_label, platforms, regions } = req.body;
+
+    // Validasi field
+    if (!long_label || !platforms || !regions) {
+      return res.status(400).json({ error: "long_label, platforms, and regions are required" });
+    }
+
+    // Pastikan platforms dan regions berupa array
+    const updatedPlatforms = Array.isArray(platforms) ? platforms : [platforms];
+    const updatedRegions = Array.isArray(regions) ? regions : [regions];
+
+    // Update data
+    const updateResult = await db.collection("games").updateOne(
+      { game_id: gameId },
+      {
+        $set: {
+          long_label,
+          platforms: updatedPlatforms,
+          regions: updatedRegions,
+        },
+      }
+    );
+
+    if (updateResult.modifiedCount === 0) {
+      return res.status(200).json({ message: "No changes made" });
+    }
+
+    return res.status(200).json({ message: "Game updated successfully" });
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
+};
+
+
+
+module.exports = { addGame, getGames, updateGames };
