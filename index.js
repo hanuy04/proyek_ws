@@ -7,6 +7,10 @@ app.use(express.json());
 
 app.listen(3000, () => console.log("Server up and running..."));
 
+// LOGIN
+const loginRoutes = require("./routes/loginRoutes");
+app.use("", loginRoutes);
+
 // ---------------------------------------- ADMIN-----------------------------------------
 // game
 const addGameRoutes = require("./routes/gameRoutes");
