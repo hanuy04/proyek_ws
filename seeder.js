@@ -7,20 +7,35 @@ const { faker } = require("@faker-js/faker");
 
 faker.seed(42);
 
-function createRandomAccount() {
-  const sex = faker.person.sexType();
-  const firstName = faker.person.firstName(sex);
-  const lastName = faker.person.lastName();
-  const email = faker.internet.email({ firstName, lastName });
-  const username = faker.internet.userName({ firstName, lastName });
+function createDataAdmin() {
+  const username = faker.internet.userName();
+  const password = '123';
 
   return {
     _id: username,
-    avatar: faker.image.avatar(),
-    birthday: faker.date.birthdate(),
+    username,
+    password
+  };
+}
+
+function createRandomAccount() {
+  const username = faker.internet.userName();
+  const password = faker.internet.password();
+  const email = faker.internet.email({ firstName: username });
+  const date_of_birth = faker.date.birthdate();
+  const saldo = 0;
+  const api_hit = 0;
+  const nomor_telepon = faker.phone.number();
+
+  return {
+    _id: username,
+    username,
+    password,
     email,
-    fullName: `${firstName} ${lastName}`,
-    gender: sex,
+    date_of_birth,
+    saldo,
+    api_hit,
+    nomor_telepon
   };
 }
 
@@ -32,70 +47,37 @@ function createRandomAccounts(n) {
   return users;
 }
 
-function createRandomPost() {
-  const n = faker.number.int({ min: 0, max: 10 });
-  const comments = [];
-  const postDate = faker.date.recent({ days: 365 });
+function createDataAdmins(n) {
+  const admins = [];
   for (let i = 0; i < n; i++) {
-    comments.push({
-      content: faker.lorem.sentence(),
-      createdAt: faker.date.soon({ days: 100, refDate: postDate }),
-    });
+    admins.push(createDataAdmin());
   }
-  return {
-    title: faker.lorem.sentence(),
-    content: faker.lorem.paragraph(),
-    createdAt: postDate,
-    comments: comments,
-  };
-}
-
-function createRandomPosts(n, accounts) {
-  const posts = [];
-  const usernames = accounts.map((a) => a._id);
-  const accountsSmall = accounts.map((a) => ({
-    _id: a._id,
-    avatar: a.avatar,
-  }));
-  for (let i = 0; i < n; i++) {
-    const post = createRandomPost();
-    post.author = faker.helpers.arrayElement(usernames);
-    post.likes = faker.helpers.arrayElements(
-      usernames,
-      faker.number.int({ min: 0, max: 10 })
-    );
-    for (let j = 0; j < post.comments.length; j++) {
-      post.comments[j].commenter = faker.helpers.arrayElement(accountsSmall);
-    }
-    posts.push(post);
-  }
-  return posts;
+  return admins;
 }
 
 const { MongoClient } = require("mongodb");
-const url = "mongodb://localhost:27017";
+const url = "mongodb+srv://hanvyhendrawan1105:lwxeC7fEfa7jgAH1@proyekws.ur2e8i2.mongodb.net/";
 // 4 dan 6 itu menandakan kita mau pakai IPv4 atau IPv6
 const client = new MongoClient(url, { family: 4 });
-const dbName = "kuliah_ws_inf";
+const dbName = "projectWS";
 
 const main = async () => {
   try {
     await client.connect();
     const database = client.db(dbName);
 
-    const accounts = createRandomAccounts(10);
-    const posts = createRandomPosts(50, accounts);
+    const admins = createDataAdmins(4);
+    const accounts = createRandomAccounts(3);
 
-    await database.dropDatabase();
-    await database.collection("accounts").insertMany(accounts);
-    await database.collection("posts").insertMany(posts);
+    await database.collection("admin").insertMany(admins);
+    await database.collection("users").insertMany(accounts);
 
-    const query = { fullName: /ow/ };
-    const projection = { _id: 1, avatar: 1 };
+    const query = { username: /ow/ };
+    const projection = { _id: 1, username: 1, email: 1 };
     const options = { limit: 5, skip: 1 };
 
     const result = await database
-      .collection("accounts")
+      .collection("users")
       .find(query, { projection })
       .limit(options.limit)
       .skip(options.skip)
