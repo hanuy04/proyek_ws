@@ -118,6 +118,32 @@ const updateGames = async (req, res) => {
   }
 };
 
+const deleteGames = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const gameId = req.params.game_id; // Ambil gameId dari URL parameter
+    const game = await db.collection("games").findOne({ game_id: gameId });
+
+    if (!game) {
+      return res.status(404).json({ error: "Game not found" });
+    }
+
+    const deleteResult = await db.collection("games").deleteOne({ game_id: gameId });
+
+    if (deleteResult.deletedCount === 0) {
+      return res.status(500).json({ error: "Failed to delete game" });
+    }
+
+    return res.status(200).json({ message: "Game deleted successfully" });
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
+};
 
 
-module.exports = { addGame, getGames, updateGames };
+module.exports = { addGame, getGames, updateGames, deleteGames };
