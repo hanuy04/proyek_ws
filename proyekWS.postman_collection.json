@@ -1,0 +1,759 @@
+{
+	"info": {
+		"_postman_id": "d7972e6f-4c1d-411b-9aa9-1edc088fce2e",
+		"name": "proyekWS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32821701"
+	},
+	"item": [
+		{
+			"name": "PUT",
+			"item": [
+				{
+					"name": "updateGames",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzQ2NDgxLCJleHAiOjE3MTgzNTAwODF9.wFbz0AQhFXguPTdZQBwFOjZokBcfgB0VDEmcW0g-iig"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "game_id",
+									"value": "wot_NA",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "long_label",
+									"value": "Dota 2",
+									"type": "text"
+								},
+								{
+									"key": "order",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "parent_game_id",
+									"value": "wot",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "platforms",
+									"value": "[wargaming_NA]",
+									"type": "text"
+								},
+								{
+									"key": "regions",
+									"value": "[EU]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/updateGames/:game_id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"updateGames",
+								":game_id"
+							],
+							"variable": [
+								{
+									"key": "game_id",
+									"value": "dota2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTeam",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "game",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "chat_room_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "faceit_url",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/updateTeam",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"updateTeam"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTicket",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/updateGame",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"updateGame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMatch",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/updateGame",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"updateGame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "blockUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzgwMjk2LCJleHAiOjE3MTgzODM4OTZ9.zCalL6SqWelHQQ4huR-4H9F8bUaqmR4-nRVdINQCLng",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Lempi_Walter",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/blockUser",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"blockUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTgzODMyMzQsImV4cCI6MTcxODM4NjgzNH0.U_E17DG8H1O9o3WLt6AZLsmK6dm8ypDsd_qaZxAbBBs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "new_username",
+									"value": "hanvy04",
+									"type": "text"
+								},
+								{
+									"key": "new_password",
+									"value": "Magic4you_",
+									"type": "text"
+								},
+								{
+									"key": "new_email",
+									"value": "hanvy04@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "new_date_of_birth",
+									"value": "11/05/2004",
+									"type": "text"
+								},
+								{
+									"key": "new_nomor_telepon",
+									"value": "081217771105",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/updateProfile/:username",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"updateProfile",
+								":username"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "hanvy04"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE",
+			"item": [
+				{
+					"name": "deleteGames",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/deleteGames/:game_id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"deleteGames",
+								":game_id"
+							],
+							"variable": [
+								{
+									"key": "game_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTeam",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/deleteGames/:game_id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"deleteGames",
+								":game_id"
+							],
+							"variable": [
+								{
+									"key": "game_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTicket",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/deleteTicket/:ticket_id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"deleteTicket",
+								":ticket_id"
+							],
+							"variable": [
+								{
+									"key": "ticket_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMatch",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzQ1MzIwLCJleHAiOjE3MTgzNDg5MjB9.EE_mh28yP-thCEUXpqLtL8asnyPkMm57m04COGitaRs"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/deleteMatch/:match_id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"deleteMatch",
+								":match_id"
+							],
+							"variable": [
+								{
+									"key": "match_id",
+									"value": "1-c76374bb-30b6-485c-b968-e4481f510001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzgwMjk2LCJleHAiOjE3MTgzODM4OTZ9.zCalL6SqWelHQQ4huR-4H9F8bUaqmR4-nRVdINQCLng",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Jerome_Barton39",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/deleteUser",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"deleteUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ADD",
+			"item": [
+				{
+					"name": "addGame",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzM3NDc0LCJleHAiOjE3MTgzNDEwNzR9.D1Wye8k0H-XpncisKeQGZJF_BUulcVp_vdPnZLoWC0w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "admin_username",
+									"value": "Hanvy",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "game_id",
+									"value": "tf2",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/addGame/:game_id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addGame",
+								":game_id"
+							],
+							"variable": [
+								{
+									"key": "game_id",
+									"value": "wot_NA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addTicket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzQ4NDIyLCJleHAiOjE3MTgzNTIwMjJ9.s76IhyVI93-vVzOyYlLNciWJnSqBtn-yq5ltB8DA_PM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Tiket Surrender",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "60",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "75000",
+									"type": "text"
+								},
+								{
+									"key": "match_id",
+									"value": "1-c76374bb-30b6-485c-b968-e4481f510001",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/addTicket",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addTicket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addTeam",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzU0MDYxLCJleHAiOjE3MTgzNTc2NjF9.Tf0VlYohMR10BURhni0kgUeVjURY8dPS1d1TWTen2dU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3000/addTeam?nickname=cloud 9&game=csgo",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addTeam"
+							],
+							"query": [
+								{
+									"key": "nickname",
+									"value": "cloud 9"
+								},
+								{
+									"key": "game",
+									"value": "csgo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addMatches",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzM3NDc0LCJleHAiOjE3MTgzNDEwNzR9.D1Wye8k0H-XpncisKeQGZJF_BUulcVp_vdPnZLoWC0w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/addMatches?hub_name=KOSLEP Hub 2v2&game=csgo",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addMatches"
+							],
+							"query": [
+								{
+									"key": "hub_name",
+									"value": "KOSLEP Hub 2v2"
+								},
+								{
+									"key": "game",
+									"value": "csgo"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "loginAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Bailey60",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/loginAdmin",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"loginAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "hanvy04",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Magic4you_",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/loginUser",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"loginUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "getGames",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/getGames",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"getGames"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "register",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "joe00",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "johan evy",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "joe@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "date_of_birth",
+									"value": "15/11/2000",
+									"type": "text"
+								},
+								{
+									"key": "nomor_telepon",
+									"value": "082233441511",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
