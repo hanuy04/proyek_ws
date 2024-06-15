@@ -179,4 +179,32 @@ const deleteTicket = async (req, res) => {
   }
 };
 
-module.exports = { addTicket, updateTicket, deleteTicket };
+const seeTicket = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const userData = req.user;
+    const user = await db
+      .collection("users")
+      .findOne({ username: userData.username });
+
+    if (user.api_hit >= 2) {
+      const sisaApi = user.api_hit - 2;
+      const updateApi = await db
+        .collection("users")
+        .updateOne(
+          { username: userData.username },
+          { $set: { api_hit: sisaApi } }
+        );
+
+      const listTicket = await db.collection("tickets").find().toArray();
+
+      return res.status(200).json(listTicket);
+    } else {
+      return res.status(400).json("API_Hit tidak mencukupi");
+    }
+  } catch (error) {}
+};
+
+module.exports = { addTicket, updateTicket, deleteTicket, seeTicket };

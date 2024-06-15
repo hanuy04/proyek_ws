@@ -351,7 +351,7 @@ const buyApiHit = async (req, res) => {
       const updateuser = await db
         .collection("users")
         .updateOne(
-          { username: userData.email },
+          { username: userData.username },
           { $set: { api_hit: totalApi, saldo: totalSaldo } }
         );
 
