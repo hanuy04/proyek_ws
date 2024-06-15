@@ -13,48 +13,28 @@ app.use("", loginRoutes);
 
 // ---------------------------------------- ADMIN-----------------------------------------
 // game
-const addGameRoutes = require("./routes/gameRoutes");
-app.use("", addGameRoutes);
-const getGameRoutes = require("./routes/gameRoutes");
-app.use("", getGameRoutes);
-const putGameRoutes = require("./routes/gameRoutes");
-app.use("", putGameRoutes);
-const deleteGameRoutes = require("./routes/gameRoutes");
-app.use("", deleteGameRoutes);
+const gameRoutes = require("./routes/gameRoutes");
+app.use("", gameRoutes);
 
 // team
-const addTeamRoutes = require("./routes/teamRoutes");
-app.use("", addTeamRoutes);
-const getTeamRoutes = require("./routes/teamRoutes");
-app.use("", getTeamRoutes);
-const updateTeamRoutes = require("./routes/teamRoutes");
-app.use("", updateTeamRoutes);
-const deleteTeamRoutes = require("./routes/teamRoutes");
-app.use("", deleteTeamRoutes);
+
+const teamRoutes = require("./routes/teamRoutes");
+app.use("", teamRoutes);
 
 // matches
-const addMatchesRoutes = require("./routes/matchRoutes");
-app.use("", addMatchesRoutes);
-const getMatchesRoutes = require("./routes/matchRoutes");
-app.use("", getMatchesRoutes);
-const deleteMatchesRoutes = require("./routes/matchRoutes");
-app.use("", deleteMatchesRoutes);
+
+const matchesRoutes = require("./routes/matchRoutes");
+app.use("", matchesRoutes);
 
 // ticket
-const addTicketRoutes = require("./routes/ticketRoutes");
-app.use("", addTicketRoutes);
-const getTicketRoutes = require("./routes/ticketRoutes");
-app.use("", getTicketRoutes);
-const updateTicketRoutes = require("./routes/ticketRoutes");
-app.use("", updateTicketRoutes);
-const deleteTicketRoutes = require("./routes/ticketRoutes");
-app.use("", deleteTicketRoutes);
+
+const ticketRoutes = require("./routes/ticketRoutes");
+app.use("", ticketRoutes);
 
 // user
-const blockUserRoutes = require("./routes/userRoutes");
-app.use("", blockUserRoutes);
-const deleteserRoutes = require("./routes/userRoutes");
-app.use("", deleteserRoutes);
+const userRoutes = require("./routes/userRoutes");
+app.use("", userRoutes);
+
 // ---------------------------------------- ADMIN-----------------------------------------
 
 // ---------------------------------------- USER -----------------------------------------
@@ -63,6 +43,5 @@ const registerRoutes = require("./routes/userRoutes");
 app.use("", registerRoutes);
 
 // update profile
-const updateProfileRoutes = require("./routes/userRoutes");
-app.use("", updateProfileRoutes);
+
 // ---------------------------------------- USER -----------------------------------------
