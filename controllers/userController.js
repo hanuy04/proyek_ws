@@ -1,3 +1,4 @@
+const { number } = require("joi");
 const client = require("../config/config");
 const Joi = require("joi").extend(require("@joi/date"));
 
@@ -135,6 +136,27 @@ const updateProfileSchema = Joi.object({
   }),
 });
 
+const topUpSchema = Joi.object({
+  saldo: Joi.number().min(1000).required().messages({
+    "number.empty": "saldo is required!",
+    "number.required": "saldo is required!",
+    "number.min": "Minimal saldo is 1000",
+  }),
+});
+
+const updatePassSchema = Joi.object({
+  email: Joi.string().email().required().messages({
+    "string.empty": "email is required!",
+    "string.required": "email is required!",
+    "string.email": "email must be a valid email address!",
+  }),
+  newPassword: Joi.string().min(8).required().messages({
+    "string.empty": "password is required!",
+    "string.required": "password is required!",
+    "string.min": "password must be at least 8 characters!",
+  }),
+});
+
 const register = async (req, res) => {
   const { error } = registerSchema.validate(req.body);
 
@@ -236,4 +258,122 @@ const updateProfile = async (req, res) => {
   }
 };
 
-module.exports = { deleteUser, blockUser, register, updateProfile };
+const topUpUser = async (req, res) => {
+  const { saldo } = req.body;
+  const userData = req.user;
+
+  const { error } = topUpSchema.validate(req.body);
+  if (error) {
+    return res.status(400).send({ message: error.details[0].message });
+  }
+
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const user = await db
+      .collection("users")
+      .findOne({ username: userData.username });
+    if (!user) {
+      return res.status(404).send({ message: "User not found" });
+    }
+
+    const totalSaldo = parseInt(saldo) + user.saldo;
+
+    await db
+      .collection("users")
+      .updateOne({ username: user.username }, { $set: { saldo: totalSaldo } });
+
+    return res.status(200).json({
+      message: `Selamat, anda berhasil top up saldo sebanyak ${saldo}. Sekarang total saldo anda adalah ${totalSaldo}`,
+    });
+  } catch (error) {
+    return res.status(500).send({ message: "Internal Server Error" });
+  } finally {
+    await client.close();
+  }
+};
+
+const forgetPassword = async (req, res) => {
+  try {
+    const { error } = updatePassSchema.validate(req.body);
+
+    if (error) {
+      return res.status(400).send({ message: error.details[0].message });
+    }
+
+    await client.connect();
+    const db = client.db("projectWS");
+    const userData = req.user;
+    const { email, newPassword } = req.body;
+
+    const user = await db
+      .collection("users")
+      .findOne({ username: userData.username });
+
+    if (user.email == email) {
+      const updatePassword = await db
+        .collection("users")
+        .updateOne(
+          { username: userData.username },
+          { $set: { password: newPassword } }
+        );
+
+      return res.status(200).json("Berhasil update password");
+    } else {
+      return res.status(400).json("Email tidak sesuai");
+    }
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
+};
+
+const buyApiHit = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+    const userData = req.user;
+
+    const user = await db
+      .collection("users")
+      .findOne({ username: userData.username });
+
+    if (user.saldo >= 10000) {
+      const totalApi = user.api_hit + 10;
+      const totalSaldo = user.saldo - 10000;
+      const updateuser = await db
+        .collection("users")
+        .updateOne(
+          { username: userData.email },
+          { $set: { api_hit: totalApi, saldo: totalSaldo } }
+        );
+
+      return res
+        .status(200)
+        .json(
+          "Berhasil membeli api_hit, sekarang total saldo anda " +
+            totalSaldo +
+            " dan api_hit anda adalah " +
+            totalApi
+        );
+    } else {
+      return res.status(400).json("Saldo anda tidak cukup, silahkan topup");
+    }
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  }
+};
+
+module.exports = {
+  deleteUser,
+  blockUser,
+  register,
+  updateProfile,
+  topUpUser,
+  buyApiHit,
+  forgetPassword,
+};
