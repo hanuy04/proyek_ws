@@ -114,4 +114,21 @@ const deleteMatches = async (req, res) => {
   }
 };
 
-module.exports = { addMatches, deleteMatches };
+const getMatches = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const matches = await db.collection("matches").find().toArray();
+
+    return res.status(200).json(matches);
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
+
+}
+
+module.exports = { addMatches, deleteMatches, getMatches };

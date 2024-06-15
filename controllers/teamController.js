@@ -129,4 +129,25 @@ const deleteTeam = async (req, res) => {
   }
 };
 
-module.exports = { addTeam, updateTeam, deleteTeam };
+const getTeam = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const teamId = req.params.team_id;
+    const team = await db.collection("teams").findOne({ team_id: teamId });
+
+    if (!team) {
+      return res.status(404).json({ error: "Team not found" });
+    }
+
+    return res.status(200).json(team);
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
+}
+
+module.exports = { addTeam, updateTeam, deleteTeam, getTeam };

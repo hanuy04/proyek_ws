@@ -42,6 +42,18 @@ app.use("", userRoutes);
 const registerRoutes = require("./routes/userRoutes");
 app.use("", registerRoutes);
 
+// get Team
+const getTeamRoutes = require("./routes/teamRoutes");
+app.use("", getTeamRoutes);
+
+// get Detail Game
+const getDetailGameRoutes = require("./routes/gameRoutes");
+app.use("", getDetailGameRoutes);
+
+// get Matches
+const getMatchesRoutes = require("./routes/matchRoutes");
+app.use("", getMatchesRoutes);
+
 // update profile
 
 // ---------------------------------------- USER -----------------------------------------

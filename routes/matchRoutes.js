@@ -9,4 +9,7 @@ router.post("/addMatches", verifyToken, addMatches);
 // Delete
 router.delete("/deleteMatches/:match_id", verifyToken, deleteMatches);
 
+// Get Matches
+router.get("/getMatches", verifyToken, getMatches);
+
 module.exports = router;
