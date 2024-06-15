@@ -5,6 +5,7 @@ const multer = require("multer");
 const upload = multer({ dest: "./upload" });
 const fs = require("fs");
 const path = require("path");
+const { use } = require("../routes/ticketRoutes");
 
 const deleteUser = async (req, res) => {
   try {
@@ -71,6 +72,19 @@ const blockUser = async (req, res) => {
 
 const today = new Date();
 const minDate = new Date(today.setFullYear(today.getFullYear() - 13));
+
+function getDate() {
+  const today = new Date();
+
+  // Get the individual components of the date
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based
+  const day = String(today.getDate()).padStart(2, "0");
+
+  const formattedDate = `${month}/${day}/${year}`;
+
+  return formattedDate;
+}
 
 const registerSchema = Joi.object({
   username: Joi.string().required().messages({
@@ -158,6 +172,18 @@ const updatePassSchema = Joi.object({
     "string.empty": "password is required!",
     "string.required": "password is required!",
     "string.min": "password must be at least 8 characters!",
+  }),
+});
+
+const buyTicketSchema = Joi.object({
+  ticket: Joi.string().required().messages({
+    "string.empty": "ticket is required!",
+    "string.required": "ticket is required!",
+  }),
+  amount: Joi.number().min(1).required().messages({
+    "number.empty": "saldo is required!",
+    "number.required": "saldo is required!",
+    "number.min": "minimal ticket yang dibeli adalah 1",
   }),
 });
 
@@ -425,6 +451,80 @@ const updatePhotoProfile = async (req, res) => {
   }
 };
 
+const buyTicket = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const { error } = buyTicketSchema.validate(req.body);
+    if (error) {
+      return res.status(400).send({ message: error.details[0].message });
+    }
+
+    const userData = req.user;
+    const { ticket, amount } = req.body;
+
+    const user = await db
+      .collection("users")
+      .findOne({ username: userData.username });
+
+    const cekTicket = await db.collection("tickets").findOne({ name: ticket });
+
+    if (cekTicket != null) {
+      var totalHarga = parseInt(cekTicket.price) * parseInt(amount);
+      if (user.saldo > totalHarga) {
+        const dateToday = getDate();
+        const sisaSaldo = user.saldo - totalHarga;
+        const sisaTicket = parseInt(cekTicket.amount) - parseInt(amount);
+
+        const newTransaction = await db.collection("transactions").insertOne({
+          type: "Buy",
+          username: user.username,
+          ticket_name: cekTicket.name,
+          amount: amount,
+          date: dateToday,
+        });
+
+        const newInvoice = await db.collection("invoices").insertOne({
+          username: user.username,
+          ticket: cekTicket.name,
+          amount: amount,
+          total: totalHarga,
+          date: dateToday,
+        });
+
+        const updateUser = await db
+          .collection("users")
+          .updateOne(
+            { username: user.username },
+            { $set: { saldo: sisaSaldo } }
+          );
+
+        const userTicket = await db.collection("userTicket").insertOne({
+          username: user.username,
+          ticket: cekTicket.name,
+          amount: amount,
+        });
+
+        const updateTicket = await db
+          .collection("tickets")
+          .updateOne({ name: ticket }, { $set: { amount: sisaTicket } });
+
+        return res.status(200).json({
+          type: "Buy",
+          username: user.username,
+          ticket_name: ticket.name,
+          amount: amount,
+          total: totalHarga,
+          date: dateToday,
+        });
+      }
+    } else {
+      return res.status(404).json("Ticket tidak ditemukan");
+    }
+  } catch (error) {}
+};
+
 module.exports = {
   deleteUser,
   blockUser,
@@ -435,4 +535,5 @@ module.exports = {
   forgetPassword,
   addPhotoProfile,
   updatePhotoProfile,
+  buyTicket,
 };

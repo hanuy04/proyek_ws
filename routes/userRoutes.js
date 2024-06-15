@@ -9,6 +9,7 @@ const {
   forgetPassword,
   addPhotoProfile,
   updatePhotoProfile,
+  buyTicket,
 } = require("../controllers/userController");
 const { verifyToken } = require("../middleware/verifyJWT");
 const router = express.Router();
@@ -43,5 +44,7 @@ router.put(
   [upload.single("file"), verifyToken],
   updatePhotoProfile
 );
+
+router.post("/buyTicket", verifyToken, buyTicket);
 
 module.exports = router;
