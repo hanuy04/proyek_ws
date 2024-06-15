@@ -337,17 +337,12 @@ const forgetPassword = async (req, res) => {
     const userData = req.user;
     const { email, newPassword } = req.body;
 
-    const user = await db
-      .collection("users")
-      .findOne({ username: userData.username });
+    const user = await db.collection("users").findOne({ email: email });
 
-    if (user.email == email) {
+    if (user) {
       const updatePassword = await db
         .collection("users")
-        .updateOne(
-          { username: userData.username },
-          { $set: { password: newPassword } }
-        );
+        .updateOne({ email: email }, { $set: { password: newPassword } });
 
       return res.status(200).json({ messages: "Berhasil update password" });
     } else {
