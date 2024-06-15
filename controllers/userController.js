@@ -486,6 +486,7 @@ const buyTicket = async (req, res) => {
         });
 
         const newInvoice = await db.collection("invoices").insertOne({
+          type: "Buy",
           username: user.username,
           ticket: cekTicket.name,
           amount: amount,
@@ -525,6 +526,119 @@ const buyTicket = async (req, res) => {
   } catch (error) {}
 };
 
+const cancelTicket = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const userData = req.user;
+    const user = await db
+      .collection("users")
+      .findOne({ username: userData.username });
+
+    const { ticket, amount } = req.body;
+
+    const ticketData = await db.collection("tickets").findOne({ name: ticket });
+
+    if (ticketData != null) {
+      const cekUserTicket = await db
+        .collection("userTicket")
+        .findOne({ username: userData.username, ticket: ticket });
+
+      if (cekUserTicket != null) {
+        const sisaTicketUser =
+          parseInt(cekUserTicket.amount) - parseInt(amount);
+        const uangRefund = (parseInt(ticketData.price) * parseInt(amount)) / 2;
+        const totalUangUser = user.saldo + uangRefund;
+        const totalTicket = parseInt(ticketData.amount) + parseInt(amount);
+
+        if (sisaTicketUser == 0) {
+          const deleteUserTicket = await db
+            .collection("userTicket")
+            .deleteOne({ username: userData.username, ticket: ticket });
+
+          const addInvoice = await db.collection("invoices").insertOne({
+            type: "Cancel",
+            username: userData.username,
+            ticket_name: ticket,
+            amount: amount,
+            refund: uangRefund,
+            date: getDate(),
+          });
+
+          const addTransaction = await db.collection("transactions").insertOne({
+            type: "Cancel",
+            username: userData.username,
+            ticket_name: ticket,
+            amount: amount,
+            date: getDate(),
+          });
+
+          const updateUser = await db
+            .collection("users")
+            .updateOne(
+              { username: user.username },
+              { $set: { saldo: totalUangUser } }
+            );
+
+          const updateTicket = await db
+            .collection("tickets")
+            .updateOne({ name: ticket }, { $set: { amount: totalTicket } });
+        } else {
+          const updateUserTicket = await db
+            .collection("userTicket")
+            .updateOne(
+              { username: user.username, ticket: ticket },
+              { $set: { amount: sisaTicketUser } }
+            );
+
+          const addInvoice = await db.collection("invoices").insertOne({
+            type: "Cancel",
+            username: userData.username,
+            ticket_name: ticket,
+            amount: amount,
+            refund: uangRefund,
+            date: getDate(),
+          });
+
+          const addTransaction = await db.collection("transactions").insertOne({
+            type: "Cancel",
+            username: userData.username,
+            ticket_name: ticket,
+            amount: amount,
+            date: getDate(),
+          });
+
+          const updateUser = await db
+            .collection("users")
+            .updateOne(
+              { username: user.username },
+              { $set: { saldo: totalUangUser } }
+            );
+
+          const updateTicket = await db
+            .collection("tickets")
+            .updateOne({ name: ticket }, { $set: { amount: totalTicket } });
+        }
+        return res.status(200).json({
+          type: "Cancel",
+          username: userData.username,
+          ticket_name: ticket,
+          amount: amount,
+          refund: uangRefund,
+          date: getDate(),
+        });
+      } else {
+        return res.status(400).json("kamu tidak memiliki tiket tersebut");
+      }
+    } else {
+      return res
+        .status(404)
+        .json("Ticket dengan nama tersebut tidak ditemukan");
+    }
+  } catch (error) {}
+};
+
 module.exports = {
   deleteUser,
   blockUser,
@@ -536,4 +650,5 @@ module.exports = {
   addPhotoProfile,
   updatePhotoProfile,
   buyTicket,
+  cancelTicket,
 };
