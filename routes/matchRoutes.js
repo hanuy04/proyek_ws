@@ -16,4 +16,7 @@ router.delete("/deleteMatches/:match_id", verifyToken, deleteMatches);
 // Get Matches
 router.get("/getMatches", verifyToken, getMatches);
 
+// Get Detail Match
+router.get("/getDetailMatch/:match_id", verifyToken, getDetailMatch);
+
 module.exports = router;

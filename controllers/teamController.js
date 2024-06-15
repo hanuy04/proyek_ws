@@ -150,4 +150,41 @@ const getTeam = async (req, res) => {
   }
 }
 
-module.exports = { addTeam, updateTeam, deleteTeam, getTeam };
+const favTeam = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const teamId = req.params.team_id;
+    const team = await db.collection("teams").findOne({ team_id: teamId });
+
+    if (!team) {
+      return res.status(404).json({ error: "Team not found" });
+    }
+
+    const wishlist = await db.collection("wishlist").findOne({ team_id: teamId });
+
+    if (wishlist) {
+      // Remove team from wishlist
+      await db.collection("wishlist").deleteOne({ team_id: teamId });
+      return res.status(200).json({ message: "Team removed from wishlist" });
+    }
+
+    await db.collection("wishlist").insertOne({
+      team_id: team.team_id,
+      name: team.name,
+      game: team.game,
+      chat_room_id: team.chat_room_id,
+      faceit_url: team.faceit_url,
+    });
+
+    return res.status(201).json({ message: "Team added to wishlist" });
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
+};
+
+module.exports = { addTeam, updateTeam, deleteTeam, getTeam, favTeam };

@@ -54,6 +54,14 @@ app.use("", getDetailGameRoutes);
 const getMatchesRoutes = require("./routes/matchRoutes");
 app.use("", getMatchesRoutes);
 
+// get Detail Match
+const getDetailMatchRoutes = require("./routes/matchRoutes");
+app.use("", getDetailMatchRoutes);
+
+// post Fav Teams
+const favTeamsRoutes = require("./routes/teamRoutes");
+app.use("", favTeamsRoutes);
+
 // update profile
 
 // ---------------------------------------- USER -----------------------------------------

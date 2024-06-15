@@ -1,5 +1,6 @@
 const axios = require("axios");
 const client = require("../config/config");
+const { get } = require("../routes/loginRoutes");
 
 const addMatches = async (req, res) => {
   const { hub_name, game } = req.query;
@@ -131,4 +132,34 @@ const getMatches = async (req, res) => {
 
 }
 
-module.exports = { addMatches, deleteMatches, getMatches };
+const getDetailMatch = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const match_id = req.params.match_id;
+
+    if (!match_id) {
+      return res.status(400).json({ error: "Match ID is required" });
+    }
+
+    const tickets = await db
+      .collection("tickets")
+      .findOne({ match_id: match_id });
+
+    if (!tickets) {
+      return res.status(404).json({ error: "Tickets not found" });
+    }
+
+    const ticketsLeft = tickets.filter(ticket => !ticket.sold);
+
+    return res.status(200).json({ tickets_left: ticketsLeft.length });
+  } catch (error) {
+    console.error("Error:", error.message);
+    return res.status(500).json({ error: "Internal Server Error" });
+  } finally {
+    await client.close();
+  }
+};
+
+module.exports = { addMatches, deleteMatches, getMatches, getDetailMatch };
