@@ -3,6 +3,7 @@ const {
   addTeam,
   updateTeam,
   deleteTeam,
+  getTeam,
 } = require("../controllers/teamController");
 const { verifyToken } = require("../middleware/verifyJWT");
 const router = express.Router();

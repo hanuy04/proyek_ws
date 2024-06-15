@@ -1,5 +1,9 @@
 const express = require("express");
-const { addMatches, deleteMatches } = require("../controllers/matchController");
+const {
+  addMatches,
+  deleteMatches,
+  getMatches,
+} = require("../controllers/matchController");
 const { verifyToken } = require("../middleware/verifyJWT");
 const router = express.Router();
 

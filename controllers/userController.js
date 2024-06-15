@@ -1,6 +1,10 @@
 const { number } = require("joi");
 const client = require("../config/config");
 const Joi = require("joi").extend(require("@joi/date"));
+const multer = require("multer");
+const upload = multer({ dest: "./upload" });
+const fs = require("fs");
+const path = require("path");
 
 const deleteUser = async (req, res) => {
   try {
@@ -365,6 +369,59 @@ const buyApiHit = async (req, res) => {
   } catch (dbError) {
     console.error("Database error:", dbError);
     return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
+};
+
+const addPhotoProfile = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const userData = req.user;
+
+    const extension = path.extname(req.file.originalname);
+    const filename = `${userData.username}${extension}`;
+    fs.renameSync(`./upload/${req.file.filename}`, `./upload/${filename}`);
+
+    const file_path = `./upload/${filename}`;
+
+    const addPhoto = await db
+      .collection("users")
+      .updateOne(
+        { username: userData.username },
+        { $set: { profile_pic: file_path } }
+      );
+
+    return res.status(201).json("Berhasil Upload profile picture");
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
+};
+
+const updatePhotoProfile = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const userData = req.user;
+    const user = await db
+      .collection("users")
+      .findOne({ username: userData.username });
+
+    fs.unlinkSync(user.profile_pic);
+
+    const extension = path.extname(req.file.originalname);
+    const filename = `${userData.username}${extension}`;
+    fs.renameSync(`./upload/${req.file.filename}`, `./upload/${filename}`);
+
+    return res.status(200).json("Berhasil update Profile Picture");
+  } catch (error) {
+    return res.status(400).json({ error: error.message });
   }
 };
 
@@ -376,4 +433,6 @@ module.exports = {
   topUpUser,
   buyApiHit,
   forgetPassword,
+  addPhotoProfile,
+  updatePhotoProfile,
 };
