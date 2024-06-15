@@ -558,19 +558,11 @@ const cancelTicket = async (req, res) => {
             .deleteOne({ username: userData.username, ticket: ticket });
 
           const addInvoice = await db.collection("invoices").insertOne({
-            type: "Cancel",
+            status: "Cancelled",
             username: userData.username,
             ticket_name: ticket,
             amount: amount,
             refund: uangRefund,
-            date: getDate(),
-          });
-
-          const addTransaction = await db.collection("transactions").insertOne({
-            type: "Cancel",
-            username: userData.username,
-            ticket_name: ticket,
-            amount: amount,
             date: getDate(),
           });
 
@@ -593,19 +585,11 @@ const cancelTicket = async (req, res) => {
             );
 
           const addInvoice = await db.collection("invoices").insertOne({
-            type: "Cancel",
+            status: "Cancelled",
             username: userData.username,
             ticket_name: ticket,
             amount: amount,
             refund: uangRefund,
-            date: getDate(),
-          });
-
-          const addTransaction = await db.collection("transactions").insertOne({
-            type: "Cancel",
-            username: userData.username,
-            ticket_name: ticket,
-            amount: amount,
             date: getDate(),
           });
 
