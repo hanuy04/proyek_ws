@@ -202,7 +202,7 @@ const seeTicket = async (req, res) => {
 
       return res.status(200).json(listTicket);
     } else {
-      return res.status(400).json("API_Hit tidak mencukupi");
+      return res.status(400).json({ message: "API_Hit tidak mencukupi" });
     }
   } catch (error) {}
 };

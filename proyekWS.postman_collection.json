@@ -610,7 +610,13 @@
 					"name": "see Ticket",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0NTE5OTgsImV4cCI6MTcxODQ1NTU5OH0.qjIHF3Gfk_h1wYKl05QRHrMRcpSkp45SIpSjKWN_7uU",
+								"type": "text"
+							}
+						],
 						"url": "localhost:3000/seeTickets"
 					},
 					"response": []
@@ -671,7 +677,8 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0MzU3ODcsImV4cCI6MTcxODQzOTM4N30.eQeVzYhZpsGx6GRdr4N92EfMVjOXxRcPCNg91F1mwMM"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0NTMxMjIsImV4cCI6MTcxODQ1NjcyMn0.KF796FOCwaZIwNcGoV3-xCVAdBRmb_8jiQVlhO5yVVE",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -679,12 +686,12 @@
 							"urlencoded": [
 								{
 									"key": "saldo",
-									"value": "10000",
+									"value": "1000000",
 									"type": "text"
 								}
 							]
 						},
-						"url": "localhost:3000/topup"
+						"url": "localhost:3000/topUpSaldo"
 					},
 					"response": []
 				},
@@ -788,16 +795,60 @@
 				{
 					"name": "buy Ticket",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0NjE3MjgsImV4cCI6MTcxODQ2NTMyOH0.cq-n27gweh_eZRm1U1_L1PeaDoEPYw3YSCAA7oca1FM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "ticket",
+									"value": "Tiket Coba-Coba",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": "localhost:3000/buyTicket"
 					},
 					"response": []
 				},
 				{
 					"name": "cancel Ticket",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0NjE3MjgsImV4cCI6MTcxODQ2NTMyOH0.cq-n27gweh_eZRm1U1_L1PeaDoEPYw3YSCAA7oca1FM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "ticket",
+									"value": "Tiket Coba-Coba",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": "localhost:3000/cancelTicket"
 					},
 					"response": []
 				}

@@ -349,9 +349,9 @@ const forgetPassword = async (req, res) => {
           { $set: { password: newPassword } }
         );
 
-      return res.status(200).json("Berhasil update password");
+      return res.status(200).json({ messages: "Berhasil update password" });
     } else {
-      return res.status(400).json("Email tidak sesuai");
+      return res.status(400).json({ messages: "Email tidak sesuai" });
     }
   } catch (dbError) {
     console.error("Database error:", dbError);
@@ -381,16 +381,17 @@ const buyApiHit = async (req, res) => {
           { $set: { api_hit: totalApi, saldo: totalSaldo } }
         );
 
-      return res
-        .status(200)
-        .json(
+      return res.status(200).json({
+        messages:
           "Berhasil membeli api_hit, sekarang total saldo anda " +
-            totalSaldo +
-            " dan api_hit anda adalah " +
-            totalApi
-        );
+          totalSaldo +
+          " dan api_hit anda adalah " +
+          totalApi,
+      });
     } else {
-      return res.status(400).json("Saldo anda tidak cukup, silahkan topup");
+      return res
+        .status(400)
+        .json({ messages: "Saldo anda tidak cukup, silahkan topup" });
     }
   } catch (dbError) {
     console.error("Database error:", dbError);
@@ -420,7 +421,7 @@ const addPhotoProfile = async (req, res) => {
         { $set: { profile_pic: file_path } }
       );
 
-    return res.status(201).json("Berhasil Upload profile picture");
+    return res.status(201).json({ message: "Berhasil Upload profile picture" });
   } catch (dbError) {
     console.error("Database error:", dbError);
     return res.status(500).json({ error: "Database error" });
@@ -445,7 +446,7 @@ const updatePhotoProfile = async (req, res) => {
     const filename = `${userData.username}${extension}`;
     fs.renameSync(`./upload/${req.file.filename}`, `./upload/${filename}`);
 
-    return res.status(200).json("Berhasil update Profile Picture");
+    return res.status(200).json({ message: "Berhasil update Profile Picture" });
   } catch (error) {
     return res.status(400).json({ error: error.message });
   }
@@ -521,9 +522,14 @@ const buyTicket = async (req, res) => {
         });
       }
     } else {
-      return res.status(404).json("Ticket tidak ditemukan");
+      return res.status(404).json({ message: "Ticket tidak ditemukan" });
     }
-  } catch (error) {}
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
 };
 
 const cancelTicket = async (req, res) => {
@@ -613,14 +619,21 @@ const cancelTicket = async (req, res) => {
           date: getDate(),
         });
       } else {
-        return res.status(400).json("kamu tidak memiliki tiket tersebut");
+        return res
+          .status(400)
+          .json({ message: "kamu tidak memiliki tiket tersebut" });
       }
     } else {
       return res
         .status(404)
-        .json("Ticket dengan nama tersebut tidak ditemukan");
+        .json({ message: "Ticket dengan nama tersebut tidak ditemukan" });
     }
-  } catch (error) {}
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
 };
 
 module.exports = {
