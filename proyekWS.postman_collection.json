@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d7972e6f-4c1d-411b-9aa9-1edc088fce2e",
+		"_postman_id": "88e9ef4b-3df3-4882-91d5-bca96c42374d",
 		"name": "proyekWS",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "32821701"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32822714"
 	},
 	"item": [
 		{
@@ -107,16 +107,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/updateTeam",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"updateTeam"
-							]
-						}
+						"url": "localhost:3000/updateTeam/1"
 					},
 					"response": []
 				},
@@ -125,16 +116,7 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
-						"url": {
-							"raw": "localhost:3000/updateGame",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"updateGame"
-							]
-						}
+						"url": "localhost:3000/updateGame"
 					},
 					"response": []
 				},
@@ -143,16 +125,7 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
-						"url": {
-							"raw": "localhost:3000/updateGame",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"updateGame"
-							]
-						}
+						"url": "localhost:3000/updateGame"
 					},
 					"response": []
 				},
@@ -163,8 +136,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzgwMjk2LCJleHAiOjE3MTgzODM4OTZ9.zCalL6SqWelHQQ4huR-4H9F8bUaqmR4-nRVdINQCLng",
-								"type": "text"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzgwMjk2LCJleHAiOjE3MTgzODM4OTZ9.zCalL6SqWelHQQ4huR-4H9F8bUaqmR4-nRVdINQCLng"
 							}
 						],
 						"body": {
@@ -177,16 +149,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/blockUser",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"blockUser"
-							]
-						}
+						"url": "localhost:3000/blockUser"
 					},
 					"response": []
 				},
@@ -197,8 +160,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTgzODMyMzQsImV4cCI6MTcxODM4NjgzNH0.U_E17DG8H1O9o3WLt6AZLsmK6dm8ypDsd_qaZxAbBBs",
-								"type": "text"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTgzODMyMzQsImV4cCI6MTcxODM4NjgzNH0.U_E17DG8H1O9o3WLt6AZLsmK6dm8ypDsd_qaZxAbBBs"
 							}
 						],
 						"body": {
@@ -375,8 +337,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzgwMjk2LCJleHAiOjE3MTgzODM4OTZ9.zCalL6SqWelHQQ4huR-4H9F8bUaqmR4-nRVdINQCLng",
-								"type": "text"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzgwMjk2LCJleHAiOjE3MTgzODM4OTZ9.zCalL6SqWelHQQ4huR-4H9F8bUaqmR4-nRVdINQCLng"
 							}
 						],
 						"body": {
@@ -389,16 +350,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/deleteUser",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"deleteUser"
-							]
-						}
+						"url": "localhost:3000/deleteUser"
 					},
 					"response": []
 				}
@@ -414,18 +366,15 @@
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
-								"type": "text"
+								"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
 							},
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzM3NDc0LCJleHAiOjE3MTgzNDEwNzR9.D1Wye8k0H-XpncisKeQGZJF_BUulcVp_vdPnZLoWC0w",
-								"type": "text"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzM3NDc0LCJleHAiOjE3MTgzNDEwNzR9.D1Wye8k0H-XpncisKeQGZJF_BUulcVp_vdPnZLoWC0w"
 							}
 						],
 						"body": {
@@ -472,8 +421,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzQ4NDIyLCJleHAiOjE3MTgzNTIwMjJ9.s76IhyVI93-vVzOyYlLNciWJnSqBtn-yq5ltB8DA_PM",
-								"type": "text"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzQ4NDIyLCJleHAiOjE3MTgzNTIwMjJ9.s76IhyVI93-vVzOyYlLNciWJnSqBtn-yq5ltB8DA_PM"
 							}
 						],
 						"body": {
@@ -501,16 +449,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/addTicket",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"addTicket"
-							]
-						}
+						"url": "localhost:3000/addTicket"
 					},
 					"response": []
 				},
@@ -521,18 +460,15 @@
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
-								"type": "text"
+								"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
 							},
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzU0MDYxLCJleHAiOjE3MTgzNTc2NjF9.Tf0VlYohMR10BURhni0kgUeVjURY8dPS1d1TWTen2dU",
-								"type": "text"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzU0MDYxLCJleHAiOjE3MTgzNTc2NjF9.Tf0VlYohMR10BURhni0kgUeVjURY8dPS1d1TWTen2dU"
 							}
 						],
 						"body": {
@@ -569,18 +505,15 @@
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
-								"type": "text"
+								"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
 							},
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzM3NDc0LCJleHAiOjE3MTgzNDEwNzR9.D1Wye8k0H-XpncisKeQGZJF_BUulcVp_vdPnZLoWC0w",
-								"type": "text"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzM3NDc0LCJleHAiOjE3MTgzNDEwNzR9.D1Wye8k0H-XpncisKeQGZJF_BUulcVp_vdPnZLoWC0w"
 							}
 						],
 						"url": {
@@ -631,16 +564,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/loginAdmin",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"loginAdmin"
-							]
-						}
+						"url": "localhost:3000/loginAdmin"
 					},
 					"response": []
 				},
@@ -664,16 +588,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/loginUser",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"loginUser"
-							]
-						}
+						"url": "localhost:3000/loginUser"
 					},
 					"response": []
 				}
@@ -687,16 +602,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "localhost:3000/getGames",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"getGames"
-							]
-						}
+						"url": "localhost:3000/getGames"
+					},
+					"response": []
+				},
+				{
+					"name": "see Ticket",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3000/seeTickets"
 					},
 					"response": []
 				}
@@ -740,16 +655,149 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/register",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"register"
+						"url": "localhost:3000/register"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "topup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0MzU3ODcsImV4cCI6MTcxODQzOTM4N30.eQeVzYhZpsGx6GRdr4N92EfMVjOXxRcPCNg91F1mwMM"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "saldo",
+									"value": "10000",
+									"type": "text"
+								}
 							]
-						}
+						},
+						"url": "localhost:3000/topup"
+					},
+					"response": []
+				},
+				{
+					"name": "forget password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwiaWF0IjoxNzE4NDM4NzMyLCJleHAiOjE3MTg0NDIzMzJ9.xJWuo4a8yS8_0EhL3OAKclN93mWYpTFmq9Jw_coOCvk"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "joe@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "Kacawmen",
+									"type": "text"
+								}
+							]
+						},
+						"url": "localhost:3000/forgetPassword"
+					},
+					"response": []
+				},
+				{
+					"name": "buy Api Hit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0NTE5OTgsImV4cCI6MTcxODQ1NTU5OH0.qjIHF3Gfk_h1wYKl05QRHrMRcpSkp45SIpSjKWN_7uU"
+							}
+						],
+						"url": "localhost:3000/buyApiHit"
+					},
+					"response": []
+				},
+				{
+					"name": "upload photo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0NDQ1MDksImV4cCI6MTcxODQ0ODEwOX0.5M5PPW8hgusfmHas09YSDMymtAMnY8kbRHpSA_0anv0"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama",
+									"value": "test",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/DESKTOP/Downloads/DragonBall.jpg"
+								}
+							]
+						},
+						"url": "localhost:3000/addPhotoProfile"
+					},
+					"response": []
+				},
+				{
+					"name": "update Photo",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0NDU0MzUsImV4cCI6MTcxODQ0OTAzNX0.pLXL2K8L0xljVuHh2Le6qYkiAREfSVx7szDv0UHWEfE"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/DESKTOP/Downloads/DragonBall.jpg"
+								}
+							]
+						},
+						"url": "localhost:3000/updatePhotoProfile"
+					},
+					"response": []
+				},
+				{
+					"name": "buy Ticket",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "cancel Ticket",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
