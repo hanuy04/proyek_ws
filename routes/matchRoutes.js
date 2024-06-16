@@ -3,6 +3,7 @@ const {
   addMatches,
   deleteMatches,
   getMatches,
+  getDetailMatch,
 } = require("../controllers/matchController");
 const { verifyToken } = require("../middleware/verifyJWT");
 const router = express.Router();

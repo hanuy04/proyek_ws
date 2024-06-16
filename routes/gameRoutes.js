@@ -3,8 +3,8 @@ const {
   addGame,
   updateGames,
   deleteGames,
+  getGames,
 } = require("../controllers/gameController");
-const { getGames } = require("../controllers/gameController");
 const { verifyToken } = require("../middleware/verifyJWT");
 const router = express.Router();
 

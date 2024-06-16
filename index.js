@@ -37,30 +37,12 @@ app.use("", userRoutes);
 
 // ---------------------------------------- ADMIN-----------------------------------------
 
+const adminRoutes = require("./routes/admin");
+app.use("", adminRoutes);
 // ---------------------------------------- USER -----------------------------------------
 // register
 const registerRoutes = require("./routes/userRoutes");
 app.use("", registerRoutes);
-
-// get Team
-const getTeamRoutes = require("./routes/teamRoutes");
-app.use("", getTeamRoutes);
-
-// get Detail Game
-const getDetailGameRoutes = require("./routes/gameRoutes");
-app.use("", getDetailGameRoutes);
-
-// get Matches
-const getMatchesRoutes = require("./routes/matchRoutes");
-app.use("", getMatchesRoutes);
-
-// get Detail Match
-const getDetailMatchRoutes = require("./routes/matchRoutes");
-app.use("", getDetailMatchRoutes);
-
-// post Fav Teams
-const favTeamsRoutes = require("./routes/teamRoutes");
-app.use("", favTeamsRoutes);
 
 // update profile
 

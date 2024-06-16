@@ -11,6 +11,7 @@ const {
   updatePhotoProfile,
   buyTicket,
   cancelTicket,
+  getUserTickets,
 } = require("../controllers/userController");
 const { verifyToken } = require("../middleware/verifyJWT");
 const router = express.Router();
@@ -49,5 +50,7 @@ router.put(
 router.post("/buyTicket", verifyToken, buyTicket);
 
 router.delete("/cancelTicket", verifyToken, cancelTicket);
+
+router.get("/getUserTickets", verifyToken, getUserTickets);
 
 module.exports = router;

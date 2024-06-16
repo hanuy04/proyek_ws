@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "990268aa-4460-4d7c-b900-7a4f6e82d995",
+		"_postman_id": "88e9ef4b-3df3-4882-91d5-bca96c42374d",
 		"name": "proyekWS",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "32821701"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32822714"
 	},
 	"item": [
 		{
@@ -107,17 +107,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/updateTeam/1",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"updateTeam",
-								"1"
-							]
-						}
+						"url": "localhost:3000/updateTeam/1"
 					},
 					"response": []
 				},
@@ -126,16 +116,7 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
-						"url": {
-							"raw": "localhost:3000/updateGame",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"updateGame"
-							]
-						}
+						"url": "localhost:3000/updateGame"
 					},
 					"response": []
 				},
@@ -144,16 +125,7 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
-						"url": {
-							"raw": "localhost:3000/updateGame",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"updateGame"
-							]
-						}
+						"url": "localhost:3000/updateGame"
 					},
 					"response": []
 				},
@@ -177,16 +149,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/blockUser",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"blockUser"
-							]
-						}
+						"url": "localhost:3000/blockUser"
 					},
 					"response": []
 				},
@@ -387,16 +350,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/deleteUser",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"deleteUser"
-							]
-						}
+						"url": "localhost:3000/deleteUser"
 					},
 					"response": []
 				}
@@ -495,16 +449,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/addTicket",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"addTicket"
-							]
-						}
+						"url": "localhost:3000/addTicket"
 					},
 					"response": []
 				},
@@ -619,16 +564,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/loginAdmin",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"loginAdmin"
-							]
-						}
+						"url": "localhost:3000/loginAdmin"
 					},
 					"response": []
 				},
@@ -647,21 +583,12 @@
 								},
 								{
 									"key": "password",
-									"value": "Magic4you_",
+									"value": "qwerty123",
 									"type": "text"
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/loginUser",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"loginUser"
-							]
-						}
+						"url": "localhost:3000/loginUser"
 					},
 					"response": []
 				}
@@ -675,40 +602,29 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "localhost:3000/getGames",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"getGames"
-							]
-						}
+						"url": "localhost:3000/getGames"
 					},
 					"response": []
 				},
 				{
 					"name": "see Ticket",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0NTE5OTgsImV4cCI6MTcxODQ1NTU5OH0.qjIHF3Gfk_h1wYKl05QRHrMRcpSkp45SIpSjKWN_7uU",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg1MjMzMzUsImV4cCI6MTcxODUyNjkzNX0.WXYpYDvwg4t65YpRJYb95N2Qioe18pjDFK6Af1io2GA",
 								"type": "text"
 							}
 						],
-						"url": {
-							"raw": "localhost:3000/seeTickets",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"seeTickets"
-							]
-						}
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": "localhost:3000/seeTickets"
 					},
 					"response": []
 				}
@@ -752,16 +668,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/register",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"register"
-							]
-						}
+						"url": "localhost:3000/register"
 					},
 					"response": []
 				}
@@ -777,7 +684,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0NTMxMjIsImV4cCI6MTcxODQ1NjcyMn0.KF796FOCwaZIwNcGoV3-xCVAdBRmb_8jiQVlhO5yVVE",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZWVkIjoiZm9yZ290UGFzc3dvcmQiLCJpYXQiOjE3MTg1MjMwMzQsImV4cCI6MTcxODUyNjYzNH0.Bp5xAo1rRRtC7tLVuPu39Rh_cqPaipMfRvxIxEFRhZU",
 								"type": "text"
 							}
 						],
@@ -791,16 +698,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/topUpSaldo",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"topUpSaldo"
-							]
-						}
+						"url": "localhost:3000/topUpSaldo"
 					},
 					"response": []
 				},
@@ -829,16 +727,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/forgetPassword",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"forgetPassword"
-							]
-						}
+						"url": "localhost:3000/forgetPassword"
 					},
 					"response": []
 				},
@@ -852,16 +741,7 @@
 								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0NTE5OTgsImV4cCI6MTcxODQ1NTU5OH0.qjIHF3Gfk_h1wYKl05QRHrMRcpSkp45SIpSjKWN_7uU"
 							}
 						],
-						"url": {
-							"raw": "localhost:3000/buyApiHit",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"buyApiHit"
-							]
-						}
+						"url": "localhost:3000/buyApiHit"
 					},
 					"response": []
 				},
@@ -891,16 +771,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/addPhotoProfile",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"addPhotoProfile"
-							]
-						}
+						"url": "localhost:3000/addPhotoProfile"
 					},
 					"response": []
 				},
@@ -924,16 +795,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/updatePhotoProfile",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"updatePhotoProfile"
-							]
-						}
+						"url": "localhost:3000/updatePhotoProfile"
 					},
 					"response": []
 				},
@@ -944,7 +806,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0NjE3MjgsImV4cCI6MTcxODQ2NTMyOH0.cq-n27gweh_eZRm1U1_L1PeaDoEPYw3YSCAA7oca1FM",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg1MjMzMzUsImV4cCI6MTcxODUyNjkzNX0.WXYpYDvwg4t65YpRJYb95N2Qioe18pjDFK6Af1io2GA",
 								"type": "text"
 							}
 						],
@@ -953,26 +815,17 @@
 							"urlencoded": [
 								{
 									"key": "ticket",
-									"value": "Tiket Coba-Coba",
+									"value": "Tiket Ada Dong",
 									"type": "text"
 								},
 								{
 									"key": "amount",
-									"value": "5",
+									"value": "2",
 									"type": "text"
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/buyTicket",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"buyTicket"
-							]
-						}
+						"url": "localhost:3000/buyTicket"
 					},
 					"response": []
 				},
@@ -1002,16 +855,104 @@
 								}
 							]
 						},
+						"url": "localhost:3000/cancelTicket"
+					},
+					"response": []
+				},
+				{
+					"name": "get UsersTicket",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg1MjMzMzUsImV4cCI6MTcxODUyNjkzNX0.WXYpYDvwg4t65YpRJYb95N2Qioe18pjDFK6Af1io2GA",
+								"type": "text"
+							}
+						],
+						"url": "localhost:3000/getUserTickets"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "get all user invoice",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg1MjQyMTgsImV4cCI6MTcxODUyNzgxOH0.C4B64chpio52ZdPv3zDry6TNbhpL6I0J8g_fXGYqiIw",
+								"type": "text"
+							}
+						],
+						"url": "localhost:3000/getInvoice"
+					},
+					"response": []
+				},
+				{
+					"name": "get 1 user invoice",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4NTI0NTc5LCJleHAiOjE3MTg1MjgxNzl9.pLyJIvCnabS5UjDrTFvhcW0Bur6r9j4CeduFJm-dQY8",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "localhost:3000/cancelTicket",
+							"raw": "localhost:3000/getInvoice/joe00",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"cancelTicket"
+								"getInvoice",
+								"joe00"
+							],
+							"query": [
+								{
+									"key": "x",
+									"value": null,
+									"disabled": true
+								}
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all user transaction",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4NTI0NTc5LCJleHAiOjE3MTg1MjgxNzl9.pLyJIvCnabS5UjDrTFvhcW0Bur6r9j4CeduFJm-dQY8",
+								"type": "text"
+							}
+						],
+						"url": "localhost:3000/getTransaction"
+					},
+					"response": []
+				},
+				{
+					"name": "get 1 user transaction",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4NTI0ODk2LCJleHAiOjE3MTg1Mjg0OTZ9.xH1GFITQ8NHk3EETU7sUZ0dY4FHqvgtEdSUTnmZ9irk",
+								"type": "text"
+							}
+						],
+						"url": "localhost:3000/getTransaction/hanvy04"
 					},
 					"response": []
 				}

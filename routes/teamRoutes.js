@@ -4,6 +4,7 @@ const {
   updateTeam,
   deleteTeam,
   getTeam,
+  favTeam,
 } = require("../controllers/teamController");
 const { verifyToken } = require("../middleware/verifyJWT");
 const router = express.Router();

@@ -304,6 +304,7 @@ const topUpUser = async (req, res) => {
     const user = await db
       .collection("users")
       .findOne({ username: userData.username });
+
     if (!user) {
       return res.status(404).send({ message: "User not found" });
     }
@@ -631,6 +632,26 @@ const cancelTicket = async (req, res) => {
   }
 };
 
+const getUserTickets = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const userData = req.user;
+    const dataUserTicket = await db
+      .collection("userTicket")
+      .find({ username: userData.username })
+      .toArray();
+
+    return res.status(200).json(dataUserTicket);
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
+};
+
 module.exports = {
   deleteUser,
   blockUser,
@@ -643,4 +664,5 @@ module.exports = {
   updatePhotoProfile,
   buyTicket,
   cancelTicket,
+  getUserTickets,
 };
