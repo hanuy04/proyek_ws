@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "0d9f3ef9-1ef7-4980-84b5-a07f8833603a",
+		"_postman_id": "068f7f8f-ce8e-40c6-879d-596a2b62d1b2",
 		"name": "proyekWS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "32821701"
+		"_exporter_id": "32822741"
 	},
 	"item": [
 		{
@@ -593,6 +593,37 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/favTeams/:team_id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"favTeams",
+								":team_id"
+							],
+							"variable": [
+								{
+									"key": "team_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -641,7 +672,13 @@
 					"name": "getGames",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "localhost:3000/getGames",
 							"host": [
@@ -745,6 +782,110 @@
 							"port": "3000",
 							"path": [
 								"getRegions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Detail Game",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/getGames/:game_id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"getGames",
+								":game_id"
+							],
+							"variable": [
+								{
+									"key": "game_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Matches",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/getMatches",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"getMatches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Detail Match",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/getDetailMatches/:match_id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"getDetailMatches",
+								":match_id"
+							],
+							"variable": [
+								{
+									"key": "match_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Teams",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/getTeams",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"getTeams"
 							]
 						}
 					},

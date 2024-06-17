@@ -19,7 +19,7 @@ router.put("/updateTeam/:team_id", verifyToken, updateTeam);
 router.delete("/deleteTeam/:team_id", verifyToken, deleteTeam);
 
 // Get Teams
-router.get("/getTeams", getTeam);
+router.get("/getTeams", verifyToken, getTeam);
 
 // Fav Teams
 router.post("/favTeams/:team_id", verifyToken, favTeam);
