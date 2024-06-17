@@ -448,6 +448,19 @@ const updatePhotoProfile = async (req, res) => {
   }
 };
 
+const midtransClient = require("midtrans-client");
+
+// Replace with your actual keys
+const MIDTRANS_SERVER_KEY = "SB-Mid-server-AzB_Nl8Pr82Cn47CnarVaiRj";
+const MIDTRANS_CLIENT_KEY = "SB-Mid-client-kkbssv7bo813DI4k";
+
+// Initialize the Midtrans client
+let snap = new midtransClient.Snap({
+  isProduction: false, // Use false for sandbox, true for production
+  serverKey: MIDTRANS_SERVER_KEY,
+  clientKey: MIDTRANS_CLIENT_KEY,
+});
+
 const buyTicket = async (req, res) => {
   try {
     await client.connect();
@@ -464,59 +477,86 @@ const buyTicket = async (req, res) => {
     const user = await db
       .collection("users")
       .findOne({ username: userData.username });
-
     const cekTicket = await db.collection("tickets").findOne({ name: ticket });
 
     if (cekTicket != null) {
-      var totalHarga = parseInt(cekTicket.price) * parseInt(amount);
-      if (user.saldo > totalHarga) {
-        const dateToday = getDate();
-        const sisaSaldo = user.saldo - totalHarga;
-        const sisaTicket = parseInt(cekTicket.amount) - parseInt(amount);
+      const totalHarga = parseInt(cekTicket.price) * parseInt(amount);
 
-        const newTransaction = await db.collection("transactions").insertOne({
-          type: "Buy",
+      // Create the Midtrans transaction
+      let parameter = {
+        transaction_details: {
+          order_id: "order-id-" + getDate(),
+          gross_amount: totalHarga,
+        },
+        credit_card: {
+          secure: true,
+        },
+        customer_details: {
           username: user.username,
-          ticket_name: cekTicket.name,
-          amount: amount,
-          date: dateToday,
+          email: user.email,
+        },
+      };
+
+      await snap
+        .createTransaction(parameter)
+        .then(async (transaction) => {
+          const transactionToken = transaction.token;
+          const dateToday = getDate();
+          const sisaSaldo = user.saldo - totalHarga;
+          const sisaTicket = parseInt(cekTicket.amount) - parseInt(amount);
+
+          const newTransaction = await db.collection("transactions").insertOne({
+            type: "Buy",
+            username: user.username,
+            ticket_name: cekTicket.name,
+            amount: amount,
+            date: dateToday,
+            transaction_token: transactionToken,
+            status: "Pending",
+          });
+
+          const newInvoice = await db.collection("invoices").insertOne({
+            type: "Buy",
+            username: user.username,
+            ticket: cekTicket.name,
+            amount: amount,
+            total: totalHarga,
+            date: dateToday,
+          });
+
+          await db
+            .collection("users")
+            .updateOne(
+              { username: user.username },
+              { $set: { saldo: sisaSaldo } }
+            );
+
+          await db.collection("userTicket").insertOne({
+            username: user.username,
+            ticket: cekTicket.name,
+            amount: amount,
+          });
+
+          await db
+            .collection("tickets")
+            .updateOne({ name: ticket }, { $set: { amount: sisaTicket } });
+
+          return res.status(200).json({
+            type: "Buy",
+            username: user.username,
+            ticket_name: ticket,
+            amount: amount,
+            total: totalHarga,
+            date: dateToday,
+            transaction_token: transactionToken,
+          });
+        })
+        .catch((err) => {
+          console.error("Midtrans error:", err);
+          return res
+            .status(500)
+            .json({ error: "Payment processing error", details: err });
         });
-
-        const newInvoice = await db.collection("invoices").insertOne({
-          type: "Buy",
-          username: user.username,
-          ticket: cekTicket.name,
-          amount: amount,
-          total: totalHarga,
-          date: dateToday,
-        });
-
-        const updateUser = await db
-          .collection("users")
-          .updateOne(
-            { username: user.username },
-            { $set: { saldo: sisaSaldo } }
-          );
-
-        const userTicket = await db.collection("userTicket").insertOne({
-          username: user.username,
-          ticket: cekTicket.name,
-          amount: amount,
-        });
-
-        const updateTicket = await db
-          .collection("tickets")
-          .updateOne({ name: ticket }, { $set: { amount: sisaTicket } });
-
-        return res.status(200).json({
-          type: "Buy",
-          username: user.username,
-          ticket_name: ticket.name,
-          amount: amount,
-          total: totalHarga,
-          date: dateToday,
-        });
-      }
     } else {
       return res.status(404).json({ message: "Ticket tidak ditemukan" });
     }
@@ -538,7 +578,7 @@ const cancelTicket = async (req, res) => {
       .collection("users")
       .findOne({ username: userData.username });
 
-    const { ticket, amount } = req.body;
+    const { ticket, amount, transactionToken } = req.body;
 
     const ticketData = await db.collection("tickets").findOne({ name: ticket });
 
@@ -578,6 +618,21 @@ const cancelTicket = async (req, res) => {
           const updateTicket = await db
             .collection("tickets")
             .updateOne({ name: ticket }, { $set: { amount: totalTicket } });
+
+          // Create refund request to Midtrans
+          const refundParams = {
+            chargeback_id: transactionToken, // Use the transaction token from your original transaction
+            amount: uangRefund, // Refund amount
+            reason: "Customer requested cancellation", // Reason for refund
+          };
+
+          try {
+            const refundResponse = await snap.refundCharge(refundParams);
+            console.log("Refund response:", refundResponse);
+          } catch (refundError) {
+            console.error("Midtrans refund error:", refundError);
+            // Handle refund error (log, notify, etc.)
+          }
         } else {
           const updateUserTicket = await db
             .collection("userTicket")
@@ -605,7 +660,23 @@ const cancelTicket = async (req, res) => {
           const updateTicket = await db
             .collection("tickets")
             .updateOne({ name: ticket }, { $set: { amount: totalTicket } });
+
+          // Create refund request to Midtrans
+          const refundParams = {
+            chargeback_id: transactionToken, // Use the transaction token from your original transaction
+            amount: uangRefund, // Refund amount
+            reason: "Customer requested cancellation", // Reason for refund
+          };
+
+          try {
+            const refundResponse = await snap.refundCharge(refundParams);
+            console.log("Refund response:", refundResponse);
+          } catch (refundError) {
+            console.error("Midtrans refund error:", refundError);
+            // Handle refund error (log, notify, etc.)
+          }
         }
+
         return res.status(200).json({
           type: "Cancel",
           username: userData.username,
