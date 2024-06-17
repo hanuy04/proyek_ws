@@ -135,9 +135,36 @@ const getOneUserTransaction = async (req, res) => {
   }
 };
 
+const getAllUser = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const userData = req.user;
+
+    const cekUser = await db
+      .collection("admin")
+      .findOne({ username: userData.username });
+
+    if (cekUser != null) {
+      const listUser = await db.collection("users").find().toArray();
+
+      return res.status(200).json(listUser);
+    } else {
+      return res.status(400).json({ message: "Anda bukan admin" });
+    }
+  } catch (dbError) {
+    console.error("Database error:", dbError);
+    return res.status(500).json({ error: "Database error" });
+  } finally {
+    await client.close();
+  }
+}
+
 module.exports = {
   getAllInvoice,
   getOneUserInvoice,
   getAllTransaction,
   getOneUserTransaction,
+  getAllUser,
 };

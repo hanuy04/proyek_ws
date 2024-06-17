@@ -719,6 +719,46 @@ const getUserTickets = async (req, res) => {
   }
 };
 
+const deletePhotoProfile = async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("projectWS");
+
+    const userData = req.user;
+    const user = await db
+      .collection("users")
+      .findOne({ username: userData.username });
+
+    fs.unlinkSync(user.profile_pic);
+
+    const deletePhoto = await db
+      .collection("users")
+      .updateOne(
+        { username: userData.username },
+        { $set: { profile_pic: "./upload/default.jpg" } }
+      );
+
+    return res.status(200).json({ message: "Berhasil delete profile picture" });
+  } catch (error) {
+    return res.status(400).json({ error: error.message });
+  }
+};
+
+const deleteUsers = async (req, res) => {
+  try {
+    const { cari } = req.params;
+    await db
+      .collection("user")
+      .updateOne(
+        { username: cari },
+        { $set: { isDeleted: true, deletedAt: new Date() } }
+      );
+    return res.status(200).json("Berhasil hapus user");
+  } catch (error) {
+    return res.status(400).json({ error: error.message });
+  }
+};
+
 module.exports = {
   deleteUser,
   blockUser,
@@ -732,4 +772,6 @@ module.exports = {
   buyTicket,
   cancelTicket,
   getUserTickets,
+  deletePhotoProfile,
+  deleteUsers,
 };

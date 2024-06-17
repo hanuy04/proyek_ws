@@ -12,6 +12,8 @@ const {
   buyTicket,
   cancelTicket,
   getUserTickets,
+  deletePhotoProfile,
+  deleteUsers,
 } = require("../controllers/userController");
 const { verifyToken } = require("../middleware/verifyJWT");
 const router = express.Router();
@@ -28,6 +30,8 @@ router.put("/updateProfile/:username", verifyToken, updateProfile);
 
 // Delete
 router.delete("/deleteUser", verifyToken, deleteUser);
+
+router.delete("/deletePhotoProfile", verifyToken, deletePhotoProfile);
 
 router.post("/topUpSaldo", verifyToken, topUpUser);
 
@@ -47,10 +51,14 @@ router.put(
   updatePhotoProfile
 );
 
+router.put("/deleteUsers", verifyToken, deleteUsers);
+
 router.post("/buyTicket", verifyToken, buyTicket);
 
 router.delete("/cancelTicket", verifyToken, cancelTicket);
 
 router.get("/getUserTickets", verifyToken, getUserTickets);
+
+
 
 module.exports = router;

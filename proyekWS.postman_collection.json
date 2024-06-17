@@ -366,39 +366,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "deleteUser",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzgwMjk2LCJleHAiOjE3MTgzODM4OTZ9.zCalL6SqWelHQQ4huR-4H9F8bUaqmR4-nRVdINQCLng"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "Jerome_Barton39",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "localhost:3000/deleteUser",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"deleteUser"
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -1217,6 +1184,48 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/deleteUsers",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"deleteUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Users",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/deletePhotoProfile",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"deletePhotoProfile"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -1325,6 +1334,38 @@
 								"hanvy04"
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/deleteUser",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"deleteUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All User",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
