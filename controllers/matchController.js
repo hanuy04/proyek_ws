@@ -131,7 +131,15 @@ const getMatches = async (req, res) => {
 
     const matches = await db.collection("matches").find().toArray();
 
-    return res.status(200).json(matches);
+    return res.status(200).json({
+      matches: matches.map((match) => ({
+        match_id: match.match_id,
+        game: match.game,
+        region: match.region,
+        competition_name: match.competition_name,
+        status: match.status,
+      })),
+    });
   } catch (dbError) {
     console.error("Database error:", dbError);
     return res.status(500).json({ error: "Database error" });
@@ -151,17 +159,34 @@ const getDetailMatch = async (req, res) => {
       return res.status(400).json({ error: "Match ID is required" });
     }
 
-    const tickets = await db
+    const match = await db
+      .collection("matches")
+      .findOne({ match_id: match_id });
+
+    if (!match) {
+      return res.status(404).json({ error: "Match not found" });
+    }
+
+    const ticket = await db
       .collection("tickets")
       .findOne({ match_id: match_id });
 
-    if (!tickets) {
-      return res.status(404).json({ error: "Tickets not found" });
+    if (!ticket) {
+      return res.status(404).json({ error: "ticket not found" });
     }
 
-    const ticketsLeft = tickets.filter((ticket) => !ticket.sold);
-
-    return res.status(200).json({ tickets_left: ticketsLeft.length });
+    return res.status(200).json({
+      detail_match: {
+        match_id: match.match_id,
+        game: match.game,
+        region: match.region,
+        competition_name: match.competition_name,
+        teams: match.teams,
+        results: match.results,
+        faceit_url: match.faceit_url,
+        tickets_left: ticket.amount,
+      },
+    });
   } catch (error) {
     console.error("Error:", error.message);
     return res.status(500).json({ error: "Internal Server Error" });

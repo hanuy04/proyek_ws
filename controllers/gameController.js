@@ -84,19 +84,19 @@ const getGameById = async (req, res) => {
     await client.connect();
     const db = client.db("projectWS");
 
-    const gameId = req.params.game_id; // Ambil gameId dari URL parameter
+    const game_id = req.params.game_id;
 
-    if (!gameId || gameId == "") {
+    if (!game_id || game_id == "") {
       return res.status(400).json({ message: "Game ID is required" });
     }
 
-    const game = await db.collection("games").findOne({ game_id: gameId });
+    const game = await db.collection("games").findOne({ game_id: game_id });
 
     if (!game) {
-      return res.status(404).json({ error: "Game not found" });
+      return res.status(404).json({ message: "Game not found" });
     }
 
-    return res.status(200).json(game);
+    return res.status(200).json({ game: game });
   } catch (dbError) {
     console.error("Database error:", dbError);
     return res.status(500).json({ error: "Database error" });

@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "068f7f8f-ce8e-40c6-879d-596a2b62d1b2",
+		"_postman_id": "9e8b3e5a-1f08-427d-b061-527dcba48f9c",
 		"name": "proyekWS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "32822741"
+		"_exporter_id": "32821701"
 	},
 	"item": [
 		{
@@ -562,13 +562,13 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "addFavTeam",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjY2NmM2ZDMyMjNiZmNkOTc2ODQ4YTA1NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE4NjMxNjk2LCJleHAiOjE3MTg2MzUyOTZ9.ggHUQCvDgZXUMXfcDmFy3ZTKk0UeRimgowC4wNXrEEs",
 								"type": "text"
 							}
 						],
@@ -585,7 +585,7 @@
 							"variable": [
 								{
 									"key": "team_id",
-									"value": ""
+									"value": "026f8240-e700-4e91-a711-38c018718b49"
 								}
 							]
 						}
@@ -758,7 +758,13 @@
 					"name": "get Detail Game",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjY2NmM2ZDMyMjNiZmNkOTc2ODQ4YTA1NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE4NjMxNjk2LCJleHAiOjE3MTg2MzUyOTZ9.ggHUQCvDgZXUMXfcDmFy3ZTKk0UeRimgowC4wNXrEEs",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "localhost:3000/getGames/:game_id",
 							"host": [
@@ -772,7 +778,7 @@
 							"variable": [
 								{
 									"key": "game_id",
-									"value": ""
+									"value": "csgo"
 								}
 							]
 						}
@@ -786,7 +792,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjY2NmM2ZDMyMjNiZmNkOTc2ODQ4YTA1NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE4NjMxNjk2LCJleHAiOjE3MTg2MzUyOTZ9.ggHUQCvDgZXUMXfcDmFy3ZTKk0UeRimgowC4wNXrEEs",
 								"type": "text"
 							}
 						],
@@ -810,24 +816,24 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjY2NmM2ZDMyMjNiZmNkOTc2ODQ4YTA1NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE4NjMxNjk2LCJleHAiOjE3MTg2MzUyOTZ9.ggHUQCvDgZXUMXfcDmFy3ZTKk0UeRimgowC4wNXrEEs",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/getDetailMatches/:match_id",
+							"raw": "localhost:3000/getDetailMatch/:match_id",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"getDetailMatches",
+								"getDetailMatch",
 								":match_id"
 							],
 							"variable": [
 								{
 									"key": "match_id",
-									"value": ""
+									"value": "1-994c1244-e918-44c7-b717-e225450ef560"
 								}
 							]
 						}
@@ -1365,7 +1371,10 @@
 					"name": "Get All User",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				}

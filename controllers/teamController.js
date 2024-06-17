@@ -148,19 +148,13 @@ const getTeam = async (req, res) => {
     await client.connect();
     const db = client.db("projectWS");
 
-    const teamId = req.params.team_id;
+    const teams = await db.collection("teams").find().toArray();
 
-    if (!teamId || teamId == "") {
-      return res.status(400).json({ message: "team_id is required" });
-    }
-
-    const team = await db.collection("teams").findOne({ team_id: teamId });
-
-    if (!team) {
+    if (!teams) {
       return res.status(404).json({ error: "Team not found" });
     }
 
-    return res.status(200).json(team);
+    return res.status(200).json({ teams: teams });
   } catch (dbError) {
     console.error("Database error:", dbError);
     return res.status(500).json({ error: "Database error" });
@@ -186,17 +180,17 @@ const favTeam = async (req, res) => {
       return res.status(404).json({ error: "Team not found" });
     }
 
-    const wishlist = await db
-      .collection("wishlist")
+    const favorites = await db
+      .collection("favorites")
       .findOne({ team_id: teamId });
 
-    if (wishlist) {
+    if (favorites) {
       // Remove team from wishlist
-      await db.collection("wishlist").deleteOne({ team_id: teamId });
-      return res.status(200).json({ message: "Team removed from wishlist" });
+      await db.collection("favorites").deleteOne({ team_id: teamId });
+      return res.status(200).json({ message: "Team removed from favorites" });
     }
 
-    await db.collection("wishlist").insertOne({
+    await db.collection("favorites").insertOne({
       team_id: team.team_id,
       name: team.name,
       game: team.game,
@@ -204,7 +198,7 @@ const favTeam = async (req, res) => {
       faceit_url: team.faceit_url,
     });
 
-    return res.status(201).json({ message: "Team added to wishlist" });
+    return res.status(201).json({ message: "Team added to favorites" });
   } catch (dbError) {
     console.error("Database error:", dbError);
     return res.status(500).json({ error: "Database error" });

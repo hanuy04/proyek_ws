@@ -4,6 +4,7 @@ const {
   updateGames,
   deleteGames,
   getGames,
+  getGameById,
   getPlatforms,
   getRegions,
 } = require("../controllers/gameController");
@@ -19,7 +20,7 @@ router.get("/getPlatforms", getPlatforms);
 router.get("/getRegions", getRegions);
 
 // Get Game by ID
-router.get("/getGames/:game_id", verifyToken, getGames);
+router.get("/getGames/:game_id", verifyToken, getGameById);
 
 // Put
 router.put("/updateGames/:game_id", verifyToken, updateGames);
