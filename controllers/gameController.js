@@ -170,4 +170,61 @@ const deleteGames = async (req, res) => {
   }
 };
 
-module.exports = { addGame, getGames, updateGames, deleteGames, getGameById };
+const getRegions = async (req, res) => {
+  try {
+    const result = await axios.get(
+      'https://open.faceit.com/data/v4/games', // Endpoint API Faceit untuk semua game
+      {
+        headers: {
+          Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d", // Kunci API untuk otorisasi
+          Accept: "application/json", // Terima respons dalam format JSON
+        },
+      }
+    );
+
+    if (!result.data || !result.data.items) { // Periksa apakah tidak ada data atau item yang dikembalikan dari API
+      return res.status(404).json({ message: "Data's not found!" }); // Kembalikan kesalahan 404 jika data tidak ditemukan
+    }
+
+    const regions = new Set(); // Gunakan Set untuk memastikan tidak ada duplikat
+    result.data.items.forEach(game => {
+      game.regions.forEach(region => regions.add(region)); // Tambahkan setiap region ke dalam Set
+    });
+
+    return res.status(200).json([...regions]); // Kembalikan regions dengan status 200
+  } catch (error) {
+    console.error("Error fetching data:", error.message); // Tampilkan kesalahan pengambilan data di konsol
+    return res.status(500).json({ error: error.message }); // Kembalikan kesalahan 500 jika terjadi kesalahan pengambilan data
+  }
+};
+
+const getPlatforms = async (req, res) => {
+  try {
+    const result = await axios.get(
+      'https://open.faceit.com/data/v4/games', // Endpoint API Faceit untuk semua game
+      {
+        headers: {
+          Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d", // Kunci API untuk otorisasi
+          Accept: "application/json", // Terima respons dalam format JSON
+        },
+      }
+    );
+
+    if (!result.data || !result.data.items) { // Periksa apakah tidak ada data atau item yang dikembalikan dari API
+      return res.status(404).json({ message: "Data's not found!" }); // Kembalikan kesalahan 404 jika data tidak ditemukan
+    }
+
+    const platforms = new Set(); // Gunakan Set untuk memastikan tidak ada duplikat
+    result.data.items.forEach(game => {
+      game.platforms.forEach(platform => platforms.add(platform)); // Tambahkan setiap platform ke dalam Set
+    });
+
+    return res.status(200).json([...platforms]); // Kembalikan platforms dengan status 200
+  } catch (error) {
+    console.error("Error fetching data:", error.message); // Tampilkan kesalahan pengambilan data di konsol
+    return res.status(500).json({ error: error.message }); // Kembalikan kesalahan 500 jika terjadi kesalahan pengambilan data
+  }
+};
+
+
+module.exports = { addGame, getGames, updateGames, deleteGames, getGameById, getRegions, getPlatforms };
