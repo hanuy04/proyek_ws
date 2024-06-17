@@ -4,7 +4,16 @@ const { get } = require("../routes/loginRoutes");
 
 const addMatches = async (req, res) => {
   const { hub_name, game } = req.query;
-  if (!hub_name) {
+  const auth = req.header("Authorization");
+  const accept = req.header("Accept");
+
+  if (!auth || auth == "" || !accept || accept == "") {
+    return res
+      .status(401)
+      .json({ message: "Authorization and Accept header is required!" });
+  }
+
+  if (!hub_name || hub_name == "") {
     return res.status(400).json({ error: "Hub name is required!" });
   }
 
@@ -13,8 +22,8 @@ const addMatches = async (req, res) => {
       `https://open.faceit.com/data/v4/search/hubs?name=${hub_name}&game=${game}&offset=0&limit=1`,
       {
         headers: {
-          Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
-          Accept: "application/json",
+          Authorization: auth,
+          Accept: accept,
         },
       }
     );
@@ -28,8 +37,8 @@ const addMatches = async (req, res) => {
         `https://open.faceit.com/data/v4/hubs/${findHub.data.items[0].competition_id}/matches?offset=0&limit=5`,
         {
           headers: {
-            Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
-            Accept: "application/json",
+            Authorization: auth,
+            Accept: accept,
           },
         }
       );
@@ -84,7 +93,7 @@ const deleteMatches = async (req, res) => {
 
     const match_id = req.params.match_id;
 
-    if (!match_id) {
+    if (!match_id || match_id == "") {
       return res.status(400).json({ error: "Match ID is required" });
     }
 
@@ -129,8 +138,7 @@ const getMatches = async (req, res) => {
   } finally {
     await client.close();
   }
-
-}
+};
 
 const getDetailMatch = async (req, res) => {
   try {
@@ -139,7 +147,7 @@ const getDetailMatch = async (req, res) => {
 
     const match_id = req.params.match_id;
 
-    if (!match_id) {
+    if (!match_id || match_id == "") {
       return res.status(400).json({ error: "Match ID is required" });
     }
 
@@ -151,7 +159,7 @@ const getDetailMatch = async (req, res) => {
       return res.status(404).json({ error: "Tickets not found" });
     }
 
-    const ticketsLeft = tickets.filter(ticket => !ticket.sold);
+    const ticketsLeft = tickets.filter((ticket) => !ticket.sold);
 
     return res.status(200).json({ tickets_left: ticketsLeft.length });
   } catch (error) {

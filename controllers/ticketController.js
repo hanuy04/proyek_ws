@@ -99,6 +99,10 @@ const updateTicket = async (req, res) => {
   const { new_name, amount, price } = req.body;
   const name = req.params.name;
 
+  if (!name || name == "") {
+    return res.status(400).json({ message: "Name is required!" });
+  }
+
   try {
     await client.connect();
     const db = client.db("projectWS");
@@ -150,7 +154,7 @@ const updateTicket = async (req, res) => {
 const deleteTicket = async (req, res) => {
   const name = req.params.name;
 
-  if (!name) {
+  if (!name || name == "") {
     return res.status(400).json({ error: "Name is required" });
   }
 
@@ -189,22 +193,13 @@ const seeTicket = async (req, res) => {
       .collection("users")
       .findOne({ username: userData.username });
 
-    if (user.api_hit >= 2) {
-      const sisaApi = user.api_hit - 2;
-      const updateApi = await db
-        .collection("users")
-        .updateOne(
-          { username: userData.username },
-          { $set: { api_hit: sisaApi } }
-        );
+    const listTicket = await db.collection("tickets").find().toArray();
 
-      const listTicket = await db.collection("tickets").find().toArray();
-
-      return res.status(200).json(listTicket);
-    } else {
-      return res.status(400).json({ message: "API_Hit tidak mencukupi" });
-    }
-  } catch (error) {}
+    return res.status(200).json(listTicket);
+  } catch (error) {
+    console.error("Database error:", error);
+    return res.status(500).json({ error: "Database error" });
+  }
 };
 
 module.exports = { addTicket, updateTicket, deleteTicket, seeTicket };

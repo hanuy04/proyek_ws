@@ -450,15 +450,11 @@ const updatePhotoProfile = async (req, res) => {
 
 const midtransClient = require("midtrans-client");
 
-// Replace with your actual keys
-const MIDTRANS_SERVER_KEY = "SB-Mid-server-AzB_Nl8Pr82Cn47CnarVaiRj";
-const MIDTRANS_CLIENT_KEY = "SB-Mid-client-kkbssv7bo813DI4k";
-
 // Initialize the Midtrans client
 let snap = new midtransClient.Snap({
   isProduction: false, // Use false for sandbox, true for production
-  serverKey: MIDTRANS_SERVER_KEY,
-  clientKey: MIDTRANS_CLIENT_KEY,
+  serverKey: process.env.MIDTRANS_SERVER_KEY,
+  clientKey: process.env.MIDTRANS_CLIENT_KEY,
 });
 
 const buyTicket = async (req, res) => {
@@ -510,9 +506,9 @@ const buyTicket = async (req, res) => {
             username: user.username,
             ticket_name: cekTicket.name,
             amount: amount,
+            total: totalHarga,
             date: dateToday,
             transaction_token: transactionToken,
-            status: "Pending",
           });
 
           const newInvoice = await db.collection("invoices").insertOne({

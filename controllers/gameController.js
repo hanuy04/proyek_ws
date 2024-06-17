@@ -3,7 +3,16 @@ const client = require("../config/config");
 
 const addGame = async (req, res) => {
   const game_id = req.params.game_id;
-  if (!game_id) {
+  const auth = req.header("Authorization");
+  const accept = req.header("Accept");
+
+  if (!auth || auth == "" || !accept || accept == "") {
+    return res
+      .status(401)
+      .json({ message: "Authorization and Accept header is required!" });
+  }
+
+  if (!game_id || game_id == "") {
     return res.status(400).json({ error: "Game ID is required" });
   }
 
@@ -12,8 +21,8 @@ const addGame = async (req, res) => {
       `https://open.faceit.com/data/v4/games/${game_id}`,
       {
         headers: {
-          Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
-          Accept: "application/json",
+          Authorization: auth,
+          Accept: accept,
         },
       }
     );
@@ -76,6 +85,11 @@ const getGameById = async (req, res) => {
     const db = client.db("projectWS");
 
     const gameId = req.params.game_id; // Ambil gameId dari URL parameter
+
+    if (!gameId || gameId == "") {
+      return res.status(400).json({ message: "Game ID is required" });
+    }
+
     const game = await db.collection("games").findOne({ game_id: gameId });
 
     if (!game) {
@@ -89,7 +103,7 @@ const getGameById = async (req, res) => {
   } finally {
     await client.close();
   }
-}
+};
 
 const updateGames = async (req, res) => {
   try {
@@ -97,6 +111,11 @@ const updateGames = async (req, res) => {
     const db = client.db("projectWS");
 
     const gameId = req.params.game_id; // Ambil gameId dari URL parameter
+
+    if (!gameId || gameId == "") {
+      return res.status(400).json({ message: "Game ID is required" });
+    }
+
     const game = await db.collection("games").findOne({ game_id: gameId });
 
     if (!game) {
@@ -147,6 +166,11 @@ const deleteGames = async (req, res) => {
     const db = client.db("projectWS");
 
     const gameId = req.params.game_id; // Ambil gameId dari URL parameter
+
+    if (!gameId || gameId == "") {
+      return res.status(400).json({ message: "Game ID is required" });
+    }
+
     const game = await db.collection("games").findOne({ game_id: gameId });
 
     if (!game) {
@@ -171,60 +195,79 @@ const deleteGames = async (req, res) => {
 };
 
 const getRegions = async (req, res) => {
+  const auth = req.header("Authorization");
+  const accept = req.header("Accept");
+
+  if (!auth || auth == "" || !accept || accept == "") {
+    return res
+      .status(401)
+      .json({ message: "Authorization and Accept header is required!" });
+  }
+
   try {
-    const result = await axios.get(
-      'https://open.faceit.com/data/v4/games', // Endpoint API Faceit untuk semua game
-      {
-        headers: {
-          Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d", // Kunci API untuk otorisasi
-          Accept: "application/json", // Terima respons dalam format JSON
-        },
-      }
-    );
-
-    if (!result.data || !result.data.items) { // Periksa apakah tidak ada data atau item yang dikembalikan dari API
-      return res.status(404).json({ message: "Data's not found!" }); // Kembalikan kesalahan 404 jika data tidak ditemukan
-    }
-
-    const regions = new Set(); // Gunakan Set untuk memastikan tidak ada duplikat
-    result.data.items.forEach(game => {
-      game.regions.forEach(region => regions.add(region)); // Tambahkan setiap region ke dalam Set
+    const result = await axios.get("https://open.faceit.com/data/v4/games", {
+      headers: {
+        Authorization: auth,
+        Accept: accept,
+      },
     });
 
-    return res.status(200).json([...regions]); // Kembalikan regions dengan status 200
+    if (!result.data || !result.data.items) {
+      return res.status(404).json({ message: "Data's not found!" });
+    }
+
+    const regions = new Set();
+    result.data.items.forEach((game) => {
+      game.regions.forEach((region) => regions.add(region));
+    });
+
+    return res.status(200).json({ regions: [...regions] });
   } catch (error) {
-    console.error("Error fetching data:", error.message); // Tampilkan kesalahan pengambilan data di konsol
-    return res.status(500).json({ error: error.message }); // Kembalikan kesalahan 500 jika terjadi kesalahan pengambilan data
+    console.error("Error fetching data:", error.message);
+    return res.status(500).json({ error: error.message });
   }
 };
 
 const getPlatforms = async (req, res) => {
+  const auth = req.header("Authorization");
+  const accept = req.header("Accept");
+
+  if (!auth || auth == "" || !accept || accept == "") {
+    return res
+      .status(401)
+      .json({ message: "Authorization and Accept header is required!" });
+  }
+
   try {
-    const result = await axios.get(
-      'https://open.faceit.com/data/v4/games', // Endpoint API Faceit untuk semua game
-      {
-        headers: {
-          Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d", // Kunci API untuk otorisasi
-          Accept: "application/json", // Terima respons dalam format JSON
-        },
-      }
-    );
-
-    if (!result.data || !result.data.items) { // Periksa apakah tidak ada data atau item yang dikembalikan dari API
-      return res.status(404).json({ message: "Data's not found!" }); // Kembalikan kesalahan 404 jika data tidak ditemukan
-    }
-
-    const platforms = new Set(); // Gunakan Set untuk memastikan tidak ada duplikat
-    result.data.items.forEach(game => {
-      game.platforms.forEach(platform => platforms.add(platform)); // Tambahkan setiap platform ke dalam Set
+    const result = await axios.get("https://open.faceit.com/data/v4/games", {
+      headers: {
+        Authorization: auth,
+        Accept: accept,
+      },
     });
 
-    return res.status(200).json([...platforms]); // Kembalikan platforms dengan status 200
+    if (!result.data || !result.data.items) {
+      return res.status(404).json({ message: "Data's not found!" });
+    }
+
+    const platforms = new Set(); // pake set biar ndak double
+    result.data.items.forEach((game) => {
+      game.platforms.forEach((platform) => platforms.add(platform));
+    });
+
+    return res.status(200).json({ platforms: [...platforms] });
   } catch (error) {
-    console.error("Error fetching data:", error.message); // Tampilkan kesalahan pengambilan data di konsol
-    return res.status(500).json({ error: error.message }); // Kembalikan kesalahan 500 jika terjadi kesalahan pengambilan data
+    console.error("Error fetching data:", error.message);
+    return res.status(500).json({ error: error.message });
   }
 };
 
-
-module.exports = { addGame, getGames, updateGames, deleteGames, getGameById, getRegions, getPlatforms };
+module.exports = {
+  addGame,
+  getGames,
+  updateGames,
+  deleteGames,
+  getGameById,
+  getRegions,
+  getPlatforms,
+};

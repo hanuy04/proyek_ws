@@ -3,8 +3,17 @@ const client = require("../config/config");
 
 const addTeam = async (req, res) => {
   const { nickname, game } = req.query;
-  if (!nickname) {
-    return res.status(400).json({ error: "Nickname is required!" });
+  const auth = req.header("Authorization");
+  const accept = req.header("Accept");
+
+  if (!auth || auth == "" || !accept || accept == "") {
+    return res
+      .status(401)
+      .json({ message: "Authorization and Accept header is required!" });
+  }
+
+  if (!nickname || nickname == "" || !game || game == "") {
+    return res.status(400).json({ error: "Nickname and game is required!" });
   }
 
   try {
@@ -12,8 +21,8 @@ const addTeam = async (req, res) => {
       `https://open.faceit.com/data/v4/search/teams?nickname=${nickname}&game=${game}&offset=0&limit=1`,
       {
         headers: {
-          Authorization: "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
-          Accept: "application/json",
+          Authorization: auth,
+          Accept: accept,
         },
       }
     );
@@ -60,7 +69,7 @@ const updateTeam = async (req, res) => {
 
     const { name, game } = req.body;
 
-    if (!name || !game) {
+    if (!name || !game || game == "" || name == "") {
       return res.status(400).json({ error: "Name and game are required" });
     }
 
@@ -112,6 +121,11 @@ const deleteTeam = async (req, res) => {
     const db = client.db("projectWS");
 
     const teamId = req.params.team_id;
+
+    if (!teamId || teamId == "") {
+      return res.status(400).json({ message: "team_id is required" });
+    }
+
     const deleteResult = await db
       .collection("teams")
       .deleteOne({ team_id: teamId });
@@ -135,6 +149,11 @@ const getTeam = async (req, res) => {
     const db = client.db("projectWS");
 
     const teamId = req.params.team_id;
+
+    if (!teamId || teamId == "") {
+      return res.status(400).json({ message: "team_id is required" });
+    }
+
     const team = await db.collection("teams").findOne({ team_id: teamId });
 
     if (!team) {
@@ -148,7 +167,7 @@ const getTeam = async (req, res) => {
   } finally {
     await client.close();
   }
-}
+};
 
 const favTeam = async (req, res) => {
   try {
@@ -156,13 +175,20 @@ const favTeam = async (req, res) => {
     const db = client.db("projectWS");
 
     const teamId = req.params.team_id;
+
+    if (!teamId || teamId == "") {
+      return res.status(400).json({ message: "team_id is required" });
+    }
+
     const team = await db.collection("teams").findOne({ team_id: teamId });
 
     if (!team) {
       return res.status(404).json({ error: "Team not found" });
     }
 
-    const wishlist = await db.collection("wishlist").findOne({ team_id: teamId });
+    const wishlist = await db
+      .collection("wishlist")
+      .findOne({ team_id: teamId });
 
     if (wishlist) {
       // Remove team from wishlist
