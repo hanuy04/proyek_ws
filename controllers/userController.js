@@ -114,9 +114,10 @@ const registerSchema = Joi.object({
       "date.format": "date_of_birth must be in DD/MM/YYYY format!",
       "date.less": "date_of_birth must be at least 13 years old!",
     }),
-  nomor_telepon: Joi.string().required().messages({
+  nomor_telepon: Joi.string().min(12).required().messages({
     "string.empty": "nomor_telepon is required!",
     "string.required": "nomor_telepon is required!",
+    "string.min": "nomor_telepon must be at least 12 characters!",
   }),
 });
 
@@ -155,10 +156,10 @@ const updateProfileSchema = Joi.object({
 });
 
 const topUpSchema = Joi.object({
-  saldo: Joi.number().min(1000).required().messages({
+  saldo: Joi.number().min(10000).required().messages({
     "number.empty": "saldo is required!",
     "number.required": "saldo is required!",
-    "number.min": "Minimal saldo is 1000",
+    "number.min": "Minimal topup saldo is 10000",
   }),
 });
 
@@ -450,6 +451,13 @@ const updatePhotoProfile = async (req, res) => {
     const filename = `${userData.username}${extension}`;
     fs.renameSync(`./upload/${req.file.filename}`, `./upload/${filename}`);
 
+    const addPhoto = await db
+      .collection("users")
+      .updateOne(
+        { username: userData.username },
+        { $set: { profile_pic: file_path } }
+      );
+
     return res.status(200).json({ message: "Berhasil update Profile Picture" });
   } catch (error) {
     return res.status(400).json({ error: error.message });
@@ -659,118 +667,130 @@ const cancelTicket = async (req, res) => {
 
     const ticketData = await db.collection("tickets").findOne({ name: ticket });
 
-    if (ticketData != null) {
-      const cekUserTicket = await db
-        .collection("userTicket")
-        .findOne({ username: userData.username, ticket: ticket });
+    const cekUserTicket2 = await db
+      .collection("userTicket")
+      .findOne({ username: userData.username, ticket: ticket });
 
-      if (cekUserTicket != null) {
-        const sisaTicketUser =
-          parseInt(cekUserTicket.amount) - parseInt(amount);
-        const uangRefund = (parseInt(ticketData.price) * parseInt(amount)) / 2;
-        const totalUangUser = user.saldo + uangRefund;
-        const totalTicket = parseInt(ticketData.amount) + parseInt(amount);
+    if (amount > cekUserTicket2.amount) {
+      return res.status(400).json({
+        message:
+          "Jumlah tiket yang ingin di cancel melebihi jumlah tiket yang ada",
+      });
+    } else {
+      if (ticketData != null) {
+        const cekUserTicket = await db
+          .collection("userTicket")
+          .findOne({ username: userData.username, ticket: ticket });
 
-        if (sisaTicketUser == 0) {
-          const deleteUserTicket = await db
-            .collection("userTicket")
-            .deleteOne({ username: userData.username, ticket: ticket });
+        if (cekUserTicket != null) {
+          const sisaTicketUser =
+            parseInt(cekUserTicket.amount) - parseInt(amount);
+          const uangRefund =
+            (parseInt(ticketData.price) * parseInt(amount)) / 2;
+          const totalUangUser = user.saldo + uangRefund;
+          const totalTicket = parseInt(ticketData.amount) + parseInt(amount);
 
-          const addInvoice = await db.collection("invoices").insertOne({
-            status: "Cancelled",
+          if (sisaTicketUser == 0) {
+            const deleteUserTicket = await db
+              .collection("userTicket")
+              .deleteOne({ username: userData.username, ticket: ticket });
+
+            const addInvoice = await db.collection("invoices").insertOne({
+              status: "Cancelled",
+              username: userData.username,
+              ticket_name: ticket,
+              amount: amount,
+              refund: uangRefund,
+              date: getDate(),
+            });
+
+            const updateUser = await db
+              .collection("users")
+              .updateOne(
+                { username: user.username },
+                { $set: { saldo: totalUangUser } }
+              );
+
+            const updateTicket = await db
+              .collection("tickets")
+              .updateOne({ name: ticket }, { $set: { amount: totalTicket } });
+
+            // Create refund request to Midtrans
+            const refundParams = {
+              chargeback_id: transactionToken, // Use the transaction token from your original transaction
+              amount: uangRefund, // Refund amount
+              reason: "Customer requested cancellation", // Reason for refund
+            };
+
+            try {
+              const refundResponse = await snap.refundCharge(refundParams);
+              console.log("Refund response:", refundResponse);
+            } catch (refundError) {
+              console.error("Midtrans refund error:", refundError);
+              // Handle refund error (log, notify, etc.)
+            }
+          } else {
+            const updateUserTicket = await db
+              .collection("userTicket")
+              .updateOne(
+                { username: user.username, ticket: ticket },
+                { $set: { amount: sisaTicketUser } }
+              );
+
+            const addInvoice = await db.collection("invoices").insertOne({
+              status: "Cancelled",
+              username: userData.username,
+              ticket_name: ticket,
+              amount: amount,
+              refund: uangRefund,
+              date: getDate(),
+            });
+
+            const updateUser = await db
+              .collection("users")
+              .updateOne(
+                { username: user.username },
+                { $set: { saldo: totalUangUser } }
+              );
+
+            const updateTicket = await db
+              .collection("tickets")
+              .updateOne({ name: ticket }, { $set: { amount: totalTicket } });
+
+            // Create refund request to Midtrans
+            const refundParams = {
+              chargeback_id: transactionToken, // Use the transaction token from your original transaction
+              amount: uangRefund, // Refund amount
+              reason: "Customer requested cancellation", // Reason for refund
+            };
+
+            try {
+              const refundResponse = await snap.refundCharge(refundParams);
+              console.log("Refund response:", refundResponse);
+            } catch (refundError) {
+              console.error("Midtrans refund error:", refundError);
+              // Handle refund error (log, notify, etc.)
+            }
+          }
+
+          return res.status(200).json({
+            type: "Cancel",
             username: userData.username,
             ticket_name: ticket,
             amount: amount,
             refund: uangRefund,
             date: getDate(),
           });
-
-          const updateUser = await db
-            .collection("users")
-            .updateOne(
-              { username: user.username },
-              { $set: { saldo: totalUangUser } }
-            );
-
-          const updateTicket = await db
-            .collection("tickets")
-            .updateOne({ name: ticket }, { $set: { amount: totalTicket } });
-
-          // Create refund request to Midtrans
-          const refundParams = {
-            chargeback_id: transactionToken, // Use the transaction token from your original transaction
-            amount: uangRefund, // Refund amount
-            reason: "Customer requested cancellation", // Reason for refund
-          };
-
-          try {
-            const refundResponse = await snap.refundCharge(refundParams);
-            console.log("Refund response:", refundResponse);
-          } catch (refundError) {
-            console.error("Midtrans refund error:", refundError);
-            // Handle refund error (log, notify, etc.)
-          }
         } else {
-          const updateUserTicket = await db
-            .collection("userTicket")
-            .updateOne(
-              { username: user.username, ticket: ticket },
-              { $set: { amount: sisaTicketUser } }
-            );
-
-          const addInvoice = await db.collection("invoices").insertOne({
-            status: "Cancelled",
-            username: userData.username,
-            ticket_name: ticket,
-            amount: amount,
-            refund: uangRefund,
-            date: getDate(),
-          });
-
-          const updateUser = await db
-            .collection("users")
-            .updateOne(
-              { username: user.username },
-              { $set: { saldo: totalUangUser } }
-            );
-
-          const updateTicket = await db
-            .collection("tickets")
-            .updateOne({ name: ticket }, { $set: { amount: totalTicket } });
-
-          // Create refund request to Midtrans
-          const refundParams = {
-            chargeback_id: transactionToken, // Use the transaction token from your original transaction
-            amount: uangRefund, // Refund amount
-            reason: "Customer requested cancellation", // Reason for refund
-          };
-
-          try {
-            const refundResponse = await snap.refundCharge(refundParams);
-            console.log("Refund response:", refundResponse);
-          } catch (refundError) {
-            console.error("Midtrans refund error:", refundError);
-            // Handle refund error (log, notify, etc.)
-          }
+          return res
+            .status(400)
+            .json({ message: "kamu tidak memiliki tiket tersebut" });
         }
-
-        return res.status(200).json({
-          type: "Cancel",
-          username: userData.username,
-          ticket_name: ticket,
-          amount: amount,
-          refund: uangRefund,
-          date: getDate(),
-        });
       } else {
         return res
-          .status(400)
-          .json({ message: "kamu tidak memiliki tiket tersebut" });
+          .status(404)
+          .json({ message: "Ticket dengan nama tersebut tidak ditemukan" });
       }
-    } else {
-      return res
-        .status(404)
-        .json({ message: "Ticket dengan nama tersebut tidak ditemukan" });
     }
   } catch (dbError) {
     console.error("Database error:", dbError);

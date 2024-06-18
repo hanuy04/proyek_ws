@@ -159,7 +159,7 @@ const getAllUser = async (req, res) => {
   } finally {
     await client.close();
   }
-}
+};
 
 module.exports = {
   getAllInvoice,
