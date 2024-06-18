@@ -16,34 +16,16 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzQ2NDgxLCJleHAiOjE3MTgzNTAwODF9.wFbz0AQhFXguPTdZQBwFOjZokBcfgB0VDEmcW0g-iig"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5NDk4LCJleHAiOjE3MTg2OTMwOTh9.g8px98sMQimMGRR-MPfxWMsOiECK9VmsMOWyBGpIiXs"
 							}
 						],
 						"body": {
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "game_id",
-									"value": "wot_NA",
-									"type": "text",
-									"disabled": true
-								},
-								{
 									"key": "long_label",
-									"value": "Dota 2",
+									"value": "Doto 2",
 									"type": "text"
-								},
-								{
-									"key": "order",
-									"value": "1",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "parent_game_id",
-									"value": "wot",
-									"type": "text",
-									"disabled": true
 								},
 								{
 									"key": "platforms",
@@ -81,41 +63,43 @@
 					"name": "updateTeam",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5NDk4LCJleHAiOjE3MTg2OTMwOTh9.g8px98sMQimMGRR-MPfxWMsOiECK9VmsMOWyBGpIiXs",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "",
+									"value": "Infamousy",
 									"type": "text"
 								},
 								{
 									"key": "game",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "chat_room_id",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "faceit_url",
-									"value": "",
+									"value": "dota2",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/updateTeam/1",
+							"raw": "localhost:3000/updateTeam/:team_id",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"updateTeam",
-								"1"
+								":team_id"
+							],
+							"variable": [
+								{
+									"key": "team_id",
+									"value": "05c32132-deef-4521-b520-921d1a32c74f"
+								}
 							]
 						}
 					},
@@ -125,15 +109,48 @@
 					"name": "updateTicket",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5NDk4LCJleHAiOjE3MTg2OTMwOTh9.g8px98sMQimMGRR-MPfxWMsOiECK9VmsMOWyBGpIiXs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "new_name",
+									"value": "Ticket Coba-Cobain",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "90",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "5000",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
-							"raw": "localhost:3000/updateGame",
+							"raw": "localhost:3000/updateTicket/:name",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"updateGame"
+								"updateTicket",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "Ticket Coba-Coba"
+								}
 							]
 						}
 					},
@@ -164,7 +181,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzgwMjk2LCJleHAiOjE3MTgzODM4OTZ9.zCalL6SqWelHQQ4huR-4H9F8bUaqmR4-nRVdINQCLng"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5NDk4LCJleHAiOjE3MTg2OTMwOTh9.g8px98sMQimMGRR-MPfxWMsOiECK9VmsMOWyBGpIiXs"
 							}
 						],
 						"body": {
@@ -172,7 +189,7 @@
 							"urlencoded": [
 								{
 									"key": "username",
-									"value": "Lempi_Walter",
+									"value": "Golden_Walter",
 									"type": "text"
 								}
 							]
@@ -266,7 +283,13 @@
 					"name": "deleteGames",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5ODk3LCJleHAiOjE3MTg2OTM0OTd9.bPl6RA8LI60mpTR8Bie09ZltYtoh5q7k40OCvf1dd38",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "localhost:3000/deleteGames/:game_id",
 							"host": [
@@ -280,7 +303,7 @@
 							"variable": [
 								{
 									"key": "game_id",
-									"value": ""
+									"value": "wot_RU"
 								}
 							]
 						}
@@ -291,21 +314,27 @@
 					"name": "deleteTeam",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5ODk3LCJleHAiOjE3MTg2OTM0OTd9.bPl6RA8LI60mpTR8Bie09ZltYtoh5q7k40OCvf1dd38",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "localhost:3000/deleteGames/:game_id",
+							"raw": "localhost:3000/deleteTeam/:team_id",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"deleteGames",
-								":game_id"
+								"deleteTeam",
+								":team_id"
 							],
 							"variable": [
 								{
-									"key": "game_id",
-									"value": ""
+									"key": "team_id",
+									"value": "05f78dd0-c9ba-4ae3-bc35-89a510a7b0f4"
 								}
 							]
 						}
@@ -316,21 +345,27 @@
 					"name": "deleteTicket",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5ODk3LCJleHAiOjE3MTg2OTM0OTd9.bPl6RA8LI60mpTR8Bie09ZltYtoh5q7k40OCvf1dd38",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "localhost:3000/deleteTicket/:ticket_id",
+							"raw": "localhost:3000/deleteTicket/:name",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"deleteTicket",
-								":ticket_id"
+								":name"
 							],
 							"variable": [
 								{
-									"key": "ticket_id",
-									"value": ""
+									"key": "name",
+									"value": "Tiket Proyek WS"
 								}
 							]
 						}
@@ -344,17 +379,17 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzQ1MzIwLCJleHAiOjE3MTgzNDg5MjB9.EE_mh28yP-thCEUXpqLtL8asnyPkMm57m04COGitaRs"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5ODk3LCJleHAiOjE3MTg2OTM0OTd9.bPl6RA8LI60mpTR8Bie09ZltYtoh5q7k40OCvf1dd38"
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/deleteMatch/:match_id",
+							"raw": "localhost:3000/deleteMatches/:match_id",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"deleteMatch",
+								"deleteMatches",
 								":match_id"
 							],
 							"variable": [
@@ -618,13 +653,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/loginAdmin",
+							"raw": "localhost:3000/login",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"loginAdmin"
+								"login"
 							]
 						}
 					},
@@ -642,7 +677,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
 								"type": "text"
 							}
 						],
@@ -669,7 +704,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjY2NmM2ZDMyMjNiZmNkOTc2ODQ4YTA1NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE4NjEyODg4LCJleHAiOjE3MTg2MTY0ODh9.ySe6ncJYNPNbWGfqOKy-6RIARXn6buXdFxRwpNs34-E",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
 								"type": "text"
 							}
 						],
@@ -761,7 +796,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjY2NmM2ZDMyMjNiZmNkOTc2ODQ4YTA1NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE4NjMxNjk2LCJleHAiOjE3MTg2MzUyOTZ9.ggHUQCvDgZXUMXfcDmFy3ZTKk0UeRimgowC4wNXrEEs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
 								"type": "text"
 							}
 						],
@@ -792,7 +827,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjY2NmM2ZDMyMjNiZmNkOTc2ODQ4YTA1NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE4NjMxNjk2LCJleHAiOjE3MTg2MzUyOTZ9.ggHUQCvDgZXUMXfcDmFy3ZTKk0UeRimgowC4wNXrEEs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
 								"type": "text"
 							}
 						],
@@ -816,7 +851,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjY2NmM2ZDMyMjNiZmNkOTc2ODQ4YTA1NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE4NjMxNjk2LCJleHAiOjE3MTg2MzUyOTZ9.ggHUQCvDgZXUMXfcDmFy3ZTKk0UeRimgowC4wNXrEEs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
 								"type": "text"
 							}
 						],
@@ -847,7 +882,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
 								"type": "text"
 							}
 						],
@@ -929,7 +964,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZWVkIjoiZm9yZ290UGFzc3dvcmQiLCJpYXQiOjE3MTg1MjMwMzQsImV4cCI6MTcxODUyNjYzNH0.Bp5xAo1rRRtC7tLVuPu39Rh_cqPaipMfRvxIxEFRhZU",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
 								"type": "text"
 							}
 						],
@@ -1001,7 +1036,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0NTE5OTgsImV4cCI6MTcxODQ1NTU5OH0.qjIHF3Gfk_h1wYKl05QRHrMRcpSkp45SIpSjKWN_7uU"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ"
 							}
 						],
 						"url": {
@@ -1222,7 +1257,7 @@
 						"header": [
 							{
 								"key": "x-api-key",
-								"value": "",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjY2NmM2ZDMyMjNiZmNkOTc2ODQ4YTA1NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE4Njg3NTkzLCJleHAiOjE3MTg2OTExOTN9.jUqErdeafrgvhn4LZ1cIUhBG8pbSEUqxHZl9IJkXJ5c",
 								"type": "text"
 							}
 						],
