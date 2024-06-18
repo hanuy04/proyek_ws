@@ -51,8 +51,19 @@ const login = async (req, res) => {
       return res.status(400).json({ message: "User is not registered!" });
     }
 
+    const forgetPasswordToken = jwt.sign(
+      { username: user.username, need: "wrong password" },
+      JWT_KEY,
+      {
+        expiresIn: "3600s",
+      }
+    );
+
     if (user.password != password) {
-      return res.status(400).json({ message: "Wrong password!" });
+      return res.status(400).json({
+        message: "Wrong password!",
+        forget_password: forgetPasswordToken,
+      });
     }
 
     const token = jwt.sign({ username: user.username, role: "user" }, JWT_KEY, {

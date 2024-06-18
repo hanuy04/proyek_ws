@@ -163,10 +163,9 @@ const topUpSchema = Joi.object({
 });
 
 const updatePassSchema = Joi.object({
-  email: Joi.string().email().required().messages({
-    "string.empty": "email is required!",
-    "string.required": "email is required!",
-    "string.email": "email must be a valid email address!",
+  username: Joi.string().required().messages({
+    "string.empty": "username is required!",
+    "string.required": "username is required!",
   }),
   newPassword: Joi.string().min(8).required().messages({
     "string.empty": "password is required!",
@@ -343,18 +342,20 @@ const forgetPassword = async (req, res) => {
     await client.connect();
     const db = client.db("projectWS");
     const userData = req.user;
-    const { email, newPassword } = req.body;
+    const { username, newPassword } = req.body;
 
-    const user = await db.collection("users").findOne({ email: email });
+    const user = await db
+      .collection("users")
+      .findOne({ username: userData.username });
 
-    if (user) {
+    if (userData.username == username) {
       const updatePassword = await db
         .collection("users")
-        .updateOne({ email: email }, { $set: { password: newPassword } });
+        .updateOne({ username: username }, { $set: { password: newPassword } });
 
       return res.status(200).json({ messages: "Berhasil update password" });
     } else {
-      return res.status(400).json({ messages: "Email tidak sesuai" });
+      return res.status(400).json({ messages: "Username tidak sesuai" });
     }
   } catch (dbError) {
     console.error("Database error:", dbError);

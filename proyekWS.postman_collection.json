@@ -7,629 +7,6 @@
 	},
 	"item": [
 		{
-			"name": "PUT",
-			"item": [
-				{
-					"name": "updateGames",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5NDk4LCJleHAiOjE3MTg2OTMwOTh9.g8px98sMQimMGRR-MPfxWMsOiECK9VmsMOWyBGpIiXs"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "long_label",
-									"value": "Doto 2",
-									"type": "text"
-								},
-								{
-									"key": "platforms",
-									"value": "[wargaming_NA]",
-									"type": "text"
-								},
-								{
-									"key": "regions",
-									"value": "[EU]",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "localhost:3000/updateGames/:game_id",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"updateGames",
-								":game_id"
-							],
-							"variable": [
-								{
-									"key": "game_id",
-									"value": "dota2"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "updateTeam",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5NDk4LCJleHAiOjE3MTg2OTMwOTh9.g8px98sMQimMGRR-MPfxWMsOiECK9VmsMOWyBGpIiXs",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "name",
-									"value": "Infamousy",
-									"type": "text"
-								},
-								{
-									"key": "game",
-									"value": "dota2",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "localhost:3000/updateTeam/:team_id",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"updateTeam",
-								":team_id"
-							],
-							"variable": [
-								{
-									"key": "team_id",
-									"value": "05c32132-deef-4521-b520-921d1a32c74f"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "updateTicket",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5NDk4LCJleHAiOjE3MTg2OTMwOTh9.g8px98sMQimMGRR-MPfxWMsOiECK9VmsMOWyBGpIiXs",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "new_name",
-									"value": "Ticket Coba-Cobain",
-									"type": "text"
-								},
-								{
-									"key": "amount",
-									"value": "90",
-									"type": "text"
-								},
-								{
-									"key": "price",
-									"value": "5000",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "localhost:3000/updateTicket/:name",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"updateTicket",
-								":name"
-							],
-							"variable": [
-								{
-									"key": "name",
-									"value": "Ticket Coba-Coba"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "updateMatch",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/updateGame",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"updateGame"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "blockUser",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5NDk4LCJleHAiOjE3MTg2OTMwOTh9.g8px98sMQimMGRR-MPfxWMsOiECK9VmsMOWyBGpIiXs"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "Golden_Walter",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "localhost:3000/blockUser",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"blockUser"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "updateProfile",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTgzODMyMzQsImV4cCI6MTcxODM4NjgzNH0.U_E17DG8H1O9o3WLt6AZLsmK6dm8ypDsd_qaZxAbBBs"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "new_username",
-									"value": "hanvy04",
-									"type": "text"
-								},
-								{
-									"key": "new_password",
-									"value": "Magic4you_",
-									"type": "text"
-								},
-								{
-									"key": "new_email",
-									"value": "hanvy04@gmail.com",
-									"type": "text"
-								},
-								{
-									"key": "new_date_of_birth",
-									"value": "11/05/2004",
-									"type": "text"
-								},
-								{
-									"key": "new_nomor_telepon",
-									"value": "081217771105",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "localhost:3000/updateProfile/:username",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"updateProfile",
-								":username"
-							],
-							"query": [
-								{
-									"key": "username",
-									"value": null,
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "username",
-									"value": "hanvy04"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "DELETE",
-			"item": [
-				{
-					"name": "deleteGames",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5ODk3LCJleHAiOjE3MTg2OTM0OTd9.bPl6RA8LI60mpTR8Bie09ZltYtoh5q7k40OCvf1dd38",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/deleteGames/:game_id",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"deleteGames",
-								":game_id"
-							],
-							"variable": [
-								{
-									"key": "game_id",
-									"value": "wot_RU"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "deleteTeam",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5ODk3LCJleHAiOjE3MTg2OTM0OTd9.bPl6RA8LI60mpTR8Bie09ZltYtoh5q7k40OCvf1dd38",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/deleteTeam/:team_id",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"deleteTeam",
-								":team_id"
-							],
-							"variable": [
-								{
-									"key": "team_id",
-									"value": "05f78dd0-c9ba-4ae3-bc35-89a510a7b0f4"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "deleteTicket",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5ODk3LCJleHAiOjE3MTg2OTM0OTd9.bPl6RA8LI60mpTR8Bie09ZltYtoh5q7k40OCvf1dd38",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/deleteTicket/:name",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"deleteTicket",
-								":name"
-							],
-							"variable": [
-								{
-									"key": "name",
-									"value": "Tiket Proyek WS"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "deleteMatch",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5ODk3LCJleHAiOjE3MTg2OTM0OTd9.bPl6RA8LI60mpTR8Bie09ZltYtoh5q7k40OCvf1dd38"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/deleteMatches/:match_id",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"deleteMatches",
-								":match_id"
-							],
-							"variable": [
-								{
-									"key": "match_id",
-									"value": "1-c76374bb-30b6-485c-b968-e4481f510001"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "ADD",
-			"item": [
-				{
-					"name": "addGame",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
-							},
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzM3NDc0LCJleHAiOjE3MTgzNDEwNzR9.D1Wye8k0H-XpncisKeQGZJF_BUulcVp_vdPnZLoWC0w"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "admin_username",
-									"value": "Hanvy",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "game_id",
-									"value": "tf2",
-									"type": "text",
-									"disabled": true
-								}
-							]
-						},
-						"url": {
-							"raw": "localhost:3000/addGame/:game_id",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"addGame",
-								":game_id"
-							],
-							"variable": [
-								{
-									"key": "game_id",
-									"value": "wot_NA"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "addTicket",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzQ4NDIyLCJleHAiOjE3MTgzNTIwMjJ9.s76IhyVI93-vVzOyYlLNciWJnSqBtn-yq5ltB8DA_PM"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "name",
-									"value": "Tiket Surrender",
-									"type": "text"
-								},
-								{
-									"key": "amount",
-									"value": "60",
-									"type": "text"
-								},
-								{
-									"key": "price",
-									"value": "75000",
-									"type": "text"
-								},
-								{
-									"key": "match_id",
-									"value": "1-c76374bb-30b6-485c-b968-e4481f510001",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "localhost:3000/addTicket",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"addTicket"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "addTeam",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
-							},
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzU0MDYxLCJleHAiOjE3MTgzNTc2NjF9.Tf0VlYohMR10BURhni0kgUeVjURY8dPS1d1TWTen2dU"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": []
-						},
-						"url": {
-							"raw": "localhost:3000/addTeam?nickname=cloud 9&game=csgo",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"addTeam"
-							],
-							"query": [
-								{
-									"key": "nickname",
-									"value": "cloud 9"
-								},
-								{
-									"key": "game",
-									"value": "csgo"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "addMatches",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
-							},
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzM3NDc0LCJleHAiOjE3MTgzNDEwNzR9.D1Wye8k0H-XpncisKeQGZJF_BUulcVp_vdPnZLoWC0w"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/addMatches?hub_name=KOSLEP Hub 2v2&game=csgo",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"addMatches"
-							],
-							"query": [
-								{
-									"key": "hub_name",
-									"value": "KOSLEP Hub 2v2"
-								},
-								{
-									"key": "game",
-									"value": "csgo"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "addFavTeam",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjY2NmM2ZDMyMjNiZmNkOTc2ODQ4YTA1NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE4NjMxNjk2LCJleHAiOjE3MTg2MzUyOTZ9.ggHUQCvDgZXUMXfcDmFy3ZTKk0UeRimgowC4wNXrEEs",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/favTeams/:team_id",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"favTeams",
-								":team_id"
-							],
-							"variable": [
-								{
-									"key": "team_id",
-									"value": "026f8240-e700-4e91-a711-38c018718b49"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "login",
 			"item": [
 				{
@@ -642,12 +19,12 @@
 							"urlencoded": [
 								{
 									"key": "username",
-									"value": "Bailey60",
+									"value": "Mireya.Wehner18",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "123",
+									"value": "siwalankerto123",
 									"type": "text"
 								}
 							]
@@ -660,240 +37,6 @@
 							"port": "3000",
 							"path": [
 								"login"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "GET",
-			"item": [
-				{
-					"name": "getGames",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/getGames",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"getGames"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "see Ticket",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": []
-						},
-						"url": {
-							"raw": "localhost:3000/seeTickets",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"seeTickets"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getPlatforms",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/getPlatforms",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"getPlatforms"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getRegions",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/getRegions",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"getRegions"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get Detail Game",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/getGames/:game_id",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"getGames",
-								":game_id"
-							],
-							"variable": [
-								{
-									"key": "game_id",
-									"value": "csgo"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get Matches",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/getMatches",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"getMatches"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get Detail Match",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/getDetailMatch/:match_id",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"getDetailMatch",
-								":match_id"
-							],
-							"variable": [
-								{
-									"key": "match_id",
-									"value": "1-994c1244-e918-44c7-b717-e225450ef560"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get Teams",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/getTeams",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"getTeams"
 							]
 						}
 					},
@@ -958,321 +101,601 @@
 			"name": "User",
 			"item": [
 				{
-					"name": "topup",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "saldo",
-									"value": "1000000",
-									"type": "text"
+					"name": "GET",
+					"item": [
+						{
+							"name": "getGames",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/getGames",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getGames"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:3000/topUpSaldo",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"topUpSaldo"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "forget password",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwiaWF0IjoxNzE4NDM4NzMyLCJleHAiOjE3MTg0NDIzMzJ9.xJWuo4a8yS8_0EhL3OAKclN93mWYpTFmq9Jw_coOCvk"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "email",
-									"value": "joe@gmail.com",
-									"type": "text"
+						{
+							"name": "see Ticket",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
 								},
-								{
-									"key": "newPassword",
-									"value": "Kacawmen",
-									"type": "text"
+								"url": {
+									"raw": "localhost:3000/seeTickets",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"seeTickets"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:3000/forgetPassword",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"forgetPassword"
-							]
+						{
+							"name": "getPlatforms",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/getPlatforms",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getPlatforms"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getRegions",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/getRegions",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getRegions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Detail Game",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/getGames/:game_id",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getGames",
+										":game_id"
+									],
+									"variable": [
+										{
+											"key": "game_id",
+											"value": "csgo"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Matches",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/getMatches",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getMatches"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Detail Match",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/getDetailMatch/:match_id",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getDetailMatch",
+										":match_id"
+									],
+									"variable": [
+										{
+											"key": "match_id",
+											"value": "1-994c1244-e918-44c7-b717-e225450ef560"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Teams",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/getTeams",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getTeams"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get UsersTicket",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg1MjMzMzUsImV4cCI6MTcxODUyNjkzNX0.WXYpYDvwg4t65YpRJYb95N2Qioe18pjDFK6Af1io2GA",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/getUserTickets",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getUserTickets"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "buy Api Hit",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/buyApiHit",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"buyApiHit"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "upload photo",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0NDQ1MDksImV4cCI6MTcxODQ0ODEwOX0.5M5PPW8hgusfmHas09YSDMymtAMnY8kbRHpSA_0anv0"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "nama",
-									"value": "test",
-									"type": "text",
-									"disabled": true
+					"name": "POST",
+					"item": [
+						{
+							"name": "topup",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "saldo",
+											"value": "1000000",
+											"type": "text"
+										}
+									]
 								},
-								{
-									"key": "file",
-									"type": "file",
-									"src": "/C:/Users/DESKTOP/Downloads/DragonBall.jpg"
+								"url": {
+									"raw": "localhost:3000/topUpSaldo",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"topUpSaldo"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:3000/addPhotoProfile",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"addPhotoProfile"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update Photo",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0NDU0MzUsImV4cCI6MTcxODQ0OTAzNX0.pLXL2K8L0xljVuHh2Le6qYkiAREfSVx7szDv0UHWEfE"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "file",
-									"type": "file",
-									"src": "/C:/Users/DESKTOP/Downloads/DragonBall.jpg"
+						{
+							"name": "buy Api Hit",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZTAwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2ODgwODEsImV4cCI6MTcxODY5MTY4MX0.qmUSaTmQlYISRjKfyCA643jJqtDimgWpXSqoW0--ulQ"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/buyApiHit",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"buyApiHit"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:3000/updatePhotoProfile",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"updatePhotoProfile"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "buy Ticket",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg1MjMzMzUsImV4cCI6MTcxODUyNjkzNX0.WXYpYDvwg4t65YpRJYb95N2Qioe18pjDFK6Af1io2GA",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "ticket",
-									"value": "Tiket Ada Dong",
-									"type": "text"
+						{
+							"name": "upload photo",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJyb2xlIjoidXNlciIsImlhdCI6MTcxODcwMDI1OSwiZXhwIjoxNzE4NzAzODU5fQ.AIqiEm4Ys2HLqr0p3bTSeowdU5vVpuSfxk08SeCHi9E"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nama",
+											"value": "test",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/Hanvy/Downloads/d24bbe79387549086d159aa4462bf4c9 (1).jpg"
+										}
+									]
 								},
-								{
-									"key": "amount",
-									"value": "2",
-									"type": "text"
+								"url": {
+									"raw": "localhost:3000/addPhotoProfile",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"addPhotoProfile"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:3000/buyTicket",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"buyTicket"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "cancel Ticket",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0NjE3MjgsImV4cCI6MTcxODQ2NTMyOH0.cq-n27gweh_eZRm1U1_L1PeaDoEPYw3YSCAA7oca1FM",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "ticket",
-									"value": "Tiket Coba-Coba",
-									"type": "text"
+						{
+							"name": "buy Ticket",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg1MjMzMzUsImV4cCI6MTcxODUyNjkzNX0.WXYpYDvwg4t65YpRJYb95N2Qioe18pjDFK6Af1io2GA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ticket",
+											"value": "Tiket Ada Dong",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "2",
+											"type": "text"
+										}
+									]
 								},
-								{
-									"key": "amount",
-									"value": "3",
-									"type": "text"
+								"url": {
+									"raw": "localhost:3000/buyTicket",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"buyTicket"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:3000/cancelTicket",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"cancelTicket"
-							]
+						{
+							"name": "addFavTeam",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjY2NmM2ZDMyMjNiZmNkOTc2ODQ4YTA1NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE4NjMxNjk2LCJleHAiOjE3MTg2MzUyOTZ9.ggHUQCvDgZXUMXfcDmFy3ZTKk0UeRimgowC4wNXrEEs",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/favTeams/:team_id",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"favTeams",
+										":team_id"
+									],
+									"variable": [
+										{
+											"key": "team_id",
+											"value": "026f8240-e700-4e91-a711-38c018718b49"
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "get UsersTicket",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg1MjMzMzUsImV4cCI6MTcxODUyNjkzNX0.WXYpYDvwg4t65YpRJYb95N2Qioe18pjDFK6Af1io2GA",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/getUserTickets",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"getUserTickets"
-							]
+					"name": "PUT",
+					"item": [
+						{
+							"name": "forget password",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1pcmV5YS5XZWhuZXIxOCIsIm5lZWQiOiJ3cm9uZyBwYXNzd29yZCIsImlhdCI6MTcxODcxMTgyOCwiZXhwIjoxNzE4NzE1NDI4fQ.wfrsPJJcQjJrLSOGHgkXXjRA2BDtpJ9WLykE2YrAIYQ"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "Mireya.Wehner18",
+											"type": "text"
+										},
+										{
+											"key": "newPassword",
+											"value": "1234567890",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/forgotPassword",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"forgotPassword"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update Photo",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJyb2xlIjoidXNlciIsImlhdCI6MTcxODcwMDI1OSwiZXhwIjoxNzE4NzAzODU5fQ.AIqiEm4Ys2HLqr0p3bTSeowdU5vVpuSfxk08SeCHi9E"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/Hanvy/Downloads/d24bbe79387549086d159aa4462bf4c9 (1).jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/updatePhotoProfile",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"updatePhotoProfile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkVhcmwuTGl0dGVsMjkiLCJyb2xlIjoidXNlciIsImlhdCI6MTcxODYzNDMyNCwiZXhwIjoxNzE4NjM3OTI0fQ.ABFX30-0jOFr2JTOJ8wkDpz_whLux-9yNsDNNEFgV68",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/deleteUsers",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"deleteUsers"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Delete User",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkVhcmwuTGl0dGVsMjkiLCJyb2xlIjoidXNlciIsImlhdCI6MTcxODYzNDMyNCwiZXhwIjoxNzE4NjM3OTI0fQ.ABFX30-0jOFr2JTOJ8wkDpz_whLux-9yNsDNNEFgV68",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/deleteUsers",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"deleteUsers"
-							]
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "cancel Ticket",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg0NjE3MjgsImV4cCI6MTcxODQ2NTMyOH0.cq-n27gweh_eZRm1U1_L1PeaDoEPYw3YSCAA7oca1FM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ticket",
+											"value": "Tiket Coba-Coba",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/cancelTicket",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cancelTicket"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deletePhotoProfile",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjY2NmM2ZDMyMjNiZmNkOTc2ODQ4YTA1NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE4Njg3NTkzLCJleHAiOjE3MTg2OTExOTN9.jUqErdeafrgvhn4LZ1cIUhBG8pbSEUqxHZl9IJkXJ5c",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/deletePhotoProfile",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"deletePhotoProfile"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "deletePhotoProfile",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjY2NmM2ZDMyMjNiZmNkOTc2ODQ4YTA1NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE4Njg3NTkzLCJleHAiOjE3MTg2OTExOTN9.jUqErdeafrgvhn4LZ1cIUhBG8pbSEUqxHZl9IJkXJ5c",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/deletePhotoProfile",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"deletePhotoProfile"
-							]
-						}
-					},
-					"response": []
+					]
 				}
 			]
 		},
@@ -1280,157 +703,736 @@
 			"name": "Admin",
 			"item": [
 				{
-					"name": "get all user invoice",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg1MjQyMTgsImV4cCI6MTcxODUyNzgxOH0.C4B64chpio52ZdPv3zDry6TNbhpL6I0J8g_fXGYqiIw",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/getInvoice",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"getInvoice"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get 1 user invoice",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4NTI0NTc5LCJleHAiOjE3MTg1MjgxNzl9.pLyJIvCnabS5UjDrTFvhcW0Bur6r9j4CeduFJm-dQY8",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/getInvoice/joe00",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"getInvoice",
-								"joe00"
-							],
-							"query": [
-								{
-									"key": "x",
-									"value": null,
-									"disabled": true
+					"name": "PUT",
+					"item": [
+						{
+							"name": "updateGames",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5NDk4LCJleHAiOjE3MTg2OTMwOTh9.g8px98sMQimMGRR-MPfxWMsOiECK9VmsMOWyBGpIiXs"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "long_label",
+											"value": "Doto 2",
+											"type": "text"
+										},
+										{
+											"key": "platforms",
+											"value": "[wargaming_NA]",
+											"type": "text"
+										},
+										{
+											"key": "regions",
+											"value": "[EU]",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/updateGames/:game_id",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"updateGames",
+										":game_id"
+									],
+									"variable": [
+										{
+											"key": "game_id",
+											"value": "dota2"
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "updateTeam",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5NDk4LCJleHAiOjE3MTg2OTMwOTh9.g8px98sMQimMGRR-MPfxWMsOiECK9VmsMOWyBGpIiXs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Infamousy",
+											"type": "text"
+										},
+										{
+											"key": "game",
+											"value": "dota2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/updateTeam/:team_id",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"updateTeam",
+										":team_id"
+									],
+									"variable": [
+										{
+											"key": "team_id",
+											"value": "05c32132-deef-4521-b520-921d1a32c74f"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateTicket",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5NDk4LCJleHAiOjE3MTg2OTMwOTh9.g8px98sMQimMGRR-MPfxWMsOiECK9VmsMOWyBGpIiXs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "new_name",
+											"value": "Ticket Coba-Cobain",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "90",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "5000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/updateTicket/:name",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"updateTicket",
+										":name"
+									],
+									"variable": [
+										{
+											"key": "name",
+											"value": "Ticket Coba-Coba"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "blockUser",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5NDk4LCJleHAiOjE3MTg2OTMwOTh9.g8px98sMQimMGRR-MPfxWMsOiECK9VmsMOWyBGpIiXs"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "Golden_Walter",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/blockUser",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"blockUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateProfile",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJyb2xlIjoidXNlciIsImlhdCI6MTcxODY4OTg0OCwiZXhwIjoxNzE4NjkzNDQ4fQ.uB9yOOLFjLuZvjiLxwwxIDA0CRJZP5ULQb9_O7WZKT0"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "new_username",
+											"value": "hanvy04",
+											"type": "text"
+										},
+										{
+											"key": "new_password",
+											"value": "siwalankerto123",
+											"type": "text"
+										},
+										{
+											"key": "new_email",
+											"value": "hanvy04@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "new_date_of_birth",
+											"value": "11/05/2004",
+											"type": "text"
+										},
+										{
+											"key": "new_nomor_telepon",
+											"value": "081217771105",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/updateProfile/:username",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"updateProfile",
+										":username"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "hanvy04"
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "get all user transaction",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4NTI0NTc5LCJleHAiOjE3MTg1MjgxNzl9.pLyJIvCnabS5UjDrTFvhcW0Bur6r9j4CeduFJm-dQY8",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/getTransaction",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"getTransaction"
-							]
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "deleteGames",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5ODk3LCJleHAiOjE3MTg2OTM0OTd9.bPl6RA8LI60mpTR8Bie09ZltYtoh5q7k40OCvf1dd38",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/deleteGames/:game_id",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"deleteGames",
+										":game_id"
+									],
+									"variable": [
+										{
+											"key": "game_id",
+											"value": "wot_RU"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteTeam",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5ODk3LCJleHAiOjE3MTg2OTM0OTd9.bPl6RA8LI60mpTR8Bie09ZltYtoh5q7k40OCvf1dd38",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/deleteTeam/:team_id",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"deleteTeam",
+										":team_id"
+									],
+									"variable": [
+										{
+											"key": "team_id",
+											"value": "05f78dd0-c9ba-4ae3-bc35-89a510a7b0f4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteTicket",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5ODk3LCJleHAiOjE3MTg2OTM0OTd9.bPl6RA8LI60mpTR8Bie09ZltYtoh5q7k40OCvf1dd38",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/deleteTicket/:name",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"deleteTicket",
+										":name"
+									],
+									"variable": [
+										{
+											"key": "name",
+											"value": "Tiket Proyek WS"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteMatch",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4Njg5ODk3LCJleHAiOjE3MTg2OTM0OTd9.bPl6RA8LI60mpTR8Bie09ZltYtoh5q7k40OCvf1dd38"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/deleteMatches/:match_id",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"deleteMatches",
+										":match_id"
+									],
+									"variable": [
+										{
+											"key": "match_id",
+											"value": "1-c76374bb-30b6-485c-b968-e4481f510001"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/deleteUser",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"deleteUser"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "get 1 user transaction",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4NTI0ODk2LCJleHAiOjE3MTg1Mjg0OTZ9.xH1GFITQ8NHk3EETU7sUZ0dY4FHqvgtEdSUTnmZ9irk",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/getTransaction/hanvy04",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"getTransaction",
-								"hanvy04"
-							]
+					"name": "GET",
+					"item": [
+						{
+							"name": "get all user invoice",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbnZ5MDQiLCJpYXQiOjE3MTg1MjQyMTgsImV4cCI6MTcxODUyNzgxOH0.C4B64chpio52ZdPv3zDry6TNbhpL6I0J8g_fXGYqiIw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/getInvoice",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getInvoice"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get 1 user invoice",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4NTI0NTc5LCJleHAiOjE3MTg1MjgxNzl9.pLyJIvCnabS5UjDrTFvhcW0Bur6r9j4CeduFJm-dQY8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/getInvoice/joe00",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getInvoice",
+										"joe00"
+									],
+									"query": [
+										{
+											"key": "x",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all user transaction",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4NTI0NTc5LCJleHAiOjE3MTg1MjgxNzl9.pLyJIvCnabS5UjDrTFvhcW0Bur6r9j4CeduFJm-dQY8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/getTransaction",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getTransaction"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get 1 user transaction",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4NTI0ODk2LCJleHAiOjE3MTg1Mjg0OTZ9.xH1GFITQ8NHk3EETU7sUZ0dY4FHqvgtEdSUTnmZ9irk",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/getTransaction/hanvy04",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getTransaction",
+										"hanvy04"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All User",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NjM0MTEyLCJleHAiOjE3MTg2Mzc3MTJ9.3GbmakpH3KxV2jvEpGPGCy7tPLysxFMn_zr4kfSf13I",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/getAllUser",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getAllUser"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Delete User",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/deleteUser",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"deleteUser"
-							]
+					"name": "POST",
+					"item": [
+						{
+							"name": "addGame",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
+									},
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzM3NDc0LCJleHAiOjE3MTgzNDEwNzR9.D1Wye8k0H-XpncisKeQGZJF_BUulcVp_vdPnZLoWC0w"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "admin_username",
+											"value": "Hanvy",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "game_id",
+											"value": "tf2",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/addGame/:game_id",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"addGame",
+										":game_id"
+									],
+									"variable": [
+										{
+											"key": "game_id",
+											"value": "wot_NA"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addTicket",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzQ4NDIyLCJleHAiOjE3MTgzNTIwMjJ9.s76IhyVI93-vVzOyYlLNciWJnSqBtn-yq5ltB8DA_PM"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Tiket Surrender",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "60",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "75000",
+											"type": "text"
+										},
+										{
+											"key": "match_id",
+											"value": "1-c76374bb-30b6-485c-b968-e4481f510001",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/addTicket",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"addTicket"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addTeam",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
+									},
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzU0MDYxLCJleHAiOjE3MTgzNTc2NjF9.Tf0VlYohMR10BURhni0kgUeVjURY8dPS1d1TWTen2dU"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:3000/addTeam?nickname=cloud 9&game=csgo",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"addTeam"
+									],
+									"query": [
+										{
+											"key": "nickname",
+											"value": "cloud 9"
+										},
+										{
+											"key": "game",
+											"value": "csgo"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addMatches",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
+									},
+									{
+										"key": "x-api-key",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzM3NDc0LCJleHAiOjE3MTgzNDEwNzR9.D1Wye8k0H-XpncisKeQGZJF_BUulcVp_vdPnZLoWC0w"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/addMatches?hub_name=KOSLEP Hub 2v2&game=csgo",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"addMatches"
+									],
+									"query": [
+										{
+											"key": "hub_name",
+											"value": "KOSLEP Hub 2v2"
+										},
+										{
+											"key": "game",
+											"value": "csgo"
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All User",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NjM0MTEyLCJleHAiOjE3MTg2Mzc3MTJ9.3GbmakpH3KxV2jvEpGPGCy7tPLysxFMn_zr4kfSf13I",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/getAllUser",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"getAllUser"
-							]
-						}
-					},
-					"response": []
+					]
 				}
 			]
 		}
