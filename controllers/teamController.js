@@ -148,6 +148,17 @@ const getTeam = async (req, res) => {
     await client.connect();
     const db = client.db("projectWS");
 
+    const userData = req.user;
+    const user = await db
+      .collection("users")
+      .findOne({ username: userData.username });
+
+    const sisaAPI = parseInt(user.api_hit) - 2;
+
+    await db
+      .collection("users")
+      .updateOne({ username: user.username }, { $set: { api_hit: sisaAPI } });
+
     const teams = await db.collection("teams").find().toArray();
 
     if (!teams) {
@@ -179,6 +190,17 @@ const favTeam = async (req, res) => {
     if (!team) {
       return res.status(404).json({ error: "Team not found" });
     }
+
+    const userData = req.user;
+    const user = await db
+      .collection("users")
+      .findOne({ username: userData.username });
+
+    const sisaAPI = parseInt(user.api_hit) - 2;
+
+    await db
+      .collection("users")
+      .updateOne({ username: user.username }, { $set: { api_hit: sisaAPI } });
 
     const favorites = await db
       .collection("favorites")
