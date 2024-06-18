@@ -32,9 +32,13 @@ const login = async (req, res) => {
         return res.status(400).json({ message: "Wrong password!" });
       }
 
-      const token = jwt.sign({ username: admin._id, role: "admin" }, JWT_KEY, {
-        expiresIn: "3600s",
-      });
+      const token = jwt.sign(
+        { username: admin.username, role: "admin" },
+        JWT_KEY,
+        {
+          expiresIn: "3600s",
+        }
+      );
 
       return res.status(200).json({
         message: "Login admin success",
@@ -51,7 +55,7 @@ const login = async (req, res) => {
       return res.status(400).json({ message: "Wrong password!" });
     }
 
-    const token = jwt.sign({ username: user._id, role: "user" }, JWT_KEY, {
+    const token = jwt.sign({ username: user.username, role: "user" }, JWT_KEY, {
       expiresIn: "3600s",
     });
 
