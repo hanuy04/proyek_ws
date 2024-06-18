@@ -94,7 +94,7 @@ const deleteMatches = async (req, res) => {
     const match_id = req.params.match_id;
 
     if (!match_id || match_id == "") {
-      return res.status(400).json({ error: "Match ID is required" });
+      return res.status(400).json({ message: "Match ID is required" });
     }
 
     // Cari pertandingan dengan match_id yang sesuai
@@ -103,7 +103,7 @@ const deleteMatches = async (req, res) => {
       .findOne({ match_id: match_id });
 
     if (!match) {
-      return res.status(404).json({ error: "Match not found" });
+      return res.status(404).json({ message: "Match not found" });
     }
 
     // Hapus pertandingan dari database
@@ -112,7 +112,7 @@ const deleteMatches = async (req, res) => {
       .deleteOne({ match_id: match_id });
 
     if (deleteResult.deletedCount === 0) {
-      return res.status(404).json({ error: "Failed to delete match" });
+      return res.status(404).json({ message: "Failed to delete match" });
     }
 
     return res.status(200).json({ message: "Match deleted successfully" });

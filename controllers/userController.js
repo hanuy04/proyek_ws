@@ -228,6 +228,7 @@ const register = async (req, res) => {
 
 const updateProfile = async (req, res) => {
   const { error } = updateProfileSchema.validate(req.body);
+  const userData = req.user;
 
   if (error) {
     return res.status(400).json({ message: error.details[0].message });
@@ -250,7 +251,13 @@ const updateProfile = async (req, res) => {
       return res.status(400).json({ message: "Username is required!" });
     }
 
-    const user = await db.collection("users").findOne({ username: username });
+    if (userData.username != username) {
+      return res.status(400).json({ message: "User's not found!" });
+    }
+
+    const user = await db
+      .collection("users")
+      .findOne({ username: userData.username });
 
     if (!user) {
       return res.status(400).json({ message: "User's not found!" });
