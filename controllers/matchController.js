@@ -78,7 +78,7 @@ const addMatches = async (req, res) => {
       }
     } catch (error) {
       console.error("Error fetching data:", error.message);
-      return res.status(500).json({ error: error.message });
+      return res.status(500).json({ message: "Hub or game not found" });
     }
   } catch (error) {
     console.error("Error fetching data:", error.message);

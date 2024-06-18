@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "078c61c8-34bc-44a8-8c32-62dc14b6827e",
+		"_postman_id": "e7a0be43-255e-48a2-8c39-43db8c14b376",
 		"name": "proyekWS",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "32822714"
+		"description": "### **Selamat Datang di Proyek Web Service kelompok kami, untuk 3rd Party API kelompok kami menggunakan Faceit. Faceit menyediakan games, teams, matches, hubs, dan lain-lain. Konsepnya disini user dapat membeli tiket pertandingan yang telah disediakan. Selamat membaca!**",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32821701"
 	},
 	"item": [
 		{
@@ -19,17 +20,27 @@
 							"urlencoded": [
 								{
 									"key": "username",
-									"value": "Jopay",
+									"value": "Bailey60",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "Kamuganteng",
+									"value": "123",
 									"type": "text"
 								}
 							]
 						},
-						"url": "localhost:3000/login"
+						"url": {
+							"raw": "localhost:3000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						},
+						"description": "Ini adalah endpoint untuk Login"
 					},
 					"response": [
 						{
@@ -52,7 +63,16 @@
 										}
 									]
 								},
-								"url": "localhost:3000/login"
+								"url": {
+									"raw": "localhost:3000/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"login"
+									]
+								}
 							},
 							"status": "Bad Request",
 							"code": 400,
@@ -110,7 +130,16 @@
 										}
 									]
 								},
-								"url": "localhost:3000/login"
+								"url": {
+									"raw": "localhost:3000/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"login"
+									]
+								}
 							},
 							"status": "OK",
 							"code": 200,
@@ -168,7 +197,16 @@
 										}
 									]
 								},
-								"url": "localhost:3000/login"
+								"url": {
+									"raw": "localhost:3000/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"login"
+									]
+								}
 							},
 							"status": "Bad Request",
 							"code": 400,
@@ -226,7 +264,16 @@
 										}
 									]
 								},
-								"url": "localhost:3000/login"
+								"url": {
+									"raw": "localhost:3000/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"login"
+									]
+								}
 							},
 							"status": "OK",
 							"code": 200,
@@ -284,7 +331,16 @@
 										}
 									]
 								},
-								"url": "localhost:3000/login"
+								"url": {
+									"raw": "localhost:3000/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"login"
+									]
+								}
 							},
 							"status": "Bad Request",
 							"code": 400,
@@ -324,7 +380,8 @@
 						}
 					]
 				}
-			]
+			],
+			"description": "Ini adalah folder untuk endpoint Login"
 		},
 		{
 			"name": "register",
@@ -364,7 +421,17 @@
 								}
 							]
 						},
-						"url": "localhost:3000/register"
+						"url": {
+							"raw": "localhost:3000/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"register"
+							]
+						},
+						"description": "Ini adalah endpoint untuk Register"
 					},
 					"response": [
 						{
@@ -402,7 +469,16 @@
 										}
 									]
 								},
-								"url": "localhost:3000/register"
+								"url": {
+									"raw": "localhost:3000/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"register"
+									]
+								}
 							},
 							"status": "Bad Request",
 							"code": 400,
@@ -475,7 +551,16 @@
 										}
 									]
 								},
-								"url": "localhost:3000/register"
+								"url": {
+									"raw": "localhost:3000/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"register"
+									]
+								}
 							},
 							"status": "Bad Request",
 							"code": 400,
@@ -548,7 +633,16 @@
 										}
 									]
 								},
-								"url": "localhost:3000/register"
+								"url": {
+									"raw": "localhost:3000/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"register"
+									]
+								}
 							},
 							"status": "Bad Request",
 							"code": 400,
@@ -621,7 +715,16 @@
 										}
 									]
 								},
-								"url": "localhost:3000/register"
+								"url": {
+									"raw": "localhost:3000/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"register"
+									]
+								}
 							},
 							"status": "Bad Request",
 							"code": 400,
@@ -694,7 +797,16 @@
 										}
 									]
 								},
-								"url": "localhost:3000/register"
+								"url": {
+									"raw": "localhost:3000/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"register"
+									]
+								}
 							},
 							"status": "Bad Request",
 							"code": 400,
@@ -767,7 +879,16 @@
 										}
 									]
 								},
-								"url": "localhost:3000/register"
+								"url": {
+									"raw": "localhost:3000/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"register"
+									]
+								}
 							},
 							"status": "Bad Request",
 							"code": 400,
@@ -840,7 +961,16 @@
 										}
 									]
 								},
-								"url": "localhost:3000/register"
+								"url": {
+									"raw": "localhost:3000/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"register"
+									]
+								}
 							},
 							"status": "Bad Request",
 							"code": 400,
@@ -913,7 +1043,16 @@
 										}
 									]
 								},
-								"url": "localhost:3000/register"
+								"url": {
+									"raw": "localhost:3000/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"register"
+									]
+								}
 							},
 							"status": "Bad Request",
 							"code": 400,
@@ -986,7 +1125,16 @@
 										}
 									]
 								},
-								"url": "localhost:3000/register"
+								"url": {
+									"raw": "localhost:3000/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"register"
+									]
+								}
 							},
 							"status": "Bad Request",
 							"code": 400,
@@ -1059,7 +1207,16 @@
 										}
 									]
 								},
-								"url": "localhost:3000/register"
+								"url": {
+									"raw": "localhost:3000/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"register"
+									]
+								}
 							},
 							"status": "Bad Request",
 							"code": 400,
@@ -1132,7 +1289,16 @@
 										}
 									]
 								},
-								"url": "localhost:3000/register"
+								"url": {
+									"raw": "localhost:3000/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"register"
+									]
+								}
 							},
 							"status": "Created",
 							"code": 201,
@@ -1172,7 +1338,8 @@
 						}
 					]
 				}
-			]
+			],
+			"description": "Ini adalah folder untuk endpoint Register"
 		},
 		{
 			"name": "User",
@@ -1198,7 +1365,17 @@
 									"mode": "urlencoded",
 									"urlencoded": []
 								},
-								"url": "localhost:3000/getGames"
+								"url": {
+									"raw": "localhost:3000/getGames",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getGames"
+									]
+								},
+								"description": "Ini adalah endpoint untuk mendapatkan semua game yang ada di database"
 							},
 							"response": [
 								{
@@ -1212,7 +1389,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getGames"
+										"url": {
+											"raw": "localhost:3000/getGames",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getGames"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -1261,7 +1447,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getGames"
+										"url": {
+											"raw": "localhost:3000/getGames",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getGames"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -1310,7 +1505,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getGames"
+										"url": {
+											"raw": "localhost:3000/getGames",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getGames"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -1368,7 +1572,17 @@
 									"mode": "urlencoded",
 									"urlencoded": []
 								},
-								"url": "localhost:3000/seeTickets"
+								"url": {
+									"raw": "localhost:3000/seeTickets",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"seeTickets"
+									]
+								},
+								"description": "Ini adalah endpoint untuk mendapatkan semua ticket yang ada di database"
 							},
 							"response": [
 								{
@@ -1382,7 +1596,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/seeTickets"
+										"url": {
+											"raw": "localhost:3000/seeTickets",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"seeTickets"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -1431,7 +1654,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/seeTickets"
+										"url": {
+											"raw": "localhost:3000/seeTickets",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"seeTickets"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -1480,7 +1712,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/seeTickets"
+										"url": {
+											"raw": "localhost:3000/seeTickets",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"seeTickets"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -1542,7 +1783,17 @@
 										"type": "text"
 									}
 								],
-								"url": "localhost:3000/getPlatforms"
+								"url": {
+									"raw": "localhost:3000/getPlatforms",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getPlatforms"
+									]
+								},
+								"description": "Ini adalah endpoint untuk mendapatkan semua platform yang ada di faceit"
 							},
 							"response": [
 								{
@@ -1567,7 +1818,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getPlatforms"
+										"url": {
+											"raw": "localhost:3000/getPlatforms",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getPlatforms"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -1627,7 +1887,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getPlatforms"
+										"url": {
+											"raw": "localhost:3000/getPlatforms",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getPlatforms"
+											]
+										}
 									},
 									"status": "Internal Server Error",
 									"code": 500,
@@ -1683,7 +1952,17 @@
 										"type": "text"
 									}
 								],
-								"url": "localhost:3000/getRegions"
+								"url": {
+									"raw": "localhost:3000/getRegions",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getRegions"
+									]
+								},
+								"description": "Ini adalah endpoint untuk mendapatkan semua region yang ada di faceit"
 							},
 							"response": [
 								{
@@ -1702,7 +1981,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getRegions"
+										"url": {
+											"raw": "localhost:3000/getRegions",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getRegions"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -1756,7 +2044,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getRegions"
+										"url": {
+											"raw": "localhost:3000/getRegions",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getRegions"
+											]
+										}
 									},
 									"status": "Internal Server Error",
 									"code": 500,
@@ -1823,7 +2120,8 @@
 											"value": "csgo"
 										}
 									]
-								}
+								},
+								"description": "Ini adalah endpoint untuk mendapatkan detail dari sebuah game"
 							},
 							"response": [
 								{
@@ -2099,7 +2397,17 @@
 										"type": "text"
 									}
 								],
-								"url": "localhost:3000/getMatches"
+								"url": {
+									"raw": "localhost:3000/getMatches",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getMatches"
+									]
+								},
+								"description": "Ini adalah endpoint untuk mendapatkan semua match yang ada di database"
 							},
 							"response": [
 								{
@@ -2113,7 +2421,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getMatches"
+										"url": {
+											"raw": "localhost:3000/getMatches",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getMatches"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -2162,7 +2479,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getMatches"
+										"url": {
+											"raw": "localhost:3000/getMatches",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getMatches"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -2211,7 +2537,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getMatches"
+										"url": {
+											"raw": "localhost:3000/getMatches",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getMatches"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -2260,7 +2595,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getMatches"
+										"url": {
+											"raw": "localhost:3000/getMatches",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getMatches"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -2309,7 +2653,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getMatches"
+										"url": {
+											"raw": "localhost:3000/getMatches",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getMatches"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -2376,7 +2729,8 @@
 											"value": "1-994c1244-e918-44c7-b717-e225450ef560"
 										}
 									]
-								}
+								},
+								"description": "Ini adalah endpoint untuk mendapatkan detail dari sebuah match"
 							},
 							"response": [
 								{
@@ -2717,7 +3071,17 @@
 										"type": "text"
 									}
 								],
-								"url": "localhost:3000/getTeams"
+								"url": {
+									"raw": "localhost:3000/getTeams",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getTeams"
+									]
+								},
+								"description": "Ini adalah endpoint untuk mendapatkan semua team yang ada di database"
 							},
 							"response": [
 								{
@@ -2731,7 +3095,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getTeams"
+										"url": {
+											"raw": "localhost:3000/getTeams",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getTeams"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -2780,7 +3153,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getTeams"
+										"url": {
+											"raw": "localhost:3000/getTeams",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getTeams"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -2829,7 +3211,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getTeams"
+										"url": {
+											"raw": "localhost:3000/getTeams",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getTeams"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -2880,7 +3271,17 @@
 										"type": "text"
 									}
 								],
-								"url": "localhost:3000/getUserTickets"
+								"url": {
+									"raw": "localhost:3000/getUserTickets",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getUserTickets"
+									]
+								},
+								"description": "Ini adalah endpoint untuk mendapatkan semua tiket yang dibeli oleh User"
 							},
 							"response": [
 								{
@@ -2894,7 +3295,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getUserTickets"
+										"url": {
+											"raw": "localhost:3000/getUserTickets",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getUserTickets"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -2943,7 +3353,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getUserTickets"
+										"url": {
+											"raw": "localhost:3000/getUserTickets",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getUserTickets"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -2992,7 +3411,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getUserTickets"
+										"url": {
+											"raw": "localhost:3000/getUserTickets",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getUserTickets"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -3032,7 +3460,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Ini adalah endpoint User GET"
 				},
 				{
 					"name": "POST",
@@ -3058,7 +3487,17 @@
 										}
 									]
 								},
-								"url": "localhost:3000/topUpSaldo"
+								"url": {
+									"raw": "localhost:3000/topUpSaldo",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"topUpSaldo"
+									]
+								},
+								"description": "Ini adalah endpoint untuk topup saldo User"
 							},
 							"response": [
 								{
@@ -3082,7 +3521,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/topUpSaldo"
+										"url": {
+											"raw": "localhost:3000/topUpSaldo",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"topUpSaldo"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -3141,7 +3589,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/topUpSaldo"
+										"url": {
+											"raw": "localhost:3000/topUpSaldo",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"topUpSaldo"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -3200,7 +3657,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/topUpSaldo"
+										"url": {
+											"raw": "localhost:3000/topUpSaldo",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"topUpSaldo"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -3259,7 +3725,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/topUpSaldo"
+										"url": {
+											"raw": "localhost:3000/topUpSaldo",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"topUpSaldo"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -3318,7 +3793,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/topUpSaldo"
+										"url": {
+											"raw": "localhost:3000/topUpSaldo",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"topUpSaldo"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -3368,7 +3852,17 @@
 										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvcGF5Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg3MTgzMjIsImV4cCI6MTcxODcyMTkyMn0.wRaA4-7-iMZyK-qAUYli2tmg5cS9AE7K0_EhOMbm_6U"
 									}
 								],
-								"url": "localhost:3000/buyApiHit"
+								"url": {
+									"raw": "localhost:3000/buyApiHit",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"buyApiHit"
+									]
+								},
+								"description": "Ini adalah enpoint untuk membeli api_hit"
 							},
 							"response": [
 								{
@@ -3444,7 +3938,16 @@
 												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvcGF5Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg3MTU3MTgsImV4cCI6MTcxODcxOTMxOH0.GhVK91642-0g2lUcF09QQ3afCb4B_MqHX3LkTPW-oAE"
 											}
 										],
-										"url": "localhost:3000/buyApiHit"
+										"url": {
+											"raw": "localhost:3000/buyApiHit",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"buyApiHit"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -3492,7 +3995,16 @@
 												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvcGF5Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg3MTU3MTgsImV4cCI6MTcxODcxOTMxOH0.GhVK91642-0g2lUcF09QQ3afCb4B_MqHX3LkTPW-oA"
 											}
 										],
-										"url": "localhost:3000/buyApiHit"
+										"url": {
+											"raw": "localhost:3000/buyApiHit",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"buyApiHit"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -3540,7 +4052,16 @@
 												"value": ""
 											}
 										],
-										"url": "localhost:3000/buyApiHit"
+										"url": {
+											"raw": "localhost:3000/buyApiHit",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"buyApiHit"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -3600,7 +4121,17 @@
 										}
 									]
 								},
-								"url": "localhost:3000/addPhotoProfile"
+								"url": {
+									"raw": "localhost:3000/addPhotoProfile",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"addPhotoProfile"
+									]
+								},
+								"description": "Ini adalah endpoint untuk mengupload foto User"
 							},
 							"response": [
 								{
@@ -3623,7 +4154,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/addPhotoProfile"
+										"url": {
+											"raw": "localhost:3000/addPhotoProfile",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addPhotoProfile"
+											]
+										}
 									},
 									"status": "Created",
 									"code": 201,
@@ -3681,7 +4221,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/addPhotoProfile"
+										"url": {
+											"raw": "localhost:3000/addPhotoProfile",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addPhotoProfile"
+											]
+										}
 									},
 									"status": "Internal Server Error",
 									"code": 500,
@@ -3739,7 +4288,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/addPhotoProfile"
+										"url": {
+											"raw": "localhost:3000/addPhotoProfile",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addPhotoProfile"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -3797,7 +4355,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/addPhotoProfile"
+										"url": {
+											"raw": "localhost:3000/addPhotoProfile",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addPhotoProfile"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -3863,7 +4430,17 @@
 										}
 									]
 								},
-								"url": "localhost:3000/buyTicket"
+								"url": {
+									"raw": "localhost:3000/buyTicket",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"buyTicket"
+									]
+								},
+								"description": "Ini adalah endpoint untuk membeli tiket"
 							},
 							"response": [
 								{
@@ -3892,7 +4469,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/buyTicket"
+										"url": {
+											"raw": "localhost:3000/buyTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"buyTicket"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -3956,7 +4542,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/buyTicket"
+										"url": {
+											"raw": "localhost:3000/buyTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"buyTicket"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -4020,7 +4615,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/buyTicket"
+										"url": {
+											"raw": "localhost:3000/buyTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"buyTicket"
+											]
+										}
 									},
 									"status": "Not Found",
 									"code": 404,
@@ -4084,7 +4688,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/buyTicket"
+										"url": {
+											"raw": "localhost:3000/buyTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"buyTicket"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -4148,7 +4761,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/buyTicket"
+										"url": {
+											"raw": "localhost:3000/buyTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"buyTicket"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -4212,7 +4834,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/buyTicket"
+										"url": {
+											"raw": "localhost:3000/buyTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"buyTicket"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -4276,7 +4907,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/buyTicket"
+										"url": {
+											"raw": "localhost:3000/buyTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"buyTicket"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -4343,7 +4983,8 @@
 											"value": "026f8240-e700-4e91-a711-38c018718b49"
 										}
 									]
-								}
+								},
+								"description": "Ini adalah endpoint untuk menambahkan team ke favorite User"
 							},
 							"response": [
 								{
@@ -4673,7 +5314,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Ini adalah folder untuk endpoint User POST"
 				},
 				{
 					"name": "PUT",
@@ -4703,7 +5345,17 @@
 										}
 									]
 								},
-								"url": "localhost:3000/forgotPassword"
+								"url": {
+									"raw": "localhost:3000/forgotPassword",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"forgotPassword"
+									]
+								},
+								"description": "Ini adalah endpoint untuk memperbaharui password User"
 							},
 							"response": [
 								{
@@ -4731,7 +5383,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/forgotPassword"
+										"url": {
+											"raw": "localhost:3000/forgotPassword",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"forgotPassword"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -4794,7 +5455,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/forgotPassword"
+										"url": {
+											"raw": "localhost:3000/forgotPassword",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"forgotPassword"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -4857,7 +5527,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/forgotPassword"
+										"url": {
+											"raw": "localhost:3000/forgotPassword",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"forgotPassword"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -4920,7 +5599,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/forgotPassword"
+										"url": {
+											"raw": "localhost:3000/forgotPassword",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"forgotPassword"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -4983,7 +5671,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/forgotPassword"
+										"url": {
+											"raw": "localhost:3000/forgotPassword",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"forgotPassword"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -5043,7 +5740,17 @@
 										}
 									]
 								},
-								"url": "localhost:3000/updatePhotoProfile"
+								"url": {
+									"raw": "localhost:3000/updatePhotoProfile",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"updatePhotoProfile"
+									]
+								},
+								"description": "Ini adalah endpoint untuk mengupdate foto User"
 							},
 							"response": [
 								{
@@ -5066,7 +5773,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/updatePhotoProfile"
+										"url": {
+											"raw": "localhost:3000/updatePhotoProfile",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"updatePhotoProfile"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -5124,7 +5840,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/updatePhotoProfile"
+										"url": {
+											"raw": "localhost:3000/updatePhotoProfile",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"updatePhotoProfile"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -5182,7 +5907,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/updatePhotoProfile"
+										"url": {
+											"raw": "localhost:3000/updatePhotoProfile",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"updatePhotoProfile"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -5240,7 +5974,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/updatePhotoProfile"
+										"url": {
+											"raw": "localhost:3000/updatePhotoProfile",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"updatePhotoProfile"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -5291,7 +6034,17 @@
 										"type": "text"
 									}
 								],
-								"url": "localhost:3000/deleteUsers"
+								"url": {
+									"raw": "localhost:3000/deleteUsers",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"deleteUsers"
+									]
+								},
+								"description": "Ini adalah endpoint untuk menghapus akun User (SOFT DELETE)"
 							},
 							"response": [
 								{
@@ -5305,7 +6058,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/deleteUsers"
+										"url": {
+											"raw": "localhost:3000/deleteUsers",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"deleteUsers"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -5354,7 +6116,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/deleteUsers"
+										"url": {
+											"raw": "localhost:3000/deleteUsers",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"deleteUsers"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -5403,7 +6174,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/deleteUsers"
+										"url": {
+											"raw": "localhost:3000/deleteUsers",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"deleteUsers"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -5443,7 +6223,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Ini adalah folder untuk endpoint User PUT"
 				},
 				{
 					"name": "DELETE",
@@ -5474,7 +6255,17 @@
 										}
 									]
 								},
-								"url": "localhost:3000/cancelTicket"
+								"url": {
+									"raw": "localhost:3000/cancelTicket",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cancelTicket"
+									]
+								},
+								"description": "Ini adalah endpoint untuk membatalkan pembelian tiket User"
 							},
 							"response": [
 								{
@@ -5503,7 +6294,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/cancelTicket"
+										"url": {
+											"raw": "localhost:3000/cancelTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"cancelTicket"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -5567,7 +6367,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/cancelTicket"
+										"url": {
+											"raw": "localhost:3000/cancelTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"cancelTicket"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -5631,7 +6440,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/cancelTicket"
+										"url": {
+											"raw": "localhost:3000/cancelTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"cancelTicket"
+											]
+										}
 									},
 									"status": "Internal Server Error",
 									"code": 500,
@@ -5695,7 +6513,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/cancelTicket"
+										"url": {
+											"raw": "localhost:3000/cancelTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"cancelTicket"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -5759,7 +6586,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/cancelTicket"
+										"url": {
+											"raw": "localhost:3000/cancelTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"cancelTicket"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -5810,7 +6646,17 @@
 										"type": "text"
 									}
 								],
-								"url": "localhost:3000/deletePhotoProfile"
+								"url": {
+									"raw": "localhost:3000/deletePhotoProfile",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"deletePhotoProfile"
+									]
+								},
+								"description": "Ini adalah endpoint untuk menghapus foto profil User"
 							},
 							"response": [
 								{
@@ -5824,7 +6670,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/deletePhotoProfile"
+										"url": {
+											"raw": "localhost:3000/deletePhotoProfile",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"deletePhotoProfile"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -5873,7 +6728,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/deletePhotoProfile"
+										"url": {
+											"raw": "localhost:3000/deletePhotoProfile",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"deletePhotoProfile"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -5922,7 +6786,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/deletePhotoProfile"
+										"url": {
+											"raw": "localhost:3000/deletePhotoProfile",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"deletePhotoProfile"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -5971,7 +6844,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/deletePhotoProfile"
+										"url": {
+											"raw": "localhost:3000/deletePhotoProfile",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"deletePhotoProfile"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -6011,9 +6893,11 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Ini adalah folder untuk endpoint User DELETE"
 				}
-			]
+			],
+			"description": "Ini adalah folder untuk endpoint-endpoint User"
 		},
 		{
 			"name": "Admin",
@@ -6067,7 +6951,8 @@
 											"value": "dota2"
 										}
 									]
-								}
+								},
+								"description": "Ini adalah endpoint untuk mengedit detail Game di database"
 							},
 							"response": [
 								{
@@ -6619,7 +7504,8 @@
 											"value": "05c32132-deef-4521-b520-921d1a32c74f"
 										}
 									]
-								}
+								},
+								"description": "Ini adalah endpoint untuk mengedit detail team di database"
 							},
 							"response": [
 								{
@@ -7152,7 +8038,8 @@
 											"value": "Ticket Coba-Coba"
 										}
 									]
-								}
+								},
+								"description": "Ini adalah endpoint untuk mengedit detail tiket di database"
 							},
 							"response": [
 								{
@@ -7945,7 +8832,17 @@
 										}
 									]
 								},
-								"url": "localhost:3000/blockUser"
+								"url": {
+									"raw": "localhost:3000/blockUser",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"blockUser"
+									]
+								},
+								"description": "Ini adalah endpoint untuk memblokir User"
 							},
 							"response": [
 								{
@@ -7968,7 +8865,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/blockUser"
+										"url": {
+											"raw": "localhost:3000/blockUser",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"blockUser"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -8026,7 +8932,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/blockUser"
+										"url": {
+											"raw": "localhost:3000/blockUser",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"blockUser"
+											]
+										}
 									},
 									"status": "Not Found",
 									"code": 404,
@@ -8085,7 +9000,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/blockUser"
+										"url": {
+											"raw": "localhost:3000/blockUser",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"blockUser"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -8144,7 +9068,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/blockUser"
+										"url": {
+											"raw": "localhost:3000/blockUser",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"blockUser"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -8202,7 +9135,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/blockUser"
+										"url": {
+											"raw": "localhost:3000/blockUser",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"blockUser"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -8305,7 +9247,8 @@
 											"value": "hanvy04"
 										}
 									]
-								}
+								},
+								"description": "Ini adalah endpoint untuk mengedit detail User di database"
 							},
 							"response": [
 								{
@@ -9528,7 +10471,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Ini adalah folder untuk endpoint Admin PUT"
 				},
 				{
 					"name": "DELETE",
@@ -9560,7 +10504,8 @@
 											"value": "wot_RU"
 										}
 									]
-								}
+								},
+								"description": "Ini adalah endpoint untuk menghapus game di database"
 							},
 							"response": [
 								{
@@ -9853,7 +10798,8 @@
 											"value": "05f78dd0-c9ba-4ae3-bc35-89a510a7b0f4"
 										}
 									]
-								}
+								},
+								"description": "Ini adalah endpoint untuk menghapus team di database"
 							},
 							"response": [
 								{
@@ -10146,7 +11092,8 @@
 											"value": "Tiket Proyek WS"
 										}
 									]
-								}
+								},
+								"description": "Ini adalah endpoint untuk menghapus tiket di database"
 							},
 							"response": [
 								{
@@ -10438,7 +11385,8 @@
 											"value": "1-c76374bb-30b6-485c-b968-e4481f510001"
 										}
 									]
-								}
+								},
+								"description": "Ini adalah endpoint untuk menghapus match di database"
 							},
 							"response": [
 								{
@@ -10711,7 +11659,17 @@
 										"type": "text"
 									}
 								],
-								"url": "localhost:3000/deleteUser"
+								"url": {
+									"raw": "localhost:3000/deleteUser",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"deleteUser"
+									]
+								},
+								"description": "Ini adalah endpoint untuk menghapus User di database"
 							},
 							"response": [
 								{
@@ -10725,7 +11683,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/deleteUser"
+										"url": {
+											"raw": "localhost:3000/deleteUser",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"deleteUser"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -10774,7 +11741,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/deleteUser"
+										"url": {
+											"raw": "localhost:3000/deleteUser",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"deleteUser"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -10823,7 +11799,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/deleteUser"
+										"url": {
+											"raw": "localhost:3000/deleteUser",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"deleteUser"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -10882,7 +11867,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/deleteUser"
+										"url": {
+											"raw": "localhost:3000/deleteUser",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"deleteUser"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -10941,7 +11935,16 @@
 												}
 											]
 										},
-										"url": "localhost:3000/deleteUser"
+										"url": {
+											"raw": "localhost:3000/deleteUser",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"deleteUser"
+											]
+										}
 									},
 									"status": "Not Found",
 									"code": 404,
@@ -10981,7 +11984,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Ini adalah folder untuk endpoint Admin DELETE"
 				},
 				{
 					"name": "GET",
@@ -10997,7 +12001,17 @@
 										"type": "text"
 									}
 								],
-								"url": "localhost:3000/getInvoice"
+								"url": {
+									"raw": "localhost:3000/getInvoice",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getInvoice"
+									]
+								},
+								"description": "Ini adalah endpoint untuk mendapatkan semua invoice User"
 							},
 							"response": [
 								{
@@ -11011,7 +12025,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getInvoice"
+										"url": {
+											"raw": "localhost:3000/getInvoice",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getInvoice"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -11060,7 +12083,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getInvoice"
+										"url": {
+											"raw": "localhost:3000/getInvoice",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getInvoice"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -11110,7 +12142,16 @@
 												"disabled": true
 											}
 										],
-										"url": "localhost:3000/getInvoice"
+										"url": {
+											"raw": "localhost:3000/getInvoice",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getInvoice"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -11159,7 +12200,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getInvoice"
+										"url": {
+											"raw": "localhost:3000/getInvoice",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getInvoice"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -11227,7 +12277,8 @@
 											"disabled": true
 										}
 									]
-								}
+								},
+								"description": "Ini adalah endpoint untuk mendapatkan 1 invoice User"
 							},
 							"response": [
 								{
@@ -11574,7 +12625,17 @@
 										"type": "text"
 									}
 								],
-								"url": "localhost:3000/getTransaction"
+								"url": {
+									"raw": "localhost:3000/getTransaction",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getTransaction"
+									]
+								},
+								"description": "Ini adalah endpoint untuk mendapatkan semua traksaksi User"
 							},
 							"response": [
 								{
@@ -11588,7 +12649,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getTransaction"
+										"url": {
+											"raw": "localhost:3000/getTransaction",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getTransaction"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -11638,7 +12708,16 @@
 												"disabled": true
 											}
 										],
-										"url": "localhost:3000/getTransaction"
+										"url": {
+											"raw": "localhost:3000/getTransaction",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getTransaction"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -11687,7 +12766,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getTransaction"
+										"url": {
+											"raw": "localhost:3000/getTransaction",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getTransaction"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -11732,11 +12820,20 @@
 										"header": [
 											{
 												"key": "x-api-key",
-												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIyNDU3LCJleHAiOjE3MTg3MjYwNTd9.b3n1yb-fSEXCfExPGLKrysYPzifS4hz6X9pbSuEA3u4",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44",
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getTransaction"
+										"url": {
+											"raw": "localhost:3000/getTransaction",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getTransaction"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -11752,15 +12849,15 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "2258"
+											"value": "1833"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"8d2-W/Cm1v/V0ABAhfl8ICxtuMRuCwE\""
+											"value": "W/\"729-fJNEWOwbTTIrgkq3qm6+sF9tDTg\""
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 18 Jun 2024 14:54:22 GMT"
+											"value": "Tue, 18 Jun 2024 15:47:56 GMT"
 										},
 										{
 											"key": "Connection",
@@ -11772,7 +12869,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n    {\n        \"_id\": \"666d912bb9d538a1da5c9473\",\n        \"type\": \"Buy\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Coba-Coba\",\n        \"amount\": \"2\",\n        \"date\": \"06/15/2024\"\n    },\n    {\n        \"_id\": \"666da6c43939730e06e1a45d\",\n        \"type\": \"Buy\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Coba-Coba\",\n        \"amount\": \"2\",\n        \"date\": \"06/15/2024\"\n    },\n    {\n        \"_id\": \"666da75d8f01b4c05de45644\",\n        \"type\": \"Cancel\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Coba-Coba\",\n        \"amount\": \"1\",\n        \"date\": \"06/15/2024\"\n    },\n    {\n        \"_id\": \"666da78a8f01b4c05de45645\",\n        \"type\": \"Buy\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Coba-Coba\",\n        \"amount\": \"5\",\n        \"date\": \"06/15/2024\"\n    },\n    {\n        \"_id\": \"666da7928f01b4c05de45649\",\n        \"type\": \"Cancel\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Coba-Coba\",\n        \"amount\": \"3\",\n        \"date\": \"06/15/2024\"\n    },\n    {\n        \"_id\": \"666e95d97e188499ce4d7cf2\",\n        \"type\": \"Buy\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Ada Dong\",\n        \"amount\": \"2\",\n        \"date\": \"06/16/2024\"\n    },\n    {\n        \"_id\": \"666fd9375676c25a1d2b8f51\",\n        \"type\": \"Buy\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Proyek WS\",\n        \"amount\": \"2\",\n        \"date\": \"06/17/2024\",\n        \"transaction_token\": \"a6d712bf-fc4b-4439-acf0-e7763f541a8f\",\n        \"status\": \"Pending\"\n    },\n    {\n        \"_id\": \"66712650b40e0b65f4ba4859\",\n        \"type\": \"Buy\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Ada Dong\",\n        \"amount\": \"2\",\n        \"total\": 220000,\n        \"date\": \"06/18/2024\",\n        \"transaction_token\": \"cb3c2ce7-a73c-4c63-8a50-a713793c6459\"\n    },\n    {\n        \"_id\": \"6671268f733c8ab7c18c27f5\",\n        \"type\": \"Buy\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Ada Dong\",\n        \"amount\": \"2\",\n        \"total\": 220000,\n        \"date\": \"06/18/2024\",\n        \"transaction_token\": \"b2e446f2-090f-4272-b435-e5b8dec8ffa1\"\n    },\n    {\n        \"_id\": \"667126a32c8d2fb888e7b975\",\n        \"type\": \"Buy\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Ada Dong\",\n        \"amount\": \"2\",\n        \"total\": 220000,\n        \"date\": \"06/18/2024\",\n        \"transaction_token\": \"5e21483f-f564-4353-a739-c5c13dddb661\"\n    },\n    {\n        \"_id\": \"66718b524457b70bb72e313a\",\n        \"type\": \"Buy\",\n        \"username\": \"Jopay\",\n        \"ticket_name\": \"Tiket Ada Dong\",\n        \"amount\": \"2\",\n        \"total\": 220000,\n        \"date\": \"06/18/2024\",\n        \"transaction_token\": \"7ddc7879-1257-43f7-881e-ac06603f5d24\"\n    },\n    {\n        \"_id\": \"6671924b4de93ed8ffd9fdfa\",\n        \"type\": \"Buy\",\n        \"username\": \"Jopay\",\n        \"ticket_name\": \"Tiket Ada Dong\",\n        \"amount\": \"2\",\n        \"total\": 220000,\n        \"date\": \"06/18/2024\",\n        \"transaction_token\": \"d17d0338-5f47-4a3a-b34f-7079d56e78a6\"\n    },\n    {\n        \"_id\": \"6671924f4de93ed8ffd9fdfd\",\n        \"type\": \"Buy\",\n        \"username\": \"Jopay\",\n        \"ticket_name\": \"Tiket Ada Dong\",\n        \"amount\": \"2\",\n        \"total\": 220000,\n        \"date\": \"06/18/2024\",\n        \"transaction_token\": \"c691e5c7-028f-42c3-a25c-cbe6b023b086\"\n    }\n]"
+									"body": "{\n    \"detail_transaction\": [\n        {\n            \"date\": \"06/15/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Coba-Coba\",\n            \"amount\": \"2\",\n            \"type\": \"Buy\"\n        },\n        {\n            \"date\": \"06/15/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Coba-Coba\",\n            \"amount\": \"2\",\n            \"type\": \"Buy\"\n        },\n        {\n            \"date\": \"06/15/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Coba-Coba\",\n            \"amount\": \"1\",\n            \"type\": \"Cancel\"\n        },\n        {\n            \"date\": \"06/15/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Coba-Coba\",\n            \"amount\": \"5\",\n            \"type\": \"Buy\"\n        },\n        {\n            \"date\": \"06/15/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Coba-Coba\",\n            \"amount\": \"3\",\n            \"type\": \"Cancel\"\n        },\n        {\n            \"date\": \"06/16/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Ada Dong\",\n            \"amount\": \"2\",\n            \"type\": \"Buy\"\n        },\n        {\n            \"transaction_token\": \"a6d712bf-fc4b-4439-acf0-e7763f541a8f\",\n            \"date\": \"06/17/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Proyek WS\",\n            \"amount\": \"2\",\n            \"type\": \"Buy\"\n        },\n        {\n            \"transaction_token\": \"cb3c2ce7-a73c-4c63-8a50-a713793c6459\",\n            \"date\": \"06/18/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Ada Dong\",\n            \"amount\": \"2\",\n            \"total\": 220000,\n            \"type\": \"Buy\"\n        },\n        {\n            \"transaction_token\": \"b2e446f2-090f-4272-b435-e5b8dec8ffa1\",\n            \"date\": \"06/18/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Ada Dong\",\n            \"amount\": \"2\",\n            \"total\": 220000,\n            \"type\": \"Buy\"\n        },\n        {\n            \"transaction_token\": \"5e21483f-f564-4353-a739-c5c13dddb661\",\n            \"date\": \"06/18/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Ada Dong\",\n            \"amount\": \"2\",\n            \"total\": 220000,\n            \"type\": \"Buy\"\n        },\n        {\n            \"transaction_token\": \"7ddc7879-1257-43f7-881e-ac06603f5d24\",\n            \"date\": \"06/18/2024\",\n            \"username\": \"Jopay\",\n            \"ticket_name\": \"Tiket Ada Dong\",\n            \"amount\": \"2\",\n            \"total\": 220000,\n            \"type\": \"Buy\"\n        },\n        {\n            \"transaction_token\": \"d17d0338-5f47-4a3a-b34f-7079d56e78a6\",\n            \"date\": \"06/18/2024\",\n            \"username\": \"Jopay\",\n            \"ticket_name\": \"Tiket Ada Dong\",\n            \"amount\": \"2\",\n            \"total\": 220000,\n            \"type\": \"Buy\"\n        },\n        {\n            \"transaction_token\": \"c691e5c7-028f-42c3-a25c-cbe6b023b086\",\n            \"date\": \"06/18/2024\",\n            \"username\": \"Jopay\",\n            \"ticket_name\": \"Tiket Ada Dong\",\n            \"amount\": \"2\",\n            \"total\": 220000,\n            \"type\": \"Buy\"\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -11783,11 +12880,28 @@
 								"header": [
 									{
 										"key": "x-api-key",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4NTI0ODk2LCJleHAiOjE3MTg1Mjg0OTZ9.xH1GFITQ8NHk3EETU7sUZ0dY4FHqvgtEdSUTnmZ9irk",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44",
 										"type": "text"
 									}
 								],
-								"url": "localhost:3000/getTransaction/hanvy04"
+								"url": {
+									"raw": "localhost:3000/getTransaction/:username",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getTransaction",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": ""
+										}
+									]
+								},
+								"description": "Ini adalah endpoint untuk mendapatkan 1 transaksi User"
 							},
 							"response": [
 								{
@@ -11801,7 +12915,17 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getTransaction/hanvy04"
+										"url": {
+											"raw": "localhost:3000/getTransaction/hanvy04",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getTransaction",
+												"hanvy04"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -11851,7 +12975,17 @@
 												"disabled": true
 											}
 										],
-										"url": "localhost:3000/getTransaction/hanvy04"
+										"url": {
+											"raw": "localhost:3000/getTransaction/hanvy04",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getTransaction",
+												"hanvy04"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -11890,55 +13024,6 @@
 									"body": "{\n    \"message\": \"Token tidak disediakan\"\n}"
 								},
 								{
-									"name": "success",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "x-api-key",
-												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIyNDU3LCJleHAiOjE3MTg3MjYwNTd9.b3n1yb-fSEXCfExPGLKrysYPzifS4hz6X9pbSuEA3u4",
-												"type": "text"
-											}
-										],
-										"url": "localhost:3000/getTransaction/hanvy04"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "1643"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"66b-TdWR0FrwnQLI5d3dCERkGCGNrQE\""
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 18 Jun 2024 14:55:00 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "[\n    {\n        \"_id\": \"666d912bb9d538a1da5c9473\",\n        \"type\": \"Buy\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Coba-Coba\",\n        \"amount\": \"2\",\n        \"date\": \"06/15/2024\"\n    },\n    {\n        \"_id\": \"666da6c43939730e06e1a45d\",\n        \"type\": \"Buy\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Coba-Coba\",\n        \"amount\": \"2\",\n        \"date\": \"06/15/2024\"\n    },\n    {\n        \"_id\": \"666da75d8f01b4c05de45644\",\n        \"type\": \"Cancel\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Coba-Coba\",\n        \"amount\": \"1\",\n        \"date\": \"06/15/2024\"\n    },\n    {\n        \"_id\": \"666da78a8f01b4c05de45645\",\n        \"type\": \"Buy\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Coba-Coba\",\n        \"amount\": \"5\",\n        \"date\": \"06/15/2024\"\n    },\n    {\n        \"_id\": \"666da7928f01b4c05de45649\",\n        \"type\": \"Cancel\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Coba-Coba\",\n        \"amount\": \"3\",\n        \"date\": \"06/15/2024\"\n    },\n    {\n        \"_id\": \"666e95d97e188499ce4d7cf2\",\n        \"type\": \"Buy\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Ada Dong\",\n        \"amount\": \"2\",\n        \"date\": \"06/16/2024\"\n    },\n    {\n        \"_id\": \"666fd9375676c25a1d2b8f51\",\n        \"type\": \"Buy\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Proyek WS\",\n        \"amount\": \"2\",\n        \"date\": \"06/17/2024\",\n        \"transaction_token\": \"a6d712bf-fc4b-4439-acf0-e7763f541a8f\",\n        \"status\": \"Pending\"\n    },\n    {\n        \"_id\": \"66712650b40e0b65f4ba4859\",\n        \"type\": \"Buy\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Ada Dong\",\n        \"amount\": \"2\",\n        \"total\": 220000,\n        \"date\": \"06/18/2024\",\n        \"transaction_token\": \"cb3c2ce7-a73c-4c63-8a50-a713793c6459\"\n    },\n    {\n        \"_id\": \"6671268f733c8ab7c18c27f5\",\n        \"type\": \"Buy\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Ada Dong\",\n        \"amount\": \"2\",\n        \"total\": 220000,\n        \"date\": \"06/18/2024\",\n        \"transaction_token\": \"b2e446f2-090f-4272-b435-e5b8dec8ffa1\"\n    },\n    {\n        \"_id\": \"667126a32c8d2fb888e7b975\",\n        \"type\": \"Buy\",\n        \"username\": \"hanvy04\",\n        \"ticket_name\": \"Tiket Ada Dong\",\n        \"amount\": \"2\",\n        \"total\": 220000,\n        \"date\": \"06/18/2024\",\n        \"transaction_token\": \"5e21483f-f564-4353-a739-c5c13dddb661\"\n    }\n]"
-								},
-								{
 									"name": "user not found",
 									"originalRequest": {
 										"method": "GET",
@@ -11949,7 +13034,17 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getTransaction/hanvy0"
+										"url": {
+											"raw": "localhost:3000/getTransaction/hanvy0",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getTransaction",
+												"hanvy0"
+											]
+										}
 									},
 									"status": "Not Found",
 									"code": 404,
@@ -11998,7 +13093,17 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getTransaction/hanvy04"
+										"url": {
+											"raw": "localhost:3000/getTransaction/hanvy04",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getTransaction",
+												"hanvy04"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -12035,6 +13140,71 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"message\": \"Anda bukan admin\"\n}"
+								},
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "localhost:3000/getTransaction/:username",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getTransaction",
+												":username"
+											],
+											"variable": [
+												{
+													"key": "username",
+													"value": "hanvy04"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1317"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"525-W80IbJA19mNwqeUITbuNGI/MoZQ\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:44:37 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"detail_transaction\": [\n        {\n            \"date\": \"06/15/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Coba-Coba\",\n            \"amount\": \"2\",\n            \"type\": \"Buy\"\n        },\n        {\n            \"date\": \"06/15/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Coba-Coba\",\n            \"amount\": \"2\",\n            \"type\": \"Buy\"\n        },\n        {\n            \"date\": \"06/15/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Coba-Coba\",\n            \"amount\": \"1\",\n            \"type\": \"Cancel\"\n        },\n        {\n            \"date\": \"06/15/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Coba-Coba\",\n            \"amount\": \"5\",\n            \"type\": \"Buy\"\n        },\n        {\n            \"date\": \"06/15/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Coba-Coba\",\n            \"amount\": \"3\",\n            \"type\": \"Cancel\"\n        },\n        {\n            \"date\": \"06/16/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Ada Dong\",\n            \"amount\": \"2\",\n            \"type\": \"Buy\"\n        },\n        {\n            \"transaction_token\": \"a6d712bf-fc4b-4439-acf0-e7763f541a8f\",\n            \"date\": \"06/17/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Proyek WS\",\n            \"amount\": \"2\",\n            \"type\": \"Buy\"\n        },\n        {\n            \"transaction_token\": \"cb3c2ce7-a73c-4c63-8a50-a713793c6459\",\n            \"date\": \"06/18/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Ada Dong\",\n            \"amount\": \"2\",\n            \"total\": 220000,\n            \"type\": \"Buy\"\n        },\n        {\n            \"transaction_token\": \"b2e446f2-090f-4272-b435-e5b8dec8ffa1\",\n            \"date\": \"06/18/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Ada Dong\",\n            \"amount\": \"2\",\n            \"total\": 220000,\n            \"type\": \"Buy\"\n        },\n        {\n            \"transaction_token\": \"5e21483f-f564-4353-a739-c5c13dddb661\",\n            \"date\": \"06/18/2024\",\n            \"username\": \"hanvy04\",\n            \"ticket_name\": \"Tiket Ada Dong\",\n            \"amount\": \"2\",\n            \"total\": 220000,\n            \"type\": \"Buy\"\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -12049,7 +13219,17 @@
 										"type": "text"
 									}
 								],
-								"url": "localhost:3000/getAllUser"
+								"url": {
+									"raw": "localhost:3000/getAllUser",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getAllUser"
+									]
+								},
+								"description": "Ini adalah endpoint untuk mendapatkan semua data User"
 							},
 							"response": [
 								{
@@ -12063,7 +13243,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getAllUser"
+										"url": {
+											"raw": "localhost:3000/getAllUser",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getAllUser"
+											]
+										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -12113,7 +13302,16 @@
 												"disabled": true
 											}
 										],
-										"url": "localhost:3000/getAllUser"
+										"url": {
+											"raw": "localhost:3000/getAllUser",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getAllUser"
+											]
+										}
 									},
 									"status": "Forbidden",
 									"code": 403,
@@ -12162,7 +13360,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getAllUser"
+										"url": {
+											"raw": "localhost:3000/getAllUser",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getAllUser"
+											]
+										}
 									},
 									"status": "Bad Request",
 									"code": 400,
@@ -12211,7 +13418,16 @@
 												"type": "text"
 											}
 										],
-										"url": "localhost:3000/getAllUser"
+										"url": {
+											"raw": "localhost:3000/getAllUser",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"getAllUser"
+											]
+										}
 									},
 									"status": "OK",
 									"code": 200,
@@ -12251,7 +13467,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Ini adalah folder untuk endpoint Admin GET"
 				},
 				{
 					"name": "POST",
@@ -12271,7 +13488,7 @@
 									},
 									{
 										"key": "x-api-key",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzM3NDc0LCJleHAiOjE3MTgzNDEwNzR9.D1Wye8k0H-XpncisKeQGZJF_BUulcVp_vdPnZLoWC0w"
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44"
 									}
 								],
 								"body": {
@@ -12304,12 +13521,427 @@
 									"variable": [
 										{
 											"key": "game_id",
-											"value": "wot_NA"
+											"value": ""
 										}
 									]
-								}
+								},
+								"description": "Ini adalah endpoint untuk menambahkan game ke database"
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Admin Belum Login / Bukan Admin",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
+											},
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzM3NDc0LCJleHAiOjE3MTgzNDEwNzR9.D1Wye8k0H-XpncisKeQGZJF_BUulcVp_vdPnZLoWC0w"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "admin_username",
+													"value": "Hanvy",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "game_id",
+													"value": "tf2",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3000/addGame/:game_id",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addGame",
+												":game_id"
+											],
+											"variable": [
+												{
+													"key": "game_id",
+													"value": "wot_RU"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "31"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1f-lIpsUmjrhX0WPmum8gUIVhwe2GI\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:02:55 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Token tidak valid\"\n}"
+								},
+								{
+									"name": "Berhasil Tambah Game",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
+											},
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzMDMwLCJleHAiOjE3MTg3MjY2MzB9.ekKa-vSct-fblZkHsxqXFtlLJjui3WBmn_7u2DGluTI"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "admin_username",
+													"value": "Hanvy",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "game_id",
+													"value": "tf2",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3000/addGame/:game_id",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addGame",
+												":game_id"
+											],
+											"variable": [
+												{
+													"key": "game_id",
+													"value": "wot_RU"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "30"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1e-MurLuOchzICMQIJSi8REnVAS3dY\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:04:09 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Success add game\"\n}"
+								},
+								{
+									"name": "Tidak Mengisi Authorization atau Accept",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"disabled": true
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
+												"disabled": true
+											},
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzMDMwLCJleHAiOjE3MTg3MjY2MzB9.ekKa-vSct-fblZkHsxqXFtlLJjui3WBmn_7u2DGluTI"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "admin_username",
+													"value": "Hanvy",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "game_id",
+													"value": "tf2",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3000/addGame/:game_id",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addGame",
+												":game_id"
+											],
+											"variable": [
+												{
+													"key": "game_id",
+													"value": "wot_RU"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "58"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3a-oMG7+UfHwL8xUL1CbCxtszJu90k\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:04:30 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Authorization and Accept header is required!\"\n}"
+								},
+								{
+									"name": "Game Sudah Terdaftar",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
+											},
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44"
+											}
+										],
+										"url": {
+											"raw": "localhost:3000/addGame/:game_id",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addGame",
+												":game_id"
+											],
+											"variable": [
+												{
+													"key": "game_id",
+													"value": "dota2"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "34"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"22-wYpEdY4/QK0tyWSg8c5DaAYRAE4\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:50:26 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Game has been added!\"\n}"
+								},
+								{
+									"name": "Tidak Mengisi Game_id",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
+											},
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzI2MTk3LCJleHAiOjE3MTg3Mjk3OTd9.6HQEdUF0g0su-nsRLn1wv46zAFkGgTS_16DPL1BfWeU"
+											}
+										],
+										"url": {
+											"raw": "localhost:3000/addGame/:game_id",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addGame",
+												":game_id"
+											],
+											"variable": [
+												{
+													"key": "game_id",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "47"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2f-cIZjTyXlpXORJAdm6aK7DoWXKWY\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 16:06:16 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": \"Request failed with status code 404\"\n}"
+								}
+							]
 						},
 						{
 							"name": "addTicket",
@@ -12318,7 +13950,7 @@
 								"header": [
 									{
 										"key": "x-api-key",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzQ4NDIyLCJleHAiOjE3MTgzNTIwMjJ9.s76IhyVI93-vVzOyYlLNciWJnSqBtn-yq5ltB8DA_PM"
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44"
 									}
 								],
 								"body": {
@@ -12341,14 +13973,517 @@
 										},
 										{
 											"key": "match_id",
-											"value": "1-c76374bb-30b6-485c-b968-e4481f510001",
+											"value": "1-dae0feab-05b3-4ac7-9eec-a5116d00c83a",
 											"type": "text"
 										}
 									]
 								},
-								"url": "localhost:3000/addTicket"
+								"url": {
+									"raw": "localhost:3000/addTicket",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"addTicket"
+									]
+								},
+								"description": "Ini adalah endpoint untuk menambahkan tiket ke database"
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Token Tidak Valid",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzQ4NDIyLCJleHAiOjE3MTgzNTIwMjJ9.s76IhyVI93-vVzOyYlLNciWJnSqBtn-yq5ltB8DA_PM"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Tiket Surrender",
+													"type": "text"
+												},
+												{
+													"key": "amount",
+													"value": "60",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "75000",
+													"type": "text"
+												},
+												{
+													"key": "match_id",
+													"value": "1-c76374bb-30b6-485c-b968-e4481f510001",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3000/addTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addTicket"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "31"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1f-lIpsUmjrhX0WPmum8gUIVhwe2GI\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:14:51 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Token tidak valid\"\n}"
+								},
+								{
+									"name": "Amount < 0",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Tiket Surrender",
+													"type": "text"
+												},
+												{
+													"key": "amount",
+													"value": "-60",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "75000",
+													"type": "text"
+												},
+												{
+													"key": "match_id",
+													"value": "1-c76374bb-30b6-485c-b968-e4481f510001",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3000/addTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addTicket"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "44"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2c-Ju6gv9GRX1HVDqoHGDQtpQWPqi4\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:15:30 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Amount must be greater than 0!\"\n}"
+								},
+								{
+									"name": "Price < 0",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Tiket Surrender",
+													"type": "text"
+												},
+												{
+													"key": "amount",
+													"value": "60",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "-75000",
+													"type": "text"
+												},
+												{
+													"key": "match_id",
+													"value": "1-c76374bb-30b6-485c-b968-e4481f510001",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3000/addTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addTicket"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "43"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2b-uMYOYjegWCQVRQM4GiRHmH63R0Q\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:16:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"price must be greater than 0!\"\n}"
+								},
+								{
+									"name": "Match_id Tidak Ditemukan",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Tiket Surrender",
+													"type": "text"
+												},
+												{
+													"key": "amount",
+													"value": "60",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "75000",
+													"type": "text"
+												},
+												{
+													"key": "match_id",
+													"value": "1-c76374bb-30b6-485c-b968-e4481f510001a",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3000/addTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addTicket"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "32"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"20-KOiNWm1ckAfvkPkA78I7dlQ7dps\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:16:42 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Match's not found!\"\n}"
+								},
+								{
+									"name": "Berhasil Tambah Tiket",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Tiket Surrender",
+													"type": "text"
+												},
+												{
+													"key": "amount",
+													"value": "60",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "75000",
+													"type": "text"
+												},
+												{
+													"key": "match_id",
+													"value": "1-dae0feab-05b3-4ac7-9eec-a5116d00c83a",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3000/addTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addTicket"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "32"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"20-hADa/YAhpXpTckSPJzh1Py3Fw7I\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:17:33 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Success add ticket\"\n}"
+								},
+								{
+									"name": "Nama Tiket Kembar",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Tiket Surrender",
+													"type": "text"
+												},
+												{
+													"key": "amount",
+													"value": "60",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "75000",
+													"type": "text"
+												},
+												{
+													"key": "match_id",
+													"value": "1-dae0feab-05b3-4ac7-9eec-a5116d00c83a",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3000/addTicket",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addTicket"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "36"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"24-+BL4u5g9uzGu9qgDyAdybAa/f/E\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:18:06 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Ticket has been added!\"\n}"
+								}
+							]
 						},
 						{
 							"name": "addTeam",
@@ -12365,7 +14500,7 @@
 									},
 									{
 										"key": "x-api-key",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzU0MDYxLCJleHAiOjE3MTgzNTc2NjF9.Tf0VlYohMR10BURhni0kgUeVjURY8dPS1d1TWTen2dU"
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44"
 									}
 								],
 								"body": {
@@ -12373,7 +14508,7 @@
 									"urlencoded": []
 								},
 								"url": {
-									"raw": "localhost:3000/addTeam?nickname=cloud 9&game=csgo",
+									"raw": "localhost:3000/addTeam?nickname=rainbow&game=csgo",
 									"host": [
 										"localhost"
 									],
@@ -12384,16 +14519,337 @@
 									"query": [
 										{
 											"key": "nickname",
-											"value": "cloud 9"
+											"value": "rainbow"
 										},
 										{
 											"key": "game",
 											"value": "csgo"
 										}
 									]
-								}
+								},
+								"description": "Ini adalah endpoint untuk menambahkan team ke database"
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Token Tidak Valid",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
+											},
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzU0MDYxLCJleHAiOjE3MTgzNTc2NjF9.Tf0VlYohMR10BURhni0kgUeVjURY8dPS1d1TWTen2dU"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "localhost:3000/addTeam?nickname=cloud 9&game=csgo",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addTeam"
+											],
+											"query": [
+												{
+													"key": "nickname",
+													"value": "cloud 9"
+												},
+												{
+													"key": "game",
+													"value": "csgo"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "31"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1f-lIpsUmjrhX0WPmum8gUIVhwe2GI\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:19:24 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Token tidak valid\"\n}"
+								},
+								{
+									"name": "Tidak Mengisi Authorization atau Accept",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"disabled": true
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
+												"disabled": true
+											},
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "localhost:3000/addTeam?nickname=cloud 9&game=csgo",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addTeam"
+											],
+											"query": [
+												{
+													"key": "nickname",
+													"value": "cloud 9"
+												},
+												{
+													"key": "game",
+													"value": "csgo"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "58"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3a-oMG7+UfHwL8xUL1CbCxtszJu90k\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:19:49 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Authorization and Accept header is required!\"\n}"
+								},
+								{
+									"name": "Tidak Mengisi Nickname atau Nama Game",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
+											},
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "localhost:3000/addTeam?game=csgo",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addTeam"
+											],
+											"query": [
+												{
+													"key": "nickname",
+													"value": "cloud 9",
+													"disabled": true
+												},
+												{
+													"key": "game",
+													"value": "csgo"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "42"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2a-sWgFIGoRt6wxKnXlRLFs9dUgSsg\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:20:56 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": \"Nickname and game is required!\"\n}"
+								},
+								{
+									"name": "Berhasil Tambah Team",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
+											},
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "localhost:3000/addTeam?nickname=rainbow&game=csgo",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addTeam"
+											],
+											"query": [
+												{
+													"key": "nickname",
+													"value": "rainbow"
+												},
+												{
+													"key": "game",
+													"value": "csgo"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "30"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1e-6JyUEM01d9OoEEz6AfB1WQxGZSM\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:21:50 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Success add team\"\n}"
+								}
+							]
 						},
 						{
 							"name": "addMatches",
@@ -12410,11 +14866,11 @@
 									},
 									{
 										"key": "x-api-key",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzM3NDc0LCJleHAiOjE3MTgzNDEwNzR9.D1Wye8k0H-XpncisKeQGZJF_BUulcVp_vdPnZLoWC0w"
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44"
 									}
 								],
 								"url": {
-									"raw": "localhost:3000/addMatches?hub_name=KOSLEP Hub 2v2&game=csgo",
+									"raw": "localhost:3000/addMatches?game=csgoqef",
 									"host": [
 										"localhost"
 									],
@@ -12425,20 +14881,328 @@
 									"query": [
 										{
 											"key": "hub_name",
-											"value": "KOSLEP Hub 2v2"
+											"value": "KOSLEP Hub 2v2",
+											"disabled": true
 										},
 										{
 											"key": "game",
-											"value": "csgo"
+											"value": "csgoqef"
 										}
 									]
-								}
+								},
+								"description": "Ini adalah endpoint untuk menambahkan match ke database"
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Token Tidak Valid",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
+											},
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwiaWF0IjoxNzE4MzM3NDc0LCJleHAiOjE3MTgzNDEwNzR9.D1Wye8k0H-XpncisKeQGZJF_BUulcVp_vdPnZLoWC0w"
+											}
+										],
+										"url": {
+											"raw": "localhost:3000/addMatches?hub_name=KOSLEP Hub 2v2&game=csgo",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addMatches"
+											],
+											"query": [
+												{
+													"key": "hub_name",
+													"value": "KOSLEP Hub 2v2"
+												},
+												{
+													"key": "game",
+													"value": "csgo"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "31"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1f-lIpsUmjrhX0WPmum8gUIVhwe2GI\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:22:53 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Token tidak valid\"\n}"
+								},
+								{
+									"name": "Tidak Mengisi Authorization atau Accept",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"disabled": true
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d",
+												"disabled": true
+											},
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44"
+											}
+										],
+										"url": {
+											"raw": "localhost:3000/addMatches?hub_name=KOSLEP Hub 2v2&game=csgo",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addMatches"
+											],
+											"query": [
+												{
+													"key": "hub_name",
+													"value": "KOSLEP Hub 2v2"
+												},
+												{
+													"key": "game",
+													"value": "csgo"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "58"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3a-oMG7+UfHwL8xUL1CbCxtszJu90k\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:23:37 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Authorization and Accept header is required!\"\n}"
+								},
+								{
+									"name": "Hub atau Nama Game Salah",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
+											},
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44"
+											}
+										],
+										"url": {
+											"raw": "localhost:3000/addMatches?hub_name=KOSLEP Hub 2v2&game=csgoqef",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addMatches"
+											],
+											"query": [
+												{
+													"key": "hub_name",
+													"value": "KOSLEP Hub 2v2"
+												},
+												{
+													"key": "game",
+													"value": "csgoqef"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "35"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"23-sZ7OgspWuRB8N10Z+2I9UZIpZL0\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:26:24 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Hub or game not found\"\n}"
+								},
+								{
+									"name": "Tidak Mengisi Nama Hub",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 46fd3a8b-3414-4cbe-a35c-1281742fd74d"
+											},
+											{
+												"key": "x-api-key",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhaWxleTYwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE4NzIzNjA0LCJleHAiOjE3MTg3MjcyMDR9.Hqn60l2Ma_xZ3eURx3_RekGpszEnp8BnfIAByGaTj44"
+											}
+										],
+										"url": {
+											"raw": "localhost:3000/addMatches?game=csgoqef",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"addMatches"
+											],
+											"query": [
+												{
+													"key": "hub_name",
+													"value": "KOSLEP Hub 2v2",
+													"disabled": true
+												},
+												{
+													"key": "game",
+													"value": "csgoqef"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "33"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"21-72+Ty4vhF0bkAvDtln54LvbvtXM\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Jun 2024 15:27:25 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": \"Hub name is required!\"\n}"
+								}
+							]
 						}
-					]
+					],
+					"description": "Ini adalah folder untuk endpoint Admin POST"
 				}
-			]
+			],
+			"description": "Ini adalah folder untuk endpoint Admin"
 		}
 	]
 }

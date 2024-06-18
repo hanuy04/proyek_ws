@@ -6,13 +6,13 @@ const addGame = async (req, res) => {
   const auth = req.header("Authorization");
   const accept = req.header("Accept");
 
-  if (!auth || auth == "" || !accept || accept == "") {
+  if (!auth || auth === "" || !accept || accept === "") {
     return res
       .status(401)
       .json({ message: "Authorization and Accept header is required!" });
   }
 
-  if (!game_id || game_id == "") {
+  if (!game_id || game_id === "") {
     return res.status(400).json({ error: "Game ID is required" });
   }
 
@@ -28,14 +28,16 @@ const addGame = async (req, res) => {
     );
 
     if (!result.data) {
-      return res.status(404).json({ message: "Data's not found!" });
+      return res.status(404).json({ message: "Game's not found!" });
     }
 
     try {
       await client.connect();
       const db = client.db("projectWS");
 
-      const findGame = await db.collection("games").findOne({ game_id });
+      const findGame = await db
+        .collection("games")
+        .findOne({ game_id: result.data.game_id });
 
       if (findGame) {
         return res.status(400).json({ message: "Game has been added!" });

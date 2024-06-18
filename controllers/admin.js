@@ -83,7 +83,19 @@ const getAllTransaction = async (req, res) => {
         .find()
         .toArray();
 
-      return res.status(200).json(listTransaction);
+      const mappedTransactions = listTransaction.map((transaction) => ({
+        transaction_token: transaction.transaction_token,
+        date: transaction.date,
+        username: transaction.username,
+        ticket_name: transaction.ticket_name,
+        amount: transaction.amount,
+        total: transaction.total,
+        type: transaction.type,
+      }));
+
+      return res.status(200).json({
+        detail_transaction: mappedTransactions,
+      });
     } else {
       return res.status(400).json({ message: "Anda bukan admin" });
     }
@@ -118,7 +130,19 @@ const getOneUserTransaction = async (req, res) => {
           .find({ username: username })
           .toArray();
 
-        return res.status(200).json(listTransaction);
+        const mappedTransactions = listTransaction.map((transaction) => ({
+          transaction_token: transaction.transaction_token,
+          date: transaction.date,
+          username: transaction.username,
+          ticket_name: transaction.ticket_name,
+          amount: transaction.amount,
+          total: transaction.total,
+          type: transaction.type,
+        }));
+
+        return res.status(200).json({
+          detail_transaction: mappedTransactions,
+        });
       } else {
         return res
           .status(404)
