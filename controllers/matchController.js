@@ -129,29 +129,29 @@ const getMatches = async (req, res) => {
     await client.connect();
     const db = client.db("projectWS");
 
-    const matches = await db.collection("matches").find().toArray()
+    const matches = await db.collection("matches").find().toArray();
+    const userData = req.user;
 
-    const user = await db.collection("users").findOne({ email: req.user.email });
+    const user = await db
+      .collection("users")
+      .findOne({ username: userData.username });
 
-    if (user.api_hit < 10) {
+    if (user.api_hit < 2) {
       return res.status(400).json({ error: "api_hit tidak cukup" });
     }
 
-    user.api_hit -= 10;
+    const sisaAPI = parseInt(user.api_hit) - 2;
 
-    await db.collection("users").updateOne({ email: req.user.email }, { $set: { api_hit: user.api_hit } });
+    await db
+      .collection("users")
+      .updateOne(
+        { username: req.user.username },
+        { $set: { api_hit: sisaAPI } }
+      );
 
-    const updatedMatches = matches.slice(api_hit);
+    const updatedMatches = matches.slice(user.api_hit);
 
-    return res.status(200).json({
-      matches: updatedMatches.map((match) => ({
-        match_id: match.match_id,
-        game: match.game,
-        region: match.region,
-        competition_name: match.competition_name,
-        status: match.status,
-      })),
-    });
+    return res.status(200).json(matches);
   } catch (dbError) {
     console.error("Database error:", dbError);
     return res.status(500).json({ error: "Database error" });
@@ -187,15 +187,21 @@ const getDetailMatch = async (req, res) => {
       return res.status(404).json({ error: "ticket not found" });
     }
 
-    const user = await db.collection("users").findOne({ email: req.user.email });
+    const userData = req.user;
 
-    if (user.api_hit < 10) {
+    const user = await db
+      .collection("users")
+      .findOne({ username: userData.username });
+
+    if (user.api_hit < 2) {
       return res.status(400).json({ error: "api_hit tidak cukup" });
     }
 
-    user.api_hit -= 10;
+    const sisaAPI = parseInt(user.api_hit) - 2;
 
-    await db.collection("users").updateOne({ email: req.user.email }, { $set: { api_hit: user.api_hit } });
+    await db
+      .collection("users")
+      .updateOne({ username: user.username }, { $set: { api_hit: sisaAPI } });
 
     return res.status(200).json({
       detail_match: {

@@ -826,14 +826,18 @@ const deletePhotoProfile = async (req, res) => {
 
 const deleteUsers = async (req, res) => {
   try {
-    const { cari } = req.params;
+    await client.connect();
+    const db = client.db("projectWS");
+
+    let username = req.user.username;
+
     await db
-      .collection("user")
+      .collection("users")
       .updateOne(
-        { username: cari },
+        { username: username },
         { $set: { isDeleted: true, deletedAt: new Date() } }
       );
-    return res.status(200).json("Berhasil hapus user");
+    return res.status(200).json({ message: "Berhasil hapus user" });
   } catch (error) {
     return res.status(400).json({ error: error.message });
   }
