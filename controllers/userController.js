@@ -485,7 +485,6 @@ const buyTicket = async (req, res) => {
     if (cekTicket != null) {
       const totalHarga = parseInt(cekTicket.price) * parseInt(amount);
 
-      // Create the Midtrans transaction
       let parameter = {
         transaction_details: {
           order_id: "order-id-" + getDate(),
@@ -500,66 +499,140 @@ const buyTicket = async (req, res) => {
         },
       };
 
-      await snap
-        .createTransaction(parameter)
-        .then(async (transaction) => {
-          const transactionToken = transaction.token;
-          const dateToday = getDate();
-          const sisaSaldo = user.saldo - totalHarga;
-          const sisaTicket = parseInt(cekTicket.amount) - parseInt(amount);
+      const cekUserTicket = await db
+        .collection("userTicket")
+        .findOne({ username: userData.username, ticket: ticket });
 
-          const newTransaction = await db.collection("transactions").insertOne({
-            type: "Buy",
-            username: user.username,
-            ticket_name: cekTicket.name,
-            amount: amount,
-            total: totalHarga,
-            date: dateToday,
-            transaction_token: transactionToken,
-          });
+      if (cekUserTicket != null) {
+        const totalTicket = parseInt(amount) + parseInt(cekUserTicket.amount);
+        await snap
+          .createTransaction(parameter)
+          .then(async (transaction) => {
+            const transactionToken = transaction.token;
+            const dateToday = getDate();
+            const sisaSaldo = user.saldo - totalHarga;
+            const sisaTicket = parseInt(cekTicket.amount) - parseInt(amount);
 
-          const newInvoice = await db.collection("invoices").insertOne({
-            type: "Buy",
-            username: user.username,
-            ticket: cekTicket.name,
-            amount: amount,
-            total: totalHarga,
-            date: dateToday,
-          });
+            const newTransaction = await db
+              .collection("transactions")
+              .insertOne({
+                type: "Buy",
+                username: user.username,
+                ticket_name: cekTicket.name,
+                amount: amount,
+                total: totalHarga,
+                date: dateToday,
+                transaction_token: transactionToken,
+              });
 
-          await db
-            .collection("users")
-            .updateOne(
-              { username: user.username },
-              { $set: { saldo: sisaSaldo } }
+            const newInvoice = await db.collection("invoices").insertOne({
+              type: "Buy",
+              username: user.username,
+              ticket: cekTicket.name,
+              amount: amount,
+              total: totalHarga,
+              date: dateToday,
+            });
+
+            await db.collection("userTicket").updateOne(
+              {
+                username: user.username,
+                ticket: ticket,
+              },
+              { $set: { amount: totalTicket } }
             );
 
-          await db.collection("userTicket").insertOne({
-            username: user.username,
-            ticket: cekTicket.name,
-            amount: amount,
-          });
+            await db
+              .collection("users")
+              .updateOne(
+                { username: user.username },
+                { $set: { saldo: sisaSaldo } }
+              );
 
-          await db
-            .collection("tickets")
-            .updateOne({ name: ticket }, { $set: { amount: sisaTicket } });
+            await db
+              .collection("tickets")
+              .updateOne({ name: ticket }, { $set: { amount: sisaTicket } });
 
-          return res.status(200).json({
-            type: "Buy",
-            username: user.username,
-            ticket_name: ticket,
-            amount: amount,
-            total: totalHarga,
-            date: dateToday,
-            transaction_token: transactionToken,
+            return res.status(200).json({
+              type: "Buy",
+              username: user.username,
+              ticket_name: ticket,
+              amount: amount,
+              total: totalHarga,
+              date: dateToday,
+              transaction_token: transactionToken,
+            });
+          })
+          .catch((err) => {
+            console.error("Midtrans error:", err);
+            return res
+              .status(500)
+              .json({ error: "Payment processing error", details: err });
           });
-        })
-        .catch((err) => {
-          console.error("Midtrans error:", err);
-          return res
-            .status(500)
-            .json({ error: "Payment processing error", details: err });
-        });
+      } else {
+        await snap
+          .createTransaction(parameter)
+          .then(async (transaction) => {
+            const transactionToken = transaction.token;
+            const dateToday = getDate();
+            const sisaSaldo = user.saldo - totalHarga;
+            const sisaTicket = parseInt(cekTicket.amount) - parseInt(amount);
+
+            const newTransaction = await db
+              .collection("transactions")
+              .insertOne({
+                type: "Buy",
+                username: user.username,
+                ticket_name: cekTicket.name,
+                amount: amount,
+                total: totalHarga,
+                date: dateToday,
+                transaction_token: transactionToken,
+              });
+
+            const newInvoice = await db.collection("invoices").insertOne({
+              type: "Buy",
+              username: user.username,
+              ticket: cekTicket.name,
+              amount: amount,
+              total: totalHarga,
+              date: dateToday,
+            });
+
+            await db
+              .collection("users")
+              .updateOne(
+                { username: user.username },
+                { $set: { saldo: sisaSaldo } }
+              );
+
+            await db.collection("userTicket").insertOne({
+              username: user.username,
+              ticket: cekTicket.name,
+              amount: amount,
+            });
+
+            await db
+              .collection("tickets")
+              .updateOne({ name: ticket }, { $set: { amount: sisaTicket } });
+
+            return res.status(200).json({
+              type: "Buy",
+              username: user.username,
+              ticket_name: ticket,
+              amount: amount,
+              total: totalHarga,
+              date: dateToday,
+              transaction_token: transactionToken,
+            });
+          })
+          .catch((err) => {
+            console.error("Midtrans error:", err);
+            return res
+              .status(500)
+              .json({ error: "Payment processing error", details: err });
+          });
+      }
     } else {
       return res.status(404).json({ message: "Ticket tidak ditemukan" });
     }
