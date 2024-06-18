@@ -129,10 +129,22 @@ const getMatches = async (req, res) => {
     await client.connect();
     const db = client.db("projectWS");
 
-    const matches = await db.collection("matches").find().toArray();
+    const matches = await db.collection("matches").find().toArray()
+
+    const user = await db.collection("users").findOne({ email: req.user.email });
+
+    if (user.api_hit < 10) {
+      return res.status(400).json({ error: "api_hit tidak cukup" });
+    }
+
+    user.api_hit -= 10;
+
+    await db.collection("users").updateOne({ email: req.user.email }, { $set: { api_hit: user.api_hit } });
+
+    const updatedMatches = matches.slice(api_hit);
 
     return res.status(200).json({
-      matches: matches.map((match) => ({
+      matches: updatedMatches.map((match) => ({
         match_id: match.match_id,
         game: match.game,
         region: match.region,
@@ -174,6 +186,16 @@ const getDetailMatch = async (req, res) => {
     if (!ticket) {
       return res.status(404).json({ error: "ticket not found" });
     }
+
+    const user = await db.collection("users").findOne({ email: req.user.email });
+
+    if (user.api_hit < 10) {
+      return res.status(400).json({ error: "api_hit tidak cukup" });
+    }
+
+    user.api_hit -= 10;
+
+    await db.collection("users").updateOne({ email: req.user.email }, { $set: { api_hit: user.api_hit } });
 
     return res.status(200).json({
       detail_match: {
