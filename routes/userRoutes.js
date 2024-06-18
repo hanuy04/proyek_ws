@@ -59,6 +59,4 @@ router.delete("/cancelTicket", verifyToken, cancelTicket);
 
 router.get("/getUserTickets", verifyToken, getUserTickets);
 
-
-
 module.exports = router;

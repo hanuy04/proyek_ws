@@ -404,7 +404,7 @@ const addPhotoProfile = async (req, res) => {
 
     const userData = req.user;
 
-    const extension = path.extname(req.file.originalname);
+    const extension = await path.extname(req.file.originalname);
     const filename = `${userData.username}${extension}`;
     fs.renameSync(`./upload/${req.file.filename}`, `./upload/${filename}`);
 
@@ -438,7 +438,7 @@ const updatePhotoProfile = async (req, res) => {
 
     fs.unlinkSync(user.profile_pic);
 
-    const extension = path.extname(req.file.originalname);
+    const extension = await path.extname(req.file.originalname);
     const filename = `${userData.username}${extension}`;
     fs.renameSync(`./upload/${req.file.filename}`, `./upload/${filename}`);
 
