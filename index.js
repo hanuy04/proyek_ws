@@ -5,7 +5,7 @@ require("dotenv").config();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.listen(3000, () => console.log("Server up and running..."));
+app.listen(8102, () => console.log("Server up and running..."));
 
 // LOGIN
 const loginRoutes = require("./routes/loginRoutes");
